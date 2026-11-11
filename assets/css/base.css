@@ -70,6 +70,80 @@ button {
 
 ul, ol { margin: 0; padding: 0; list-style: none; }
 
+/* Tombol — DESIGN.md. Dipakai beranda dan aplikasi. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: var(--s1) var(--s2);
+  border: 1px solid var(--stone);
+  background: var(--stone);
+  color: var(--paper);
+  font-family: var(--font);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  transition: background .15s, border-color .15s;
+}
+.btn:hover {
+  background: var(--stone-hover);
+  border-color: var(--stone-hover);
+  color: var(--paper);
+  text-decoration: none;
+}
+.btn:active { background: var(--stone-active); border-color: var(--stone-active); }
+.btn:disabled { opacity: .4; cursor: not-allowed; }
+.btn.is-quiet {
+  background: transparent;
+  color: var(--stone);
+  border-color: var(--line-2);
+}
+.btn.is-quiet:hover {
+  background: var(--surface);
+  border-color: var(--line-2);
+  color: var(--ink);
+}
+
+/* Dialog — tanpa bayangan, pemisahnya border. */
+dialog.modal {
+  padding: 0;
+  border: 1px solid var(--line-2);
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow: none;
+  max-width: 420px;
+  width: calc(100% - 32px);
+}
+dialog.modal::backdrop { background: rgba(28, 25, 23, .6); }
+.modal-body { padding: var(--s2); }
+.modal-body h3 { font-family: var(--font); font-size: var(--fs-body); font-weight: 600; }
+.modal-body p { margin-top: 4px; font-size: var(--fs-caption); line-height: var(--lh-caption); color: var(--ink-2); }
+.modal-body img { margin: var(--s2) auto 0; border: 1px solid var(--line); }
+.modal-actions { display: flex; flex-wrap: wrap; gap: var(--s1); margin-top: var(--s2); }
+.modal-actions .btn { flex: 1 1 auto; }
+.modal-close {
+  display: block;
+  width: 100%;
+  margin-top: var(--s2);
+  padding: var(--s1);
+  border: 1px solid var(--line-2);
+  font-size: var(--fs-caption);
+  font-weight: 600;
+  color: var(--ink-2);
+}
+.modal-close:hover { background: var(--surface); color: var(--ink); }
+
+/* Catatan kecil */
+.note {
+  margin-top: var(--s1);
+  font-size: var(--fs-caption);
+  line-height: var(--lh-caption);
+  color: var(--ink-3);
+  max-width: 34em;
+}
+
 /* Atribut hidden harus menang atas display apa pun */
 [hidden] { display: none !important; }
 

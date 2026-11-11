@@ -10,7 +10,6 @@ const path = require('path');
 const ROOT = path.resolve(__dirname, '..', 'skd');
 /* Semua jalur di dalam manifest bersifat relatif terhadap folder data/ */
 const BASE = path.join(ROOT, 'data');
-const DATA = BASE;
 
 const errors = [];
 const warnings = [];
@@ -74,12 +73,46 @@ if (exams && Array.isArray(exams.exams)) {
       err(`${e.id}/manifest.json`, `id manifest "${man.id}" tidak cocok dengan id ujian "${e.id}"`);
     }
 
+    // aturan penilaian
+    const scoring = man.scoring;
+    if (!scoring || typeof scoring !== 'object') {
+      err(`${e.id}/manifest.json`, 'scoring kosong — mesin ujian tidak bisa menghitung skor');
+    } else {
+      if (!Number.isInteger(scoring.poinBenar) || scoring.poinBenar <= 0) {
+        err(`${e.id}/manifest.json`, 'scoring.poinBenar harus bilangan bulat positif');
+      }
+      const aturan = scoring.subtes || {};
+      for (const id of Object.keys(aturan)) {
+        const a = aturan[id];
+        const w = `${e.id}/manifest.json[scoring:${id}]`;
+        if (!['key', 'weighted'].includes(a.mode)) err(w, `mode tidak sah: "${a.mode}"`);
+        if (!Number.isInteger(a.max) || a.max <= 0) err(w, 'max harus bilangan bulat positif');
+        if (!Number.isInteger(a.threshold) || a.threshold < 0) err(w, 'threshold harus bilangan bulat ≥ 0');
+        if (Number.isInteger(a.max) && Number.isInteger(a.threshold) && a.threshold > a.max) {
+          err(w, 'threshold melebihi max');
+        }
+      }
+    }
+
     // subtes
     const subtes = man.subtes || [];
     if (!subtes.length) warn(`${e.id}/manifest.json`, 'tidak ada subtes');
 
     dupes(subtes.map((s) => s.id)).forEach((d) =>
       err(`${e.id}/manifest.json`, `id subtes ganda: "${d}"`));
+
+    if (scoring && scoring.subtes) {
+      for (const s of subtes) {
+        if (s.id && !scoring.subtes[s.id]) {
+          err(`${e.id}/manifest.json`, `subtes "${s.id}" tidak punya aturan di scoring.subtes`);
+        }
+      }
+      for (const id of Object.keys(scoring.subtes)) {
+        if (!subtes.some((s) => s.id === id)) {
+          err(`${e.id}/manifest.json`, `scoring.subtes.${id} tidak punya subtes pasangan`);
+        }
+      }
+    }
 
     for (const s of subtes) {
       const w = `${e.id}/manifest.json[subtes:${s.id || '?'}]`;
@@ -126,9 +159,15 @@ if (exams && Array.isArray(exams.exams)) {
       if (!p.title) err(w, 'title kosong');
       if (!Number.isInteger(p.jumlah) || p.jumlah <= 0) err(w, 'jumlah harus bilangan positif');
       if (!Number.isInteger(p.durasi) || p.durasi <= 0) err(w, 'durasi harus bilangan positif');
+      if (p.jenis && !['contoh', 'penuh'].includes(p.jenis)) {
+        err(w, `jenis tidak sah: "${p.jenis}"`);
+      }
       if (p.aktif && !p.file) err(w, 'aktif tapi tanpa "file"');
-      if (p.file && exists(p.file)) paketFiles.push({ exam: e.id, entry: p });
-      else if (p.aktif && p.file) err(w, `aktif tapi berkas tidak ada — ${p.file}`);
+      if (p.file && exists(p.file)) {
+        paketFiles.push({ exam: e.id, entry: p, scoring: man.scoring });
+      } else if (p.aktif && p.file) {
+        err(w, `aktif tapi berkas tidak ada — ${p.file}`);
+      }
     }
   }
 }
@@ -136,12 +175,21 @@ if (exams && Array.isArray(exams.exams)) {
 // ---------- 3. berkas paket soal ----------
 const semuaSoal = new Map(); // id soal -> lokasi (deteksi ganda lintas paket)
 
-for (const { exam, entry } of paketFiles) {
+for (const { exam, entry, scoring } of paketFiles) {
   const pk = readJSON(entry.file, entry.file);
   if (!pk) continue;
 
   const w = entry.file;
   if (pk.id && pk.id !== entry.id) err(w, `id berkas "${pk.id}" != id manifest "${entry.id}"`);
+  if (pk.jenis && !['contoh', 'penuh'].includes(pk.jenis)) {
+    err(w, `jenis tidak sah: "${pk.jenis}"`);
+  }
+  if (entry.jenis && pk.jenis && entry.jenis !== pk.jenis) {
+    warn(w, `jenis berkas "${pk.jenis}" != manifest "${entry.jenis}"`);
+  }
+  if (Number.isInteger(pk.durasi) && pk.durasi !== entry.durasi) {
+    warn(w, `durasi berkas ${pk.durasi} menit, manifest ${entry.durasi} menit`);
+  }
 
   const sections = pk.sections || [];
   if (!sections.length) err(w, 'tidak ada sections');
@@ -150,6 +198,11 @@ for (const { exam, entry } of paketFiles) {
   for (const sec of sections) {
     const sw = `${w}[${sec.subtest || '?'}]`;
     if (!sec.subtest) err(sw, 'subtest kosong');
+
+    const aturan = scoring && scoring.subtes ? scoring.subtes[sec.subtest] : null;
+    const mode = aturan ? aturan.mode : null;
+    if (!aturan) err(sw, `subtest "${sec.subtest}" tidak punya aturan penilaian`);
+
     const qs = sec.questions || [];
     total += qs.length;
     if (!qs.length) warn(sw, 'tidak ada soal');
@@ -164,19 +217,23 @@ for (const { exam, entry } of paketFiles) {
       }
 
       if (!q.q) err(qw, 'pertanyaan kosong');
+      if (!q.why) warn(qw, 'pembahasan kosong');
 
-      if (sec.subtest === 'tkp') {
-        const opts = q.opts || [];
-        if (opts.length < 2) err(qw, 'opsi < 2');
+      const opts = Array.isArray(q.opts) ? q.opts : [];
+      if (opts.length < 2) err(qw, 'opsi < 2');
+
+      if (mode === 'weighted') {
         for (const [oi, o] of opts.entries()) {
+          if (!o || typeof o !== 'object') {
+            err(qw, `opsi#${oi + 1} harus objek { t, score }`);
+            continue;
+          }
           if (!o.t) err(qw, `opsi#${oi + 1} kosong`);
           if (!Number.isInteger(o.score) || o.score < 1 || o.score > 5) {
             err(qw, `opsi#${oi + 1} skor harus 1–5, dapat ${JSON.stringify(o.score)}`);
           }
         }
       } else {
-        const opts = q.opts || [];
-        if (opts.length < 2) err(qw, 'opsi < 2');
         if (!Number.isInteger(q.key)) err(qw, 'key bukan bilangan bulat');
         else if (q.key < 0 || q.key >= opts.length) err(qw, `key ${q.key} di luar jangkauan`);
         if (opts.some((o) => typeof o !== 'string' || !o.trim())) err(qw, 'ada opsi kosong');

@@ -1,0 +1,199 @@
+{
+  "schema": 1,
+  "id": "paket-contoh",
+  "title": "Paket Contoh — 15 Soal",
+  "jenis": "contoh",
+  "durasi": 20,
+  "sections": [
+    {
+      "subtest": "twk",
+      "questions": [
+        {
+          "id": "contoh-tw-01",
+          "topik": "pancasila",
+          "q": "Rumusan dasar negara yang kemudian dikenal sebagai Pancasila tercantum dalam…",
+          "opts": [
+            "Pembukaan UUD 1945 alinea keempat",
+            "Batang Tubuh UUD 1945",
+            "Penjelasan UUD 1945",
+            "Dekrit Presiden 5 Juli 1959"
+          ],
+          "key": 0,
+          "why": "Alinea keempat Pembukaan UUD 1945 memuat lima sila yang menjadi dasar negara."
+        },
+        {
+          "id": "contoh-tw-02",
+          "topik": "pancasila",
+          "q": "Sikap yang paling mencerminkan sila kedua, Kemanusiaan yang adil dan beradab, adalah…",
+          "opts": [
+            "Mengutamakan kepentingan kelompok sendiri",
+            "Membantu korban bencana tanpa membedakan latar belakang",
+            "Mengikuti musyawarah untuk mencapai mufakat",
+            "Menjaga persatuan di tengah perbedaan"
+          ],
+          "key": 1,
+          "why": "Sila kedua menekankan nilai kemanusiaan dan perlakuan adil terhadap semua orang. Opsi lain lebih dekat ke sila ketiga atau keempat."
+        },
+        {
+          "id": "contoh-tw-03",
+          "topik": "musyawarah",
+          "q": "Dalam rapat warga, terjadi perbedaan pendapat yang tajam. Tindakan yang sesuai dengan sila keempat adalah…",
+          "opts": [
+            "Memutuskan sendiri karena paling memahami masalah",
+            "Menunda rapat sampai semua setuju tanpa batas waktu",
+            "Menampung pendapat lalu mengambil keputusan melalui musyawarah untuk mufakat",
+            "Meminta pihak yang berbeda pendapat meninggalkan rapat"
+          ],
+          "key": 2,
+          "why": "Sila keempat mengutamakan musyawarah untuk mencapai mufakat, dengan menampung pendapat dan tetap mengambil keputusan."
+        },
+        {
+          "id": "contoh-tw-04",
+          "topik": "bhinneka",
+          "q": "Semboyan Bhinneka Tunggal Ika memiliki makna…",
+          "opts": [
+            "Semua warga harus memiliki budaya yang sama",
+            "Perbedaan bukan alasan untuk terpecah, tetapi tetap satu bangsa",
+            "Persatuan hanya berlaku bagi kelompok mayoritas",
+            "Kebudayaan daerah harus ditinggalkan demi persatuan"
+          ],
+          "key": 1,
+          "why": "Bhinneka Tunggal Ika berarti berbeda-beda tetapi tetap satu. Persatuan tidak menuntut penghapusan perbedaan."
+        },
+        {
+          "id": "contoh-tw-05",
+          "topik": "integritas",
+          "q": "Seorang pegawai menerima hadiah mahal dari rekanan setelah proyek selesai. Sikap yang paling menjaga integritas adalah…",
+          "opts": [
+            "Menerima karena tidak diminta",
+            "Menerima lalu membagikannya kepada tim",
+            "Menolak dengan sopan dan menjelaskan aturan gratifikasi",
+            "Menerima dan tidak memberi tahu siapa pun"
+          ],
+          "key": 2,
+          "why": "Menolak dengan sopan menjaga integritas sekaligus hubungan kerja. Menerima, walau dibagikan, tetap berisiko melanggar aturan gratifikasi."
+        }
+      ]
+    },
+    {
+      "subtest": "tiu",
+      "questions": [
+        {
+          "id": "contoh-ti-01",
+          "topik": "deret",
+          "q": "Lanjutan deret 3, 6, 12, 24, … adalah…",
+          "opts": ["30", "36", "48", "60"],
+          "key": 2,
+          "why": "Setiap angka dikalikan dua: 3 × 2 = 6, 6 × 2 = 12, 12 × 2 = 24, maka 24 × 2 = 48."
+        },
+        {
+          "id": "contoh-ti-02",
+          "topik": "perbandingan",
+          "q": "Jika 5 pekerja menyelesaikan sebuah pekerjaan dalam 12 hari, berapa hari yang dibutuhkan 10 pekerja dengan kecepatan kerja yang sama?",
+          "opts": ["4 hari", "6 hari", "8 hari", "10 hari"],
+          "key": 1,
+          "why": "Jumlah pekerja berlipat dua, sehingga waktu menjadi separuh: 12 ÷ 2 = 6 hari."
+        },
+        {
+          "id": "contoh-ti-03",
+          "topik": "silogisme",
+          "q": "Semua siswa kelas A mengikuti ujian. Semua yang mengikuti ujian membawa kartu peserta. Kesimpulan yang pasti benar adalah…",
+          "opts": [
+            "Semua siswa kelas A membawa kartu peserta",
+            "Semua yang membawa kartu peserta adalah siswa kelas A",
+            "Sebagian siswa kelas A tidak membawa kartu peserta",
+            "Hanya siswa kelas A yang membawa kartu peserta"
+          ],
+          "key": 0,
+          "why": "Dua premis universal dapat dirangkai: siswa kelas A → mengikuti ujian → membawa kartu peserta. Arah sebaliknya tidak dapat disimpulkan."
+        },
+        {
+          "id": "contoh-ti-04",
+          "topik": "analogi",
+          "q": "Dokter : rumah sakit = guru : …",
+          "opts": ["Buku", "Sekolah", "Murid", "Papan tulis"],
+          "key": 1,
+          "why": "Hubungannya adalah tempat bekerja. Dokter bekerja di rumah sakit, guru bekerja di sekolah."
+        },
+        {
+          "id": "contoh-ti-05",
+          "topik": "persentase",
+          "q": "Harga sebuah barang naik 20%, kemudian diberi diskon 20% dari harga setelah kenaikan. Dibandingkan harga awal, harga akhirnya…",
+          "opts": ["Naik 4%", "Tetap sama", "Turun 4%", "Turun 20%"],
+          "key": 2,
+          "why": "Misalkan harga awal 100. Setelah naik 20% menjadi 120. Diskon 20% dari 120 adalah 24, sehingga harga akhir 96 — turun 4% dari harga awal."
+        }
+      ]
+    },
+    {
+      "subtest": "tkp",
+      "questions": [
+        {
+          "id": "contoh-tk-01",
+          "topik": "profesionalisme",
+          "q": "Atasan memberi tugas tambahan yang harus selesai besok, sementara Anda masih memiliki pekerjaan lain yang juga mendesak. Yang Anda lakukan…",
+          "opts": [
+            { "t": "Menyusun prioritas bersama atasan dan mengerjakan keduanya sesuai kesepakatan", "score": 5 },
+            { "t": "Mengerjakan sendiri dengan lembur hingga selesai", "score": 4 },
+            { "t": "Meminta rekan mengerjakan tugas tambahan itu", "score": 3 },
+            { "t": "Meminta perpanjangan waktu tanpa mencoba menyusun prioritas", "score": 2 },
+            { "t": "Mengerjakan salah satu dan mengabaikan yang lain", "score": 1 }
+          ],
+          "why": "Menyusun prioritas bersama atasan menjaga kedua pekerjaan tetap terkendali dan menghindari keputusan sepihak."
+        },
+        {
+          "id": "contoh-tk-02",
+          "topik": "kerja sama",
+          "q": "Rekan kerja melakukan kesalahan yang berdampak pada hasil kerja tim. Anda mengetahui hal itu sebelum atasan. Sikap Anda…",
+          "opts": [
+            { "t": "Membicarakannya empat mata dan membantunya memperbaiki", "score": 5 },
+            { "t": "Memperbaiki kesalahan itu sendiri tanpa memberitahunya", "score": 4 },
+            { "t": "Melaporkannya langsung kepada atasan", "score": 3 },
+            { "t": "Membiarkan karena bukan tugas Anda", "score": 1 },
+            { "t": "Menyalahkannya di depan tim agar tidak terulang", "score": 2 }
+          ],
+          "why": "Membicarakan empat mata dan membantu perbaikan menyelesaikan masalah sekaligus menjaga hubungan kerja."
+        },
+        {
+          "id": "contoh-tk-03",
+          "topik": "pelayanan publik",
+          "q": "Seorang warga menyampaikan keluhan karena layanan yang diterima lebih lambat dari yang dijanjikan. Sikap Anda…",
+          "opts": [
+            { "t": "Mendengarkan, meminta maaf, dan segera menindaklanjuti", "score": 5 },
+            { "t": "Menjelaskan prosedur yang berlaku", "score": 4 },
+            { "t": "Mengalihkan keluhan kepada rekan lain", "score": 3 },
+            { "t": "Meminta warga datang lagi pada hari lain", "score": 2 },
+            { "t": "Mengabaikan karena keluhan serupa sering terjadi", "score": 1 }
+          ],
+          "why": "Pelayanan terbaik dimulai dengan mendengarkan dan menindaklanjuti, bukan sekadar menjelaskan prosedur atau memindahkan keluhan."
+        },
+        {
+          "id": "contoh-tk-04",
+          "topik": "integritas",
+          "q": "Anda menemukan kemungkinan kesalahan data penting sehari sebelum rapat. Sikap Anda…",
+          "opts": [
+            { "t": "Memeriksa ulang dan mengonfirmasi ke sumber data sebelum rapat", "score": 5 },
+            { "t": "Mencatat temuan untuk diperbaiki setelah rapat", "score": 4 },
+            { "t": "Meminta rapat ditunda tanpa memeriksa penyebabnya", "score": 3 },
+            { "t": "Menyampaikan dugaan kesalahan saat rapat berlangsung", "score": 2 },
+            { "t": "Menggunakan data apa adanya karena sudah terlanjur disiapkan", "score": 1 }
+          ],
+          "why": "Data yang dipakai untuk mengambil keputusan harus dipastikan dulu kebenarannya, bukan dibiarkan sampai rapat berlangsung."
+        },
+        {
+          "id": "contoh-tk-05",
+          "topik": "teknologi informasi",
+          "q": "Tim Anda diminta menggunakan aplikasi baru untuk pekerjaan sehari-hari. Sikap Anda…",
+          "opts": [
+            { "t": "Mempelajari lebih dulu, lalu membantu anggota tim lain beradaptasi", "score": 5 },
+            { "t": "Mengikuti pelatihan yang disediakan dan mempraktikkannya", "score": 4 },
+            { "t": "Meminta rekan yang lebih paham mengerjakan bagian Anda", "score": 3 },
+            { "t": "Menunda mempelajarinya sampai benar-benar diwajibkan", "score": 2 },
+            { "t": "Tetap memakai cara lama karena lebih cepat", "score": 1 }
+          ],
+          "why": "Mempelajari lebih dulu lalu membantu tim mempercepat adaptasi dan menjaga pekerjaan tetap berjalan."
+        }
+      ]
+    }
+  ]
+}

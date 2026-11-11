@@ -41,6 +41,31 @@ var UI = (function () {
     return String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, '.');
   }
 
+  /* Tanggal ringkas untuk riwayat, mis. "11 Nov 2026". */
+  function tanggal(ts) {
+    var d = new Date(ts || Date.now());
+    try {
+      return d.toLocaleDateString('id-ID', {
+        day: 'numeric', month: 'short', year: 'numeric'
+      });
+    } catch (e) {
+      return d.toISOString().slice(0, 10);
+    }
+  }
+
+  /* Hitung mundur mm:ss. Menit boleh lebih dari 59 (mis. 100:00). */
+  function jam(ms) {
+    var total = Math.max(0, Math.ceil(ms / 1000));
+    var m = Math.floor(total / 60);
+    var s = total % 60;
+    return m + ':' + (s < 10 ? '0' : '') + s;
+  }
+
+  function menit(ms) {
+    var m = Math.max(1, Math.round(ms / 60000));
+    return m + ' menit';
+  }
+
   /* Pesan galat yang jujur, bukan "Terjadi kesalahan". */
   function errorBox(err, what) {
     return '<div class="empty">' +
@@ -51,5 +76,13 @@ var UI = (function () {
       '</div>';
   }
 
-  return { esc: esc, loadJSON: loadJSON, fmt: fmt, errorBox: errorBox };
+  return {
+    esc: esc,
+    loadJSON: loadJSON,
+    fmt: fmt,
+    tanggal: tanggal,
+    jam: jam,
+    menit: menit,
+    errorBox: errorBox
+  };
 })();

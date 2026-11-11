@@ -340,6 +340,7 @@ a.row:hover .row-go { transform: translateX(3px); color: var(--stone); }
   color: var(--ink-3);
 }
 
+
 /* ---------- Kaki ---------- */
 .app-foot {
   display: flex;
@@ -379,4 +380,5 @@ a.row:hover .row-go { transform: translateX(3px); color: var(--stone); }
   }
 
   .acc summary { font-size: 19px; }
+
 }

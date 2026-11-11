@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1C1917" media="(prefers-color-scheme: dark)">
-  <title>Latihan SKD — brhndnjf</title>
-  <meta name="description" content="Materi dan tryout SKD CPNS. Progres tersimpan di perangkat sendiri.">
+  <title>Latihan Ujian — brhndnjf</title>
+  <meta name="description" content="Materi dan tryout untuk beberapa ujian. Progres tersimpan di perangkat sendiri.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E4572E'/><text x='50' y='68' font-size='54' font-family='system-ui' font-weight='600' fill='white' text-anchor='middle'>b</text></svg>">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="../assets/css/tokens.css">
   <link rel="stylesheet" href="../assets/css/base.css">
   <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="assets/css/ujian.css">
+  <link rel="stylesheet" href="assets/css/hasil.css">
 
   <script>
     (function () {
@@ -35,14 +37,10 @@
     <div class="wrap bar-in">
       <a class="bar-brand" href="/">
         <span class="bar-dot" aria-hidden="true"></span>
-        <span><b>brhndnjf</b> <span class="bar-sep">/</span> <span class="bar-sub">Latihan SKD</span></span>
+        <span><b>brhndnjf</b> <span class="bar-sep">/</span> <span class="bar-sub">Latihan Ujian</span></span>
       </a>
 
-      <nav class="tabs" aria-label="Bagian aplikasi">
-        <a href="#/" data-nav="home">Beranda</a>
-        <a href="#/materi" data-nav="materi">Materi</a>
-        <a href="#/tryout" data-nav="tryout">Tryout</a>
-      </nav>
+      <nav class="tabs" id="tabs" aria-label="Bagian aplikasi" hidden></nav>
     </div>
   </header>
 
@@ -58,9 +56,15 @@
   <script src="assets/js/ui.js"></script>
   <script src="assets/js/store.js"></script>
   <script src="assets/js/score.js"></script>
-  <script src="assets/js/views/home.js"></script>
+  <script src="assets/js/exam.js"></script>
+  <script src="assets/js/nav.js"></script>
+  <script src="assets/js/sesi.js"></script>
+  <script src="assets/js/views/exams.js"></script>
+  <script src="assets/js/views/exam.js"></script>
   <script src="assets/js/views/materi.js"></script>
   <script src="assets/js/views/tryout.js"></script>
+  <script src="assets/js/views/ujian.js"></script>
+  <script src="assets/js/views/hasil.js"></script>
   <script src="assets/js/router.js"></script>
   <script src="assets/js/app.js"></script>
 </body>

@@ -2,6 +2,26 @@
   "schema": 1,
   "id": "cpns",
   "title": "CPNS",
+  "scoring": {
+    "poinBenar": 5,
+    "subtes": {
+      "twk": {
+        "mode": "key",
+        "max": 150,
+        "threshold": 65
+      },
+      "tiu": {
+        "mode": "key",
+        "max": 175,
+        "threshold": 80
+      },
+      "tkp": {
+        "mode": "weighted",
+        "max": 225,
+        "threshold": 156
+      }
+    }
+  },
   "subtes": [
     {
       "id": "twk",
@@ -27,10 +47,20 @@
   ],
   "paket": [
     {
+      "id": "paket-contoh",
+      "title": "Paket Contoh — 15 Soal",
+      "jumlah": 15,
+      "durasi": 20,
+      "jenis": "contoh",
+      "aktif": true,
+      "file": "cpns/paket/paket-contoh.json"
+    },
+    {
       "id": "paket-01",
       "title": "Paket 1 — Simulasi Penuh",
       "jumlah": 110,
       "durasi": 100,
+      "jenis": "penuh",
       "aktif": false,
       "file": "cpns/paket/paket-01.json"
     }

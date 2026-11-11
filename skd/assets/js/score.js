@@ -1,100 +1,157 @@
-/* score.js — aturan penilaian SKD.
+/* score.js — aturan penilaian, dibaca dari manifest ujian.
    ============================================================
-   PENTING: angka di THRESHOLDS bukan kebenaran yang dijamin.
-   Verifikasi sendiri dari pengumuman resmi MenPANRB/BKN sebelum
-   dipakai untuk menilai kelulusan. Bila berbeda, ubah HANYA di sini.
+   PENTING: ambang kelulusan ada di manifest (scoring.subtes.*.threshold).
+   Angka bawaan untuk CPNS (TWK 65, TIU 80, TKP 156) belum diverifikasi
+   dan dapat berubah. Periksa pengumuman resmi sebelum memakainya
+   untuk menilai kelulusan. Bila berbeda, ubah HANYA di manifest.
    ============================================================ */
 var Score = (function () {
   'use strict';
 
-  var THRESHOLDS = {
-    twk: 65,
-    tiu: 80,
-    tkp: 156
-  };
-
-  var MAX = {
-    twk: 150,
-    tiu: 175,
-    tkp: 225
-  };
-
-  var POIN_BENAR = 5;
-
-  function emptyDetail() {
-    return {
-      twk: { benar: 0, salah: 0, kosong: 0, skor: 0 },
-      tiu: { benar: 0, salah: 0, kosong: 0, skor: 0 },
-      tkp: { benar: 0, salah: 0, kosong: 0, skor: 0 }
-    };
+  function kosongDetail(cfg) {
+    var detail = {};
+    Object.keys(cfg.subtes).forEach(function (id) {
+      var s = cfg.subtes[id];
+      detail[id] = {
+        mode: s.mode,
+        benar: 0,
+        salah: 0,
+        kosong: 0,
+        dijawab: 0,
+        skor: 0,
+        max: 0,
+        threshold: s.threshold
+      };
+    });
+    return detail;
   }
 
-  /* jawaban: { subtest, questions, answers }
-     answers[i] = index opsi terpilih, atau null bila kosong */
-  function hitung(sections, answers) {
-    var detail = emptyDetail();
-    var total = 0;
+  function bobotMaks(q) {
+    var maks = 0;
+    (q.opts || []).forEach(function (o) {
+      if (o && typeof o.score === 'number' && o.score > maks) maks = o.score;
+    });
+    return maks;
+  }
+
+  /* answers: { "id-soal": index opsi terpilih }
+     Kunci memakai id soal, bukan urutan, supaya jawaban tetap cocok
+     walau urutan soal di berkas berubah. */
+  function hitung(cfg, sections, answers) {
+    var detail = kosongDetail(cfg);
 
     sections.forEach(function (sec) {
       var d = detail[sec.subtest];
       if (!d) return;
 
-      sec.questions.forEach(function (q, i) {
-        var pick = answers[sec.subtest + ':' + i];
+      sec.questions.forEach(function (q) {
+        var pick = answers[q.id];
 
-        if (sec.subtest === 'tkp') {
-          /* TKP: setiap opsi punya bobot; tidak ada jawaban salah */
-          if (pick == null) {
+        if (d.mode === 'weighted') {
+          d.max += bobotMaks(q);
+          if (pick == null || !q.opts[pick]) {
             d.kosong++;
             return;
           }
-          var opt = q.opts[pick];
-          var bobot = opt && typeof opt.score === 'number' ? opt.score : 0;
-          d.skor += bobot;
-          d.benar++;
+          d.dijawab++;
+          var bobot = q.opts[pick].score;
+          d.skor += typeof bobot === 'number' ? bobot : 0;
         } else {
+          d.max += cfg.poinBenar;
           if (pick == null) {
             d.kosong++;
-          } else if (pick === q.key) {
-            d.benar++;
-            d.skor += POIN_BENAR;
           } else {
-            d.salah++;
+            d.dijawab++;
+            if (pick === q.key) {
+              d.benar++;
+              d.skor += cfg.poinBenar;
+            } else {
+              d.salah++;
+            }
           }
         }
       });
-
-      total += d.skor;
     });
 
-    var lulusSemua = Object.keys(THRESHOLDS).every(function (k) {
-      return detail[k].skor >= THRESHOLDS[k];
+    var total = 0;
+    var maks = 0;
+    Object.keys(detail).forEach(function (k) {
+      total += detail[k].skor;
+      maks += detail[k].max;
+    });
+
+    var lulus = Object.keys(detail).every(function (k) {
+      return typeof detail[k].threshold !== 'number' ||
+        detail[k].skor >= detail[k].threshold;
     });
 
     return {
       detail: detail,
       total: total,
-      maks: MAX.twk + MAX.tiu + MAX.tkp,
-      thresholds: THRESHOLDS,
-      lulus: lulusSemua
+      maks: maks,
+      thresholds: (function () {
+        var t = {};
+        Object.keys(detail).forEach(function (k) { t[k] = detail[k].threshold; });
+        return t;
+      })(),
+      lulus: lulus
     };
   }
 
-  /* Untuk satu subtes saja, mis. kuis mini */
-  function hitungSatu(subtest, questions, picks) {
-    return hitung(
-      [{ subtest: subtest, questions: questions }],
-      picks.reduce(function (acc, p, i) {
-        acc[subtest + ':' + i] = p;
-        return acc;
-      }, {})
-    );
+  /* Rincian per soal untuk halaman pembahasan. */
+  function perSoal(cfg, sections, answers) {
+    var out = [];
+    var no = 0;
+
+    sections.forEach(function (sec) {
+      var s = cfg.subtes[sec.subtest];
+      if (!s) return;
+
+      sec.questions.forEach(function (q) {
+        no++;
+        var pick = answers[q.id];
+        var item = {
+          no: no,
+          id: q.id,
+          subtest: sec.subtest,
+          topik: q.topik || '',
+          q: q.q,
+          opts: q.opts,
+          pick: pick == null ? null : pick,
+          key: q.key,
+          why: q.why || '',
+          mode: s.mode,
+          skor: 0,
+          maks: 0,
+          status: 'kosong'
+        };
+
+        if (s.mode === 'weighted') {
+          item.maks = bobotMaks(q);
+          if (pick != null && q.opts[pick]) {
+            item.status = 'bobot';
+            item.skor = q.opts[pick].score || 0;
+          }
+        } else {
+          item.maks = cfg.poinBenar;
+          if (pick == null) item.status = 'kosong';
+          else if (pick === q.key) {
+            item.status = 'benar';
+            item.skor = cfg.poinBenar;
+          } else {
+            item.status = 'salah';
+          }
+        }
+
+        out.push(item);
+      });
+    });
+
+    return out;
   }
 
   return {
-    THRESHOLDS: THRESHOLDS,
-    MAX: MAX,
     hitung: hitung,
-    hitungSatu: hitungSatu
+    perSoal: perSoal
   };
 })();
