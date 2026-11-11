@@ -35,24 +35,32 @@
   var year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
 
-  /* ---------- Dialog QRIS ---------- */
+  /* ---------- Dialog QRIS ----------
+     Gambar hanya dipasang bila <dialog> punya data-qris-src.
+     Dengan begitu tidak ada permintaan 404 untuk berkas yang belum ada,
+     dan tombolnya tidak menjanjikan sesuatu yang tidak bisa dibuka. */
   var openers = document.querySelectorAll('[data-open="qris"]');
   var modal = document.getElementById('qris');
+  var src = modal ? modal.getAttribute('data-qris-src') : null;
 
-  /* Kalau berkas QRIS belum ada, jangan tampilkan tombol yang menjanjikan
-     sesuatu yang tidak bisa dibuka. Lebih baik tombolnya hilang. */
-  var qrisImg = document.querySelector('[data-qris-img]');
-  if (qrisImg) {
-    qrisImg.addEventListener('error', function () {
-      qrisImg.hidden = true;
-      openers.forEach(function (btn) { btn.hidden = true; });
-      var fallback = document.querySelector('[data-qris-fallback]');
-      if (fallback) fallback.hidden = false;
-    });
-    /* Memaksa pengecekan bila gambar sudah gagal dimuat sebelum skrip jalan */
-    if (qrisImg.complete && qrisImg.naturalWidth === 0) {
-      qrisImg.dispatchEvent(new Event('error'));
+  if (modal && src) {
+    var slot = modal.querySelector('[data-qris-slot]');
+    if (slot) {
+      var img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Kode QRIS untuk dukungan';
+      img.width = 280;
+      img.height = 280;
+      img.addEventListener('error', function () {
+        img.remove();
+        openers.forEach(function (btn) { btn.hidden = true; });
+        var fb = modal.querySelector('[data-qris-fallback]');
+        if (fb) fb.hidden = false;
+      });
+      slot.appendChild(img);
     }
+  } else {
+    openers.forEach(function (btn) { btn.hidden = true; });
   }
 
   if (modal && typeof modal.showModal === 'function') {

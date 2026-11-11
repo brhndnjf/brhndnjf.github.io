@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0F1013" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FAFAF9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1C1917" media="(prefers-color-scheme: dark)">
 
   <title>Burhan — brhndnjf</title>
   <meta name="description" content="Situs pribadi Burhan. Proyek kecil, catatan, dan latihan SKD.">
@@ -19,7 +19,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Inter:wght@400;600&family=Source+Code+Pro:wght@400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
@@ -156,7 +156,10 @@
     <div class="modal-body">
       <h3 id="qris-judul">QRIS</h3>
       <p>Pindai dengan aplikasi bank atau e-wallet.</p>
-      <img src="assets/img/qris.png" alt="Kode QRIS untuk dukungan" width="280" height="280" data-qris-img>
+      <!-- Untuk mengaktifkan: taruh berkasnya di assets/img/qris.png,
+           lalu tambahkan atribut data-qris-src="assets/img/qris.png" pada <dialog> di atas.
+           Tanpa atribut itu, tombol QRIS disembunyikan dan tidak ada permintaan 404. -->
+      <div data-qris-slot></div>
       <p class="note" data-qris-fallback hidden>
         Gambar QRIS belum tersedia. Gunakan tautan Saweria di atas.
       </p>

@@ -1,71 +1,112 @@
 /* ============================================================
-   tokens.css — satu-satunya tempat warna & ukuran didefinisikan.
-   Mengganti tema = menimpa blok [data-theme="dark"] atau
-   mengubah nilai di :root. Tidak ada warna hard-code di file lain.
+   tokens.css — ThoughtStream
+   Sumber tunggal warna, tipografi, jarak, dan bentuk.
+   Acuan: DESIGN.md. Jangan menulis nilai mentah di berkas lain.
+
+   Dua penyimpangan yang disengaja dari DESIGN.md, keduanya
+   ditandai di bawah: (1) mode gelap, (2) ukuran tipe responsif
+   memakai clamp agar 40px tidak meluber di layar 360px.
    ============================================================ */
 
 :root {
-  /* Permukaan */
-  --paper: #FAFAF8;
-  --surface: #FFFFFF;
+  /* ---- Brand Palette ---- */
+  --stone: #78716C;        /* Primary — jangkar UI, tautan, ikon */
+  --sage: #A8A29E;         /* Secondary — aksen pendukung, pemisah */
+  --ink: #1C1917;          /* Tertiary — Warm Black, judul kuat */
+  --stone-hover: #57534E;
+  --stone-active: #44403C;
 
-  /* Teks */
-  --ink: #14151A;
-  --ink-2: #5A6070;
-  --ink-3: #8E94A4;
+  /* ---- Surface Palette ---- */
+  --paper: #FAFAF9;        /* latar halaman */
+  --surface: #F5F5F4;      /* latar kartu & bagian */
+  --raised: #EFEDEB;       /* hover, blok catatan */
 
-  /* Garis */
-  --line: #E8E8E4;
-  --line-strong: #D3D3CB;
+  /* ---- Content Palette ---- */
+  --ink-2: #57534E;        /* isi sekunder, metadata */
+  --ink-3: #A8A29E;        /* placeholder, label nonaktif */
 
-  /* Aksen tunggal */
-  --accent: #E4572E;
-  --accent-ink: #C2441F;
-  --accent-soft: #FDEDE8;
+  /* ---- Border Palette ---- */
+  --line: #E7E5E4;         /* hairline pemisah */
+  --line-2: #D6D3D1;
+  --line-3: #A8A29E;
 
-  /* Status */
-  --ok: #1F9D6B;
-  --ok-soft: #E6F5EE;
-  --warn: #A9760A;
-  --bad: #C93B36;
+  /* ---- Semantic ---- */
+  --ok: #65A30D;   --ok-bg: #F0FDF4;   --ok-line: #BBF7D0;
+  --warn: #CA8A04; --warn-bg: #FEFCE8; --warn-line: #FEF08A;
+  --bad: #DC2626;  --bad-bg: #FEF2F2;  --bad-line: #FECACA;
 
-  /* Bentuk — hanya tiga radius */
-  --r-sm: 8px;
-  --r-md: 14px;
-  --r-lg: 22px;
-  --r-pill: 999px;
+  /* ---- Tipografi ---- */
+  --font-display: "Libre Baskerville", Georgia, "Times New Roman", serif;
+  --font: Inter, -apple-system, "Segoe UI", Helvetica, sans-serif;
+  --mono: "Source Code Pro", "Fira Code", Consolas, monospace;
 
-  /* Ritme */
-  --s: 8px;
-  --container: 720px;
-  --measure: 64ch;
+  --fs-display: clamp(30px, 6vw, 40px);   /* DESIGN: 40px */
+  --fs-headline: clamp(24px, 4.6vw, 30px);/* DESIGN: 30px */
+  --fs-subhead: clamp(19px, 3vw, 22px);   /* DESIGN: 22px */
+  --fs-lead: clamp(18px, 2.6vw, 20px);    /* DESIGN: 20px */
+  --fs-body: 17px;
+  --fs-small: 15px;
+  --fs-caption: 13px;
+  --fs-overline: 11px;
 
-  /* Tipografi */
-  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
+  --lh-display: 1.2;
+  --lh-headline: 1.3;
+  --lh-subhead: 1.4;
+  --lh-lead: 1.75;
+  --lh-body: 1.8;
+  --lh-small: 1.7;
+  --lh-caption: 1.5;
+
+  /* ---- Jarak: basis 12px, skala tetap ---- */
+  --s1: 12px;
+  --s2: 24px;
+  --s3: 36px;
+  --s4: 48px;
+  --s5: 60px;
+  --s6: 72px;
+  --s7: 96px;
+  --s8: 120px;
+
+  --pad-sm: 12px;
+  --pad-md: 24px;
+  --pad-lg: 36px;
+
+  /* ---- Bentuk: seluruhnya tajam ---- */
+  --r: 0px;
+  --r-full: 9999px;   /* hanya avatar */
+  --shadow: none;
+
+  /* ---- Ukuran halaman ---- */
+  --container: 680px;  /* DESIGN: lebar maksimum isi 680px */
 
   color-scheme: light;
 }
 
+/* ============================================================
+   Mode gelap — perluasan, bukan bagian DESIGN.md.
+   Prinsipnya sama: hangat, rendah kontras, tanpa bayangan.
+   ============================================================ */
 [data-theme="dark"] {
-  --paper: #0F1013;
-  --surface: #16171B;
+  --stone: #A8A29E;
+  --sage: #78716C;
+  --ink: #FAFAF9;
+  --stone-hover: #D6D3D1;
+  --stone-active: #E7E5E4;
 
-  --ink: #F3F3EF;
-  --ink-2: #A7ADBB;
-  --ink-3: #767C8B;
+  --paper: #1C1917;
+  --surface: #24201D;
+  --raised: #2E2926;
 
-  --line: #26282E;
-  --line-strong: #34373F;
+  --ink-2: #D6D3D1;
+  --ink-3: #A8A29E;
 
-  --accent: #FF7A55;
-  --accent-ink: #FF9678;
-  --accent-soft: #2A1A15;
+  --line: #35302C;
+  --line-2: #44403C;
+  --line-3: #78716C;
 
-  --ok: #4ED39B;
-  --ok-soft: #14241D;
-  --warn: #E0B45C;
-  --bad: #FF7B76;
+  --ok: #A3D95B;   --ok-bg: #1D2517;   --ok-line: #3A4A26;
+  --warn: #E5B454; --warn-bg: #26210F; --warn-line: #4A3F1C;
+  --bad: #F87171;  --bad-bg: #2A1717;  --bad-line: #4A2626;
 
   color-scheme: dark;
 }

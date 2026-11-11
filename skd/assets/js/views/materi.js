@@ -48,7 +48,6 @@ var ViewMateri = (function () {
     UI.loadJSON('data/materi/' + subtesId + '.json')
       .then(function (data) {
         var items = data.items || [];
-        var progress = Store.getProgress();
 
         if (!items.length) {
           el.innerHTML =
@@ -65,7 +64,7 @@ var ViewMateri = (function () {
             '<h1>' + UI.esc(data.title || meta.penuh) + '</h1>' +
             (data.goal ? '<p>' + UI.esc(data.goal) + '</p>' : '') +
           '</div>' +
-          items.map(function (item) { return itemHTML(item, progress[item.id]); }).join('');
+          items.map(function (item) { return itemHTML(item); }).join('');
 
         bind(el, items);
       })
@@ -78,13 +77,7 @@ var ViewMateri = (function () {
     return 'materi';
   }
 
-  function itemHTML(item, status) {
-    var tag = status === 'paham'
-      ? '<span class="tag is-live">paham</span>'
-      : status === 'ulang'
-        ? '<span class="tag is-next">ulang</span>'
-        : '';
-
+  function itemHTML(item) {
     var body = (item.sections || []).map(function (sec) {
       var h = sec.h ? '<h4>' + UI.esc(sec.h) + '</h4>' : '';
       var p = (sec.p || []).map(function (t) {
@@ -115,12 +108,19 @@ var ViewMateri = (function () {
     }
 
     return '<details class="acc" data-id="' + UI.esc(item.id) + '">' +
-      '<summary>' + UI.esc(item.title || ('Materi ' + item.no)) + tag + '</summary>' +
-      '<div class="acc-body">' + body + memo + quiz + '</div>' +
+      '<summary>' + UI.esc(item.title || ('Materi ' + item.no)) +
+        '<span class="tag" data-tag hidden></span></summary>' +
+      '<div class="acc-body">' + body + memo + quiz +
+        '<div class="mark" data-markgroup>' +
+          '<span class="mark-label">Status</span>' +
+          '<button type="button" data-mark="paham" aria-pressed="false">Sudah paham</button>' +
+          '<button type="button" data-mark="ulang" aria-pressed="false">Perlu diulang</button>' +
+        '</div>' +
+      '</div>' +
     '</details>';
   }
 
-  /* Kuis mini: klik opsi → tandai benar/salah → tampilkan alasan */
+  /* Kuis mini + penanda progres */
   function bind(el, items) {
     el.querySelectorAll('.quiz').forEach(function (quizEl) {
       var id = quizEl.closest('.acc').getAttribute('data-id');
@@ -145,6 +145,40 @@ var ViewMateri = (function () {
             why.textContent = q.why || '';
             why.hidden = !q.why;
           }
+        });
+      });
+    });
+
+    el.querySelectorAll('[data-markgroup]').forEach(function (group) {
+      var acc = group.closest('.acc');
+      var id = acc.getAttribute('data-id');
+      var tagEl = acc.querySelector('[data-tag]');
+
+      function paint(status) {
+        group.querySelectorAll('[data-mark]').forEach(function (b) {
+          b.setAttribute('aria-pressed', String(b.getAttribute('data-mark') === status));
+        });
+        if (!tagEl) return;
+        if (!status) {
+          tagEl.hidden = true;
+          tagEl.textContent = '';
+          tagEl.className = 'tag';
+          return;
+        }
+        tagEl.hidden = false;
+        tagEl.textContent = status === 'paham' ? 'paham' : 'ulang';
+        tagEl.className = 'tag ' + (status === 'paham' ? 'is-live' : 'is-next');
+      }
+
+      paint(Store.getProgress()[id] || '');
+
+      group.querySelectorAll('[data-mark]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var val = btn.getAttribute('data-mark');
+          var now = Store.getProgress()[id] || '';
+          var next = now === val ? '' : val; /* klik ulang = batalkan */
+          Store.setProgress(id, next);
+          paint(next);
         });
       });
     });
