@@ -1,0 +1,4 @@
+# .nojekyll
+# File ini mematikan pemrosesan Jekyll di GitHub Pages.
+# Tanpa file ini, folder yang namanya diawali garis bawah (mis. _notes)
+# dan folder node_modules akan diabaikan atau memicu error build.
