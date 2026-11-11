@@ -35,11 +35,32 @@ skd/
   index.html
   assets/css/app.css
   assets/js/        ui, store, score, router, views
-  data/materi/      twk.json, tiu.json, tkp.json
-  data/soal/        index.json
+  data/
+    exams.json      daftar ujian
+    cpns/
+      manifest.json subtes + daftar paket
+      materi/       twk.json, tiu.json, tkp.json
+      paket/        paket-01.json, ...
 
-tools/serve.js      server lokal untuk pratinjau
+tools/
+  serve.js          server lokal untuk pratinjau
+  validate.js       pemeriksa isi data sebelum commit
 ```
+
+## Menambah isi
+
+Seluruh isi berada di `skd/data/`. Jalur di dalam manifest bersifat relatif
+terhadap folder `skd/data/`.
+
+Sebelum commit, jalankan pemeriksa:
+
+```powershell
+node tools/validate.js
+```
+
+Perintah itu menolak kunci jawaban di luar jangkauan, id soal ganda, opsi TKP
+yang bobotnya bukan 1–5, dan manifest yang menunjuk berkas tidak ada. Tanpa
+build step, inilah satu-satunya jaring pengaman — jangan dilewati.
 
 ## Pratinjau lokal
 

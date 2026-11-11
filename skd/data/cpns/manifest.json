@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "id": "cpns",
+  "title": "CPNS",
+  "subtes": [
+    {
+      "id": "twk",
+      "nama": "TWK",
+      "penuh": "Tes Wawasan Kebangsaan",
+      "ringkas": "Nasionalisme, integritas, bela negara, pilar negara.",
+      "materi": "cpns/materi/twk.json"
+    },
+    {
+      "id": "tiu",
+      "nama": "TIU",
+      "penuh": "Tes Intelegensia Umum",
+      "ringkas": "Verbal, numerik, dan figural.",
+      "materi": "cpns/materi/tiu.json"
+    },
+    {
+      "id": "tkp",
+      "nama": "TKP",
+      "penuh": "Tes Karakteristik Pribadi",
+      "ringkas": "Pelayanan publik, jejaring, sosial budaya, TIK, profesionalisme.",
+      "materi": "cpns/materi/tkp.json"
+    }
+  ],
+  "paket": [
+    {
+      "id": "paket-01",
+      "title": "Paket 1 — Simulasi Penuh",
+      "jumlah": 110,
+      "durasi": 100,
+      "aktif": false,
+      "file": "cpns/paket/paket-01.json"
+    }
+  ]
+}

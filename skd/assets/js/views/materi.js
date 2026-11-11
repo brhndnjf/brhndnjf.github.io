@@ -1,80 +1,108 @@
 /* views/materi.js — daftar subtes & isi materi.
-   Data berasal dari skd/data/materi/<subtes>.json */
+   Semua jalur berkas berasal dari manifest ujian, bukan ditulis di kode.
+   Menambah ujian baru tidak boleh memerlukan perubahan di berkas ini. */
 var ViewMateri = (function () {
   'use strict';
 
-  var SUBTES = [
-    { id: 'twk', nama: 'TWK', penuh: 'Tes Wawasan Kebangsaan', ringkas: 'Nasionalisme, integritas, bela negara, pilar negara.' },
-    { id: 'tiu', nama: 'TIU', penuh: 'Tes Intelegensia Umum', ringkas: 'Verbal, numerik, dan figural.' },
-    { id: 'tkp', nama: 'TKP', penuh: 'Tes Karakteristik Pribadi', ringkas: 'Pelayanan publik, jejaring, sosial budaya, TIK, profesionalisme.' }
-  ];
+  var EXAM = 'cpns';
+  var manifestCache = null;
+
+  function ambilManifest() {
+    if (!manifestCache) {
+      manifestCache = UI.loadJSON('data/' + EXAM + '/manifest.json').catch(function (err) {
+        manifestCache = null; /* biar bisa dicoba lagi */
+        throw err;
+      });
+    }
+    return manifestCache;
+  }
 
   function daftar(el) {
     el.innerHTML =
       '<div class="view-head">' +
         '<span class="eyebrow">Materi</span>' +
-        '<h1>Tiga subtes</h1>' +
-        '<p>Pilih subtes untuk melihat ringkasannya. Materi dibaca cepat, ' +
-        'lalu tandai sudah paham atau perlu diulang.</p>' +
+        '<h1>Pilih subtes</h1>' +
+        '<p>Ringkasan yang bisa dibaca cepat, lalu ditandai sudah paham ' +
+        'atau perlu diulang.</p>' +
       '</div>' +
-      '<div class="list">' +
-      SUBTES.map(function (s) {
-        return '<a class="row" href="#/materi/' + s.id + '">' +
-          '<span class="row-title">' + UI.esc(s.penuh) + '</span>' +
-          '<span class="row-sub">' + UI.esc(s.ringkas) + '</span>' +
-          '<span class="row-go" aria-hidden="true">→</span>' +
-        '</a>';
-      }).join('') +
-      '</div>';
+      '<p class="muted">Memuat…</p>';
+
+    ambilManifest()
+      .then(function (data) {
+        var subtes = data.subtes || [];
+        el.innerHTML =
+          '<div class="view-head">' +
+            '<span class="eyebrow">Materi · ' + subtes.length + ' subtes</span>' +
+            '<h1>Pilih subtes</h1>' +
+            '<p>Ringkasan yang bisa dibaca cepat, lalu ditandai sudah paham ' +
+            'atau perlu diulang.</p>' +
+          '</div>' +
+          '<div class="list">' +
+          subtes.map(function (s) {
+            return '<a class="row" href="#/materi/' + encodeURIComponent(s.id) + '">' +
+              '<span class="row-title">' + UI.esc(s.penuh) + '</span>' +
+              '<span class="row-sub">' + UI.esc(s.ringkas || '') + '</span>' +
+              '<span class="row-go" aria-hidden="true">→</span>' +
+            '</a>';
+          }).join('') +
+          '</div>';
+      })
+      .catch(function (err) {
+        el.innerHTML = UI.errorBox(err, 'daftar subtes');
+      });
+
     return 'materi';
   }
 
   function isi(el, subtesId) {
-    var meta = SUBTES.filter(function (s) { return s.id === subtesId; })[0];
-    if (!meta) {
-      el.innerHTML = '<div class="empty"><strong>Subtes tidak dikenal</strong></div>';
-      return 'materi';
+    el.innerHTML =
+      '<a class="back" href="#/materi">← Semua subtes</a>' +
+      '<p class="muted">Memuat materi…</p>';
+
+    ambilManifest()
+      .then(function (data) {
+        var meta = (data.subtes || []).filter(function (s) { return s.id === subtesId; })[0];
+        if (!meta) {
+          el.innerHTML =
+            '<a class="back" href="#/materi">← Semua subtes</a>' +
+            '<div class="empty"><strong>Subtes tidak dikenal</strong>' +
+            'Tidak ada subtes <code>' + UI.esc(subtesId) + '</code> di manifest.</div>';
+          return;
+        }
+        return UI.loadJSON('data/' + meta.materi).then(function (materi) {
+          render(el, meta, materi);
+        });
+      })
+      .catch(function (err) {
+        el.innerHTML =
+          '<a class="back" href="#/materi">← Semua subtes</a>' +
+          UI.errorBox(err, 'materi');
+      });
+
+    return 'materi';
+  }
+
+  function render(el, meta, data) {
+    var items = data.items || [];
+
+    if (!items.length) {
+      el.innerHTML =
+        '<a class="back" href="#/materi">← Semua subtes</a>' +
+        '<div class="empty"><strong>Belum ada materi</strong>' +
+        'Berkas <code>' + UI.esc(meta.materi) + '</code> masih kosong.</div>';
+      return;
     }
 
     el.innerHTML =
       '<a class="back" href="#/materi">← Semua subtes</a>' +
       '<div class="view-head">' +
-        '<span class="eyebrow">' + UI.esc(meta.nama) + '</span>' +
-        '<h1>' + UI.esc(meta.penuh) + '</h1>' +
-        '<p>' + UI.esc(meta.ringkas) + '</p>' +
+        '<span class="eyebrow">' + UI.esc(meta.nama) + ' · ' + items.length + ' materi</span>' +
+        '<h1>' + UI.esc(data.title || meta.penuh) + '</h1>' +
+        (data.goal ? '<p>' + UI.esc(data.goal) + '</p>' : '') +
       '</div>' +
-      '<p class="muted">Memuat materi…</p>';
+      items.map(function (item) { return itemHTML(item); }).join('');
 
-    UI.loadJSON('data/materi/' + subtesId + '.json')
-      .then(function (data) {
-        var items = data.items || [];
-
-        if (!items.length) {
-          el.innerHTML =
-            '<a class="back" href="#/materi">← Semua subtes</a>' +
-            '<div class="empty"><strong>Belum ada materi</strong>' +
-            'Berkas <code>data/materi/' + UI.esc(subtesId) + '.json</code> masih kosong.</div>';
-          return;
-        }
-
-        el.innerHTML =
-          '<a class="back" href="#/materi">← Semua subtes</a>' +
-          '<div class="view-head">' +
-            '<span class="eyebrow">' + UI.esc(meta.nama) + ' · ' + items.length + ' materi</span>' +
-            '<h1>' + UI.esc(data.title || meta.penuh) + '</h1>' +
-            (data.goal ? '<p>' + UI.esc(data.goal) + '</p>' : '') +
-          '</div>' +
-          items.map(function (item) { return itemHTML(item); }).join('');
-
-        bind(el, items);
-      })
-      .catch(function (err) {
-        el.innerHTML =
-          '<a class="back" href="#/materi">← Semua subtes</a>' +
-          UI.errorBox(err, 'materi ' + meta.nama);
-      });
-
-    return 'materi';
+    bind(el, items);
   }
 
   function itemHTML(item) {
@@ -184,5 +212,5 @@ var ViewMateri = (function () {
     });
   }
 
-  return { daftar: daftar, isi: isi, SUBTES: SUBTES };
+  return { daftar: daftar, isi: isi };
 })();

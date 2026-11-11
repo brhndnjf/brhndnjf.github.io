@@ -1,7 +1,9 @@
-/* views/tryout.js — daftar paket soal.
-   Mesin ujian penuh menyusul; sekarang hanya daftar dan riwayat. */
+/* views/tryout.js — daftar paket dari manifest ujian.
+   Paket yang ditandai aktif wajib punya berkas; tanpa itu, tampil sebagai terkunci. */
 var ViewTryout = (function () {
   'use strict';
+
+  var EXAM = 'cpns';
 
   function render(el) {
     var attempts = Store.getAttempts();
@@ -15,12 +17,13 @@ var ViewTryout = (function () {
       '</div>' +
       '<p class="muted">Memuat paket…</p>';
 
-    UI.loadJSON('data/soal/index.json')
+    UI.loadJSON('data/' + EXAM + '/manifest.json')
       .then(function (data) {
-        var packs = (data.packs || []).filter(function (p) { return p.aktif; });
+        var packs = data.paket || [];
+        var siap = packs.filter(function (p) { return p.aktif; });
 
-        var list = packs.length
-          ? '<div class="list">' + packs.map(function (p) {
+        var list = siap.length
+          ? '<div class="list">' + siap.map(function (p) {
               return '<div class="row is-dim">' +
                 '<span class="row-title">' + UI.esc(p.title) +
                   ' <span class="tag is-next">Segera</span></span>' +
@@ -31,9 +34,15 @@ var ViewTryout = (function () {
           : '<div class="empty"><strong>Belum ada paket soal</strong>' +
             'Paket ditambahkan setelah soalnya benar-benar siap.</div>';
 
+        var menunggu = packs.length - siap.length;
+        var catatan = menunggu > 0
+          ? '<p class="note">' + menunggu + ' paket masih disiapkan.</p>'
+          : '';
+
         var riwayat = attempts.length
-          ? '<h2 style="margin-top:40px;font-size:13px;font-family:var(--mono);' +
-            'letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)">Riwayat</h2>' +
+          ? '<div class="view-head" style="margin-top:var(--s5);border-bottom:0;padding-bottom:0">' +
+              '<span class="eyebrow">Riwayat</span>' +
+            '</div>' +
             '<div class="list">' + attempts.map(function (a) {
               return '<div class="row is-dim">' +
                 '<span class="row-title">' + UI.esc(a.paket || 'Paket') + '</span>' +
@@ -50,7 +59,7 @@ var ViewTryout = (function () {
             '<h1>Uji dengan waktu</h1>' +
             '<p>110 soal, 100 menit, skor keluar langsung. Timer berjalan di ' +
             'browser — jangan tutup tab di tengah ujian.</p>' +
-          '</div>' + list + riwayat;
+          '</div>' + list + catatan + riwayat;
       })
       .catch(function (err) {
         el.innerHTML = UI.errorBox(err, 'daftar paket soal');
