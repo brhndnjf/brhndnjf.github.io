@@ -1,0 +1,75 @@
+{
+  "subtest": "tiu",
+  "title": "Tes Intelegensia Umum",
+  "goal": "Kenali polanya dulu, hitung belakangan.",
+  "items": [
+    {
+      "id": "tiu-01",
+      "no": 1,
+      "title": "Deret angka",
+      "sections": [
+        {
+          "h": "Cara cepat",
+          "p": [
+            "Sebelum menghitung, cek selisih antar suku. Kalau selisihnya tetap, itu deret aritmetika. Kalau selisihnya membesar beraturan, periksa selisih dari selisih.",
+            "Jika angkanya naik turun, curigai dua pola yang berselang-seling: suku ganjil satu pola, suku genap pola lain."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Selisih bertingkat: 2, 5, 10, 17 → selisih 3, 5, 7",
+            "Perkalian: 3, 6, 12, 24",
+            "Dua pola berselang: 4, 9, 7, 12, 10, 15",
+            "Kuadrat: 1, 4, 9, 16"
+          ]
+        }
+      ],
+      "memo": "Jangan langsung mencari rumus. Tulis selisihnya di kertas — pola biasanya terlihat di dua baris pertama.",
+      "quiz": [
+        {
+          "q": "Lanjutan deret 2, 5, 10, 17, 26, … adalah",
+          "opts": ["33", "35", "37", "39"],
+          "key": 2,
+          "why": "Selisihnya 3, 5, 7, 9 — bertambah 2. Selisih berikutnya 11, jadi 26 + 11 = 37."
+        }
+      ]
+    },
+    {
+      "id": "tiu-02",
+      "no": 2,
+      "title": "Silogisme",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "Silogisme menguji apakah kesimpulan benar-benar mengikuti premis, bukan apakah kesimpulannya masuk akal di dunia nyata.",
+            "Kesimpulan yang sah harus berlaku di semua kemungkinan yang sesuai premis."
+          ]
+        },
+        {
+          "h": "Jebakan umum",
+          "list": [
+            "Kesimpulan terlalu luas — menyimpulkan \"semua\" padahal premis hanya \"sebagian\".",
+            "Menyimpulkan hubungan terbalik yang tidak dinyatakan.",
+            "Menambah informasi dari pengetahuan umum yang tidak ada di premis."
+          ]
+        }
+      ],
+      "memo": "Kalau opsi memakai kata \"semua\" padahal premisnya \"sebagian\", hampir pasti salah.",
+      "quiz": [
+        {
+          "q": "Semua pegawai memakai seragam. Sebagian pegawai memakai dasi. Kesimpulan yang pasti benar adalah…",
+          "opts": [
+            "Semua pegawai memakai dasi",
+            "Sebagian pegawai berseragam dan memakai dasi",
+            "Pegawai yang memakai dasi tidak berseragam",
+            "Semua yang berseragam adalah pegawai"
+          ],
+          "key": 1,
+          "why": "Yang memakai dasi adalah bagian dari pegawai, dan semua pegawai berseragam. Jadi ada pegawai yang berseragam sekaligus berdasi."
+        }
+      ]
+    }
+  ]
+}

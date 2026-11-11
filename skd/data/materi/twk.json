@@ -1,0 +1,105 @@
+{
+  "subtest": "twk",
+  "title": "Tes Wawasan Kebangsaan",
+  "goal": "Paham kaitannya, bukan menghafal daftarnya.",
+  "items": [
+    {
+      "id": "twk-01",
+      "no": 1,
+      "title": "Nasionalisme",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "Nasionalisme adalah kesadaran bahwa diri adalah bagian dari satu bangsa, dan kesediaan menempatkan kepentingan bangsa di atas kepentingan pribadi atau golongan.",
+            "Dalam soal SKD, nasionalisme paling sering muncul sebagai sikap terhadap simbol negara, produk dalam negeri, dan persatuan di tengah perbedaan."
+          ]
+        },
+        {
+          "h": "Yang sering dikelirukan",
+          "list": [
+            "Nasionalisme bukan chauvinisme — menganggap bangsa sendiri paling unggul dan merendahkan bangsa lain.",
+            "Nasionalisme bukan sekadar memasang bendera; intinya kesediaan berkorban.",
+            "Cinta tanah air menekankan rasa memiliki; patriotisme menekankan kesediaan membela."
+          ]
+        }
+      ],
+      "memo": "Kalau opsi jawaban berbau merendahkan bangsa lain, itu jebakan chauvinisme.",
+      "quiz": [
+        {
+          "q": "Sikap yang paling mencerminkan nasionalisme adalah…",
+          "opts": [
+            "Menolak semua produk asing tanpa kecuali",
+            "Menganggap budaya bangsa sendiri paling tinggi",
+            "Menggunakan produk dalam negeri sambil tetap terbuka pada kerja sama",
+            "Menghindari pergaulan dengan warga negara lain"
+          ],
+          "key": 2,
+          "why": "Nasionalisme terbuka: mendukung kemampuan sendiri tanpa menutup diri. Opsi lain mengarah ke chauvinisme."
+        }
+      ]
+    },
+    {
+      "id": "twk-02",
+      "no": 2,
+      "title": "Integritas",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "Integritas adalah kesesuaian antara ucapan, aturan, dan perbuatan — termasuk saat tidak ada yang mengawasi.",
+            "Bentuk yang paling sering diuji: menolak gratifikasi, jujur melaporkan kesalahan sendiri, dan konsisten menjalankan aturan meski merugikan diri sendiri."
+          ]
+        },
+        {
+          "h": "Contoh penerapan",
+          "list": [
+            "Menolak hadiah dari pihak yang berkepentingan dengan pekerjaan.",
+            "Melaporkan kesalahan sendiri sebelum ditemukan orang lain.",
+            "Tidak memakai wewenang untuk kepentingan pribadi."
+          ]
+        }
+      ],
+      "memo": "Integritas diuji saat tidak ada saksi. Opsi yang bergantung pada \"asal tidak ketahuan\" selalu salah.",
+      "quiz": [
+        {
+          "q": "Rekan kerja memberi hadiah mahal sebagai ucapan terima kasih atas proyek yang Anda tangani. Sikap terbaik adalah…",
+          "opts": [
+            "Menerima karena tidak diminta",
+            "Menerima lalu membagikannya ke tim",
+            "Menolak dengan sopan dan menjelaskan aturannya",
+            "Menerima dan tidak memberi tahu siapa pun"
+          ],
+          "key": 2,
+          "why": "Menolak dengan sopan menjaga integritas sekaligus hubungan kerja. Menerima — walau dibagikan — tetap melanggar aturan gratifikasi."
+        }
+      ]
+    },
+    {
+      "id": "twk-03",
+      "no": 3,
+      "title": "Bela Negara",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "Bela negara adalah hak dan kewajiban setiap warga negara, bukan hanya tugas TNI atau Polri.",
+            "Bentuknya menyesuaikan kemampuan: pelajar belajar sungguh-sungguh, pegawai bekerja profesional, warga menjaga lingkungan."
+          ]
+        },
+        {
+          "h": "Lima nilai dasar",
+          "list": [
+            "Cinta tanah air",
+            "Kesadaran berbangsa dan bernegara",
+            "Yakin Pancasila sebagai ideologi negara",
+            "Rela berkorban untuk bangsa dan negara",
+            "Memiliki kemampuan awal bela negara"
+          ]
+        }
+      ],
+      "memo": "Bela negara tidak selalu berarti angkat senjata. Kontribusi sesuai profesi adalah jawaban yang paling sering benar.",
+      "quiz": []
+    }
+  ]
+}

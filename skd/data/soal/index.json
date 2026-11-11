@@ -1,0 +1,12 @@
+{
+  "catatan": "Daftar paket tryout. Tandai aktif:true hanya setelah soal benar-benar siap.",
+  "packs": [
+    {
+      "id": "paket-01",
+      "title": "Paket 1 — Simulasi Penuh",
+      "jumlah": 110,
+      "durasi": 100,
+      "aktif": false
+    }
+  ]
+}

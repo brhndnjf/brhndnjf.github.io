@@ -1,0 +1,33 @@
+{
+  "subtest": "tkp",
+  "title": "Tes Karakteristik Pribadi",
+  "goal": "Tidak ada jawaban salah — yang dinilai bobotnya.",
+  "items": [
+    {
+      "id": "tkp-01",
+      "no": 1,
+      "title": "Cara membaca soal TKP",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "TKP tidak punya jawaban benar atau salah. Setiap opsi berbobot 1 sampai 5, dan yang dicari adalah opsi paling sesuai dengan nilai yang diharapkan dari seorang ASN.",
+            "Karena semua opsi \"masuk akal\", kuncinya memilih yang paling menyelesaikan masalah tanpa merugikan pihak lain."
+          ]
+        },
+        {
+          "h": "Urutan prioritas yang biasanya berlaku",
+          "list": [
+            "Menyelesaikan tugas dan pelayanan publik lebih dulu",
+            "Mengikuti prosedur dan aturan, bukan jalan pintas",
+            "Mengutamakan kepentingan bersama di atas kepentingan pribadi",
+            "Mengambil inisiatif, bukan menunggu perintah",
+            "Menghindari sikap menyalahkan orang lain"
+          ]
+        }
+      ],
+      "memo": "Opsi yang paling \"dewasa\" biasanya berbobot 5: mengakui kekurangan, memperbaiki, dan tetap menyelesaikan tanggung jawab.",
+      "quiz": []
+    }
+  ]
+}

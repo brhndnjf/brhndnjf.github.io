@@ -2,6 +2,14 @@
 RANCANGAN.md
 RENCANA.md
 
+# Jangan pernah menyimpan rahasia di repo. Baris ini hanya jaring pengaman
+# terakhir kalau ada yang keliru menaruh token di folder ini.
+token.md
+*.token
+.env
+.env.*
+!.env.example
+
 # Berkas sistem
 Thumbs.db
 desktop.ini
