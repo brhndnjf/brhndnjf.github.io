@@ -71,6 +71,10 @@
   --pad-md: 24px;
   --pad-lg: 36px;
 
+  /* Jarak antar-bagian — DESIGN.md: mobile 60, tablet 84, desktop 120.
+     Nilainya dinaikkan lewat media query min-width di bawah (mobile-first). */
+  --section: 60px;
+
   /* ---- Bentuk: seluruhnya tajam ---- */
   --r: 0px;
   --r-full: 9999px;   /* hanya avatar */
@@ -80,6 +84,14 @@
   --container: 680px;  /* DESIGN: lebar maksimum isi 680px */
 
   color-scheme: light;
+}
+
+/* Jarak antar-bagian bertingkat — mobile-first: mulai dari 60, naik di layar lebar */
+@media (min-width: 768px) {
+  :root { --section: 84px; }
+}
+@media (min-width: 1024px) {
+  :root { --section: 120px; }
 }
 
 /* ============================================================

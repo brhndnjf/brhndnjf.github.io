@@ -39,9 +39,10 @@
 [data-theme="dark"] .theme-toggle .i-moon { display: none; }
 [data-theme="dark"] .theme-toggle .i-sun { display: block; }
 
-/* ---------- Identitas ---------- */
+/* ---------- Identitas ----------
+   Mobile-first: nilai dasar untuk layar kecil, dinaikkan lewat min-width. */
 .intro {
-  padding: var(--s5) 0 var(--s1);
+  padding: var(--s3) 0 var(--s1);
 }
 
 .intro h1 { margin-top: var(--s2); }
@@ -56,8 +57,8 @@
 
 /* ---------- Tautan ---------- */
 .links {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: var(--s1);
   margin-top: var(--s3);
 }
@@ -65,6 +66,7 @@
 .link {
   display: inline-flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 8px;
   padding: 8px 16px;
   border: 1px solid var(--line-2);
@@ -87,7 +89,7 @@
 }
 
 /* ---------- Bagian ---------- */
-.section { padding: var(--s5) 0 0; }
+.section { padding-top: var(--section); }
 
 .section-head {
   display: flex;
@@ -133,7 +135,7 @@ a.project:hover .project-title { color: var(--stone); }
 .project-title {
   grid-column: 1;
   font-family: var(--font-display);
-  font-size: var(--fs-subhead);
+  font-size: 19px;
   font-weight: 700;
   line-height: var(--lh-subhead);
   letter-spacing: -0.01em;
@@ -183,7 +185,7 @@ a.project:hover .project-go { transform: translateX(3px); color: var(--stone); }
 /* ---------- Dukungan ---------- */
 .support {
   margin-top: var(--s4);
-  padding: var(--s3);
+  padding: var(--s2);
   border: 1px solid var(--line);
   background: var(--surface);
 }
@@ -224,7 +226,7 @@ a.project:hover .project-go { transform: translateX(3px); color: var(--stone); }
 
 /* ---------- Kaki ---------- */
 .foot {
-  margin-top: var(--s6);
+  margin-top: var(--s5);
   padding: var(--s2) 0 var(--s5);
   border-top: 1px solid var(--line);
   display: flex;
@@ -277,16 +279,18 @@ dialog.modal::backdrop { background: rgba(28, 25, 23, .6); }
   max-width: 34em;
 }
 
-@media (max-width: 560px) {
-  .intro { padding-top: var(--s3); }
-  .section { padding-top: var(--s4); }
-  .support { padding: var(--s2); }
-  .wrap { padding: 0 var(--s2); }
+/* ============================================================
+   Layar lebih lebar — mobile-first: semua penyesuaian ke atas
+   memakai min-width, bukan max-width.
+   ============================================================ */
+@media (min-width: 561px) {
+  .intro { padding-top: var(--s5); }
 
-  .links { display: grid; grid-template-columns: 1fr 1fr; }
-  .link { justify-content: flex-start; }
+  .links { display: flex; flex-wrap: wrap; }
 
-  .project { padding: var(--s2) 0; }
-  .project-title { font-size: 19px; }
-  .foot { margin-top: var(--s5); }
+  .support { padding: var(--s3); }
+
+  .project-title { font-size: var(--fs-subhead); }
+
+  .foot { margin-top: var(--s6); }
 }

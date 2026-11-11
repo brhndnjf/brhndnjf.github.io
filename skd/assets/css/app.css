@@ -15,8 +15,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--s2);
-  min-height: 60px;
+  gap: var(--s1);
+  min-height: 54px;
   padding-top: var(--s1);
   padding-bottom: var(--s1);
 }
@@ -25,20 +25,22 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  flex: none;
   font-family: var(--mono);
   font-size: var(--fs-caption);
   color: var(--ink-2);
   text-decoration: none;
 }
 .bar-brand b { color: var(--ink); font-weight: 600; }
-.bar-sep { color: var(--ink-3); }
+/* Nama bagian disembunyikan di layar kecil: bilah tetap satu baris */
+.bar-sep, .bar-sub { display: none; }
 .bar-dot {
   width: 7px; height: 7px;
   background: var(--stone);
   flex: none;
 }
 
-.tabs { display: flex; gap: var(--s2); }
+.tabs { display: flex; gap: var(--s2); margin-left: auto; }
 .tabs a {
   padding: 6px 0;
   font-size: var(--fs-small);
@@ -55,10 +57,10 @@
 }
 
 /* ---------- Kerangka isi ---------- */
-#view { padding-top: var(--s4); padding-bottom: var(--s5); min-height: 60vh; }
+#view { padding-top: var(--s3); padding-bottom: var(--s5); min-height: 60vh; }
 #view:focus { outline: none; }
 
-.view-head { margin-bottom: var(--s3); padding-bottom: var(--s2); border-bottom: 1px solid var(--line); }
+.view-head { margin-bottom: var(--s2); padding-bottom: var(--s2); border-bottom: 1px solid var(--line); }
 .view-head .eyebrow { margin-bottom: var(--s1); }
 .view-head h1 { font-size: var(--fs-headline); }
 .view-head p {
@@ -81,7 +83,7 @@
 
 /* ---------- Kartu ---------- */
 .card {
-  padding: var(--s3);
+  padding: var(--s2);
   border: 1px solid var(--line);
   background: var(--paper);
 }
@@ -162,7 +164,7 @@ a.row:hover .row-go { transform: translateX(3px); color: var(--stone); }
   cursor: pointer;
   list-style: none;
   font-family: var(--font-display);
-  font-size: 19px;
+  font-size: 17px;
   font-weight: 700;
   line-height: var(--lh-subhead);
 }
@@ -289,7 +291,7 @@ a.row:hover .row-go { transform: translateX(3px); color: var(--stone); }
 /* ---------- Status kosong ---------- */
 .empty {
   margin-top: var(--s2);
-  padding: var(--s4) var(--s2);
+  padding: var(--s3) var(--s2);
   text-align: center;
   border: 1px solid var(--line);
   background: var(--surface);
@@ -309,12 +311,18 @@ a.row:hover .row-go { transform: translateX(3px); color: var(--stone); }
 /* ---------- Statistik ---------- */
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 .stat { padding: var(--s2) var(--s1) var(--s2) 0; }
 .stat + .stat { padding-left: var(--s2); border-left: 1px solid var(--line); }
+.stat:nth-child(3) {
+  grid-column: 1 / -1;
+  border-left: 0;
+  padding-left: 0;
+  border-top: 1px solid var(--line);
+}
 .stat b {
   display: block;
   font-family: var(--font-display);
@@ -347,15 +355,28 @@ a.row:hover .row-go { transform: translateX(3px); color: var(--stone); }
 .app-foot a { color: var(--ink-3); text-decoration: none; }
 .app-foot a:hover { color: var(--stone); text-decoration: underline; }
 
-@media (max-width: 560px) {
-  .bar-in { min-height: 54px; flex-wrap: nowrap; gap: var(--s1); }
-  .bar-brand { flex: none; }
-  .bar-sub, .bar-sep { display: none; }
-  .tabs { margin-left: auto; gap: var(--s2); }
-  #view { padding-top: var(--s3); }
-  .view-head { margin-bottom: var(--s2); }
-  .card, .empty { padding: var(--s2); }
-  .stats { grid-template-columns: 1fr 1fr; }
-  .stat:nth-child(3) { grid-column: 1 / -1; border-left: 0; padding-left: 0; border-top: 1px solid var(--line); }
-  .acc summary { font-size: 17px; }
+/* ============================================================
+   Layar lebih lebar — mobile-first: penyesuaian ke atas.
+   ============================================================ */
+@media (min-width: 561px) {
+  .bar-in { min-height: 60px; gap: var(--s2); }
+  .bar-sep, .bar-sub { display: inline; }
+  .bar-sep { color: var(--ink-3); }
+  .tabs { margin-left: 0; }
+
+  #view { padding-top: var(--s4); }
+  .view-head { margin-bottom: var(--s3); }
+
+  .card { padding: var(--s3); }
+  .empty { padding: var(--s4) var(--s2); }
+
+  .stats { grid-template-columns: repeat(3, 1fr); }
+  .stat:nth-child(3) {
+    grid-column: auto;
+    border-left: 1px solid var(--line);
+    padding-left: var(--s2);
+    border-top: 0;
+  }
+
+  .acc summary { font-size: 19px; }
 }
