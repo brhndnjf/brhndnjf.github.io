@@ -176,13 +176,10 @@
     </footer>
   </div>
 
-  <dialog class="modal" id="qris" aria-labelledby="qris-judul">
+  <dialog class="modal" id="qris" aria-labelledby="qris-judul" data-qris-src="assets/img/qris.png">
     <div class="modal-body">
       <h3 id="qris-judul">QRIS</h3>
       <p>Pindai dengan aplikasi bank atau e-wallet.</p>
-      <!-- Untuk mengaktifkan: taruh berkasnya di assets/img/qris.png,
-           lalu tambahkan atribut data-qris-src="assets/img/qris.png" pada <dialog> di atas.
-           Tanpa atribut itu, tombol QRIS disembunyikan dan tidak ada permintaan 404. -->
       <div data-qris-slot></div>
       <p class="note" data-qris-fallback hidden>
         Gambar QRIS belum tersedia. Gunakan tautan Saweria di atas.

@@ -31,7 +31,7 @@ assets/
   css/hub.css       komponen beranda
   js/theme.js       mode terang/gelap otomatis (jam setempat), dipakai beranda & aplikasi
   js/hub.js         tahun, dialog QRIS
-  img/qris.png      (belum ada — tombol QRIS otomatis disembunyikan)
+  img/qris.png      kode QRIS donasi
 
 skd/
   index.html
@@ -133,12 +133,11 @@ Sunting blok `<div class="projects">` di `index.html`. Pakai `<a class="project"
 bila sudah ada tautan, `<div class="project">` bila belum. Status memakai
 `<span class="tag is-live">`, `is-next`, atau `tag` biasa.
 
-## Mengaktifkan QRIS
+## QRIS
 
-1. Taruh gambar di `assets/img/qris.png`.
-2. Tambahkan `data-qris-src="assets/img/qris.png"` pada `<dialog id="qris">`.
-
-Tanpa atribut itu, tombol QRIS disembunyikan dan tidak ada permintaan 404.
+Gambar aktif di `assets/img/qris.png` dan dimuat lewat
+`data-qris-src` pada `<dialog id="qris">`. Untuk mengganti, timpa berkas
+tersebut. Bila atribut dihapus, tombol QRIS disembunyikan otomatis.
 
 ## Catatan
 
