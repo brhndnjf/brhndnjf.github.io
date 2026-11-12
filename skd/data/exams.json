@@ -4,8 +4,8 @@
     {
       "id": "cpns",
       "title": "CPNS",
-      "subtitle": "Seleksi Kompetensi Dasar",
-      "desc": "TWK, TIU, dan TKP. Materi ringkas dan tryout dengan timer.",
+      "subtitle": "Materi, tryout, bank soal, kamus",
+      "desc": "SKD: materi TWK/TIU/TKP dan tryout berwaktu. Disusul bank soal, bank materi, dan kamus kata.",
       "status": "aktif",
       "manifest": "cpns/manifest.json"
     }

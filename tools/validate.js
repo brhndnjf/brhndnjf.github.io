@@ -148,6 +148,20 @@ if (exams && Array.isArray(exams.exams)) {
       }
     }
 
+    // modul alat belajar (SKD, bank soal, kamus, …)
+    const modul = man.modul || [];
+    dupes(modul.map((m) => m.id)).forEach((d) =>
+      err(`${e.id}/manifest.json`, `id modul ganda: "${d}"`));
+
+    for (const m of modul) {
+      const w = `${e.id}/manifest.json[modul:${m.id || '?'}]`;
+      if (!m.id) err(w, 'id kosong');
+      if (!m.title) err(w, 'title kosong');
+      if (m.status && !['aktif', 'segera'].includes(m.status)) {
+        err(w, `status tidak sah: "${m.status}"`);
+      }
+    }
+
     // paket
     const paket = man.paket || [];
     dupes(paket.map((p) => p.id)).forEach((d) =>

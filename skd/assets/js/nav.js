@@ -1,9 +1,21 @@
-/* nav.js — navigasi aplikasi mengikuti ujian yang sedang dibuka.
-   Di layar kecil, nav menjadi tab di bilah atas. Di desktop, nav
-   menjadi rail vertikal bersama ringkasan progres. Tanpa ujian
-   (halaman daftar ujian), nav dan progres disembunyikan. */
+/* nav.js — navigasi aplikasi mengikuti produk yang sedang dibuka.
+   Tanpa produk (halaman daftar), nav dan progres disembunyikan.
+   Nav selalu punya "Ujian" (indeks CPNS) + alat yang aktif. */
 var Nav = (function () {
   'use strict';
+
+  var ALAT = [
+    { nav: 'materi', label: 'Materi', segmen: 'materi' },
+    { nav: 'tryout', label: 'Tryout', segmen: 'tryout' },
+    { nav: 'bank-soal', label: 'Bank Soal', segmen: 'bank-soal' },
+    { nav: 'bank-materi', label: 'Bank Materi', segmen: 'bank-materi' },
+    { nav: 'kamus', label: 'Kamus', segmen: 'kamus' }
+  ];
+
+  function segmenAktif() {
+    var parts = location.hash.replace(/^#\/?/, '').split('/').filter(Boolean);
+    return parts[1] || '';
+  }
 
   function render(examId, section) {
     var el = document.getElementById('tabs');
@@ -22,11 +34,11 @@ var Nav = (function () {
 
     if (el) {
       var e = encodeURIComponent(examId);
-      var items = [
-        { nav: 'exams', href: '#/', label: 'Ujian' },
-        { nav: 'materi', href: '#/' + e + '/materi', label: 'Materi' },
-        { nav: 'tryout', href: '#/' + e + '/tryout', label: 'Tryout' }
-      ];
+      var items = [{ nav: 'ujian', href: '#/' + e, label: 'Ujian' }].concat(
+        ALAT.map(function (a) {
+          return { nav: a.nav, href: '#/' + e + '/' + a.segmen, label: a.label };
+        })
+      );
 
       el.innerHTML = items.map(function (item) {
         return '<a href="' + item.href + '" data-nav="' + item.nav + '">' +
@@ -34,8 +46,19 @@ var Nav = (function () {
       }).join('');
 
       el.hidden = false;
+
+      var aktif = section || (function () {
+        var seg = segmenAktif();
+        if (!seg) return 'ujian';
+        if (seg === 'materi' || seg === 'tryout') return 'ujian';
+        for (var i = 0; i < ALAT.length; i++) {
+          if (ALAT[i].segmen === seg) return ALAT[i].nav;
+        }
+        return '';
+      })();
+
       el.querySelectorAll('[data-nav]').forEach(function (a) {
-        if (section && a.getAttribute('data-nav') === section) {
+        if (aktif && a.getAttribute('data-nav') === aktif) {
           a.setAttribute('aria-current', 'page');
         }
       });

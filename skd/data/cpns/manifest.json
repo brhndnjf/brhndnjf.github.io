@@ -45,6 +45,38 @@
       "materi": "cpns/materi/tkp.json"
     }
   ],
+  "modul": [
+    {
+      "id": "skd",
+      "title": "SKD",
+      "desc": "Materi dan tryout berwaktu: TWK, TIU, TKP.",
+      "status": "aktif"
+    },
+    {
+      "id": "bank-soal",
+      "title": "Bank Soal",
+      "desc": "Latihan santai per topik, tanpa timer.",
+      "status": "segera"
+    },
+    {
+      "id": "bank-materi",
+      "title": "Bank Materi",
+      "desc": "Ringkasan baca-cepat per subtes.",
+      "status": "segera"
+    },
+    {
+      "id": "kamus",
+      "title": "Kamus",
+      "desc": "Kata TIU verbal: sinonim, antonim, analogi.",
+      "status": "segera"
+    },
+    {
+      "id": "skb",
+      "title": "SKB",
+      "desc": "Tahapan setelah SKD.",
+      "status": "segera"
+    }
+  ],
   "paket": [
     {
       "id": "paket-contoh",

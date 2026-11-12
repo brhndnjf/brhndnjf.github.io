@@ -4,6 +4,20 @@
 (function () {
   'use strict';
 
+  function modulSegera(el, params, fallback) {
+    return Exam.manifest(params.exam)
+      .then(function (man) {
+        var m = (man.modul || []).filter(function (x) {
+          return x.id === (params.modul || fallback);
+        })[0];
+        ViewPlaceholder.render(el, params.exam, m ? m.id : fallback,
+          m ? m.title : fallback, m ? m.desc : '');
+      })
+      .catch(function (err) {
+        el.innerHTML = UI.errorBox(err, 'halaman ini');
+      });
+  }
+
   Router.add('/materi', function () {
     Router.go('cpns/materi');
   });
@@ -35,6 +49,26 @@
   });
   Router.add('/:exam/hasil/:attempt', function (el, params) {
     ViewHasil.render(el, params.exam, params.attempt);
+  });
+  Router.add('/:exam/bank-soal', function (el, params) {
+    params.modul = 'bank-soal';
+    modulSegera(el, params);
+  });
+  Router.add('/:exam/bank-soal/:topik', function (el, params) {
+    params.modul = 'bank-soal';
+    modulSegera(el, params);
+  });
+  Router.add('/:exam/bank-materi', function (el, params) {
+    params.modul = 'bank-materi';
+    modulSegera(el, params);
+  });
+  Router.add('/:exam/kamus', function (el, params) {
+    params.modul = 'kamus';
+    modulSegera(el, params);
+  });
+  Router.add('/:exam/skb', function (el, params) {
+    params.modul = 'skb';
+    modulSegera(el, params);
   });
 
   Router.start();
