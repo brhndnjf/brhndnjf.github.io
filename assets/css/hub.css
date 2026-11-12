@@ -275,8 +275,6 @@ a.project:hover .project-go { transform: translateX(3px); color: var(--stone); }
   .hub-rail {
     grid-column: 1;
     grid-row: 1;
-    position: sticky;
-    top: var(--s2);
   }
   .links {
     grid-column: 1;
