@@ -86,12 +86,39 @@
   "paket": [
     {
       "id": "paket-contoh",
-      "title": "Paket Contoh — 15 Soal",
-      "jumlah": 15,
-      "durasi": 20,
+      "title": "Paket Contoh — 30 Soal",
+      "jumlah": 30,
+      "durasi": 40,
       "jenis": "contoh",
       "aktif": true,
       "file": "cpns/paket/paket-contoh.json"
+    },
+    {
+      "id": "paket-latihan-01",
+      "title": "Paket Latihan 1 — 30 Soal",
+      "jumlah": 30,
+      "durasi": 40,
+      "jenis": "contoh",
+      "aktif": true,
+      "file": "cpns/paket/paket-latihan-01.json"
+    },
+    {
+      "id": "paket-latihan-02",
+      "title": "Paket Latihan 2 — 30 Soal",
+      "jumlah": 30,
+      "durasi": 40,
+      "jenis": "contoh",
+      "aktif": true,
+      "file": "cpns/paket/paket-latihan-02.json"
+    },
+    {
+      "id": "paket-latihan-03",
+      "title": "Paket Latihan 3 — 30 Soal",
+      "jumlah": 30,
+      "durasi": 40,
+      "jenis": "contoh",
+      "aktif": true,
+      "file": "cpns/paket/paket-latihan-03.json"
     },
     {
       "id": "paket-01",

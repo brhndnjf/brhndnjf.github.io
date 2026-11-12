@@ -1,0 +1,374 @@
+{
+  "schema": 1,
+  "id": "paket-latihan-01",
+  "title": "Paket Latihan 1 — 30 Soal",
+  "jenis": "contoh",
+  "durasi": 40,
+  "sections": [
+    {
+      "subtest": "twk",
+      "questions": [
+        {
+          "id": "lat1-tw-01",
+          "topik": "pancasila",
+          "q": "Sila ketiga Pancasila, Persatuan Indonesia, paling tepat diwujudkan melalui sikap…",
+          "opts": [
+            "Menempatkan kepentingan bangsa di atas kepentingan golongan",
+            "Membantu sesama hanya bila berasal dari daerah yang sama",
+            "Mengutamakan pendapat sendiri agar keputusan cepat",
+            "Membiarkan perbedaan tanpa upaya menjaga kebersamaan"
+          ],
+          "key": 0,
+          "why": "Persatuan Indonesia menekankan kepentingan bersama dan kesatuan bangsa di atas kepentingan kelompok atau golongan."
+        },
+        {
+          "id": "lat1-tw-02",
+          "topik": "pancasila",
+          "q": "Penerapan sila kelima, Keadilan sosial bagi seluruh rakyat Indonesia, dalam kehidupan sehari-hari adalah…",
+          "opts": [
+            "Memberi kesempatan yang sama sesuai hak dan kewajiban",
+            "Membagi fasilitas hanya kepada yang dikenal dekat",
+            "Mengutamakan hasil tanpa memperhatikan proses yang adil",
+            "Menunda bantuan karena bukan tanggung jawab pribadi"
+          ],
+          "key": 0,
+          "why": "Sila kelima menekankan keadilan dan pemerataan perlakuan sesuai hak serta kewajiban, bukan berdasarkan kedekatan pribadi."
+        },
+        {
+          "id": "lat1-tw-03",
+          "topik": "uud1945",
+          "q": "Tujuan negara Indonesia yang tercantum dalam Pembukaan UUD 1945 antara lain adalah…",
+          "opts": [
+            "Melindungi segenap bangsa Indonesia dan seluruh tumpah darah Indonesia",
+            "Menjadikan satu golongan sebagai penentu kebijakan negara",
+            "Membatasi peran warga negara dalam kehidupan berbangsa",
+            "Mengutamakan kepentingan wilayah tertentu"
+          ],
+          "key": 0,
+          "why": "Alinea keempat Pembukaan UUD 1945 menyebutkan tujuan negara, salah satunya melindungi segenap bangsa dan seluruh tumpah darah Indonesia."
+        },
+        {
+          "id": "lat1-tw-04",
+          "topik": "uud1945",
+          "q": "Hak warga negara untuk memperoleh pendidikan diatur sebagai bagian dari upaya mencerdaskan kehidupan bangsa. Sikap yang selaras dengan hal ini adalah…",
+          "opts": [
+            "Memanfaatkan kesempatan belajar dengan tanggung jawab",
+            "Menganggap pendidikan hanya urusan pemerintah",
+            "Menghalangi orang lain memperoleh akses belajar",
+            "Mengabaikan kewajiban belajar karena merasa sudah cukup"
+          ],
+          "key": 0,
+          "why": "Hak pendidikan perlu diimbangi sikap bertanggung jawab dalam belajar, sejalan dengan tujuan mencerdaskan kehidupan bangsa."
+        },
+        {
+          "id": "lat1-tw-05",
+          "topik": "bhinneka",
+          "q": "Sikap yang tepat ketika bekerja dengan rekan yang memiliki tradisi berbeda adalah…",
+          "opts": [
+            "Menghormati tradisinya selama tidak mengganggu tugas bersama",
+            "Meminta ia meninggalkan tradisinya saat bekerja",
+            "Menjadikan perbedaan itu bahan ejekan agar suasana cair",
+            "Menghindari kerja sama untuk mencegah perbedaan"
+          ],
+          "key": 0,
+          "why": "Menghormati perbedaan tradisi menjaga kerukunan dan kerja sama, selama tidak mengganggu pelaksanaan tugas."
+        },
+        {
+          "id": "lat1-tw-06",
+          "topik": "nkri",
+          "q": "Menjaga keutuhan wilayah dan persatuan bangsa merupakan tanggung jawab…",
+          "opts": [
+            "Seluruh warga negara sesuai peran masing-masing",
+            "Hanya aparat keamanan",
+            "Hanya pemerintah pusat",
+            "Hanya warga yang tinggal di wilayah perbatasan"
+          ],
+          "key": 0,
+          "why": "Keutuhan NKRI adalah tanggung jawab bersama; setiap warga negara berkontribusi sesuai peran dan lingkungannya."
+        },
+        {
+          "id": "lat1-tw-07",
+          "topik": "bela-negara",
+          "q": "Dalam kehidupan bermasyarakat, contoh bela negara nonfisik adalah…",
+          "opts": [
+            "Aktif menjaga ketertiban dan mematuhi hukum yang berlaku",
+            "Mengabaikan masalah lingkungan sekitar",
+            "Menyebarkan kabar yang belum jelas kebenarannya",
+            "Menolak kegiatan gotong royong"
+          ],
+          "key": 0,
+          "why": "Bela negara nonfisik mencakup kepatuhan pada hukum, menjaga ketertiban, dan kontribusi positif di lingkungan masyarakat."
+        },
+        {
+          "id": "lat1-tw-08",
+          "topik": "integritas",
+          "q": "Saat mengerjakan laporan, Anda menemukan data yang kurang mendukung target tim. Tindakan yang paling berintegritas adalah…",
+          "opts": [
+            "Menyajikan data apa adanya disertai penjelasan yang jelas",
+            "Mengubah angka agar laporan terlihat baik",
+            "Menghilangkan data yang tidak sesuai harapan",
+            "Menunda laporan tanpa memberi keterangan"
+          ],
+          "key": 0,
+          "why": "Integritas menuntut kejujuran dalam menyampaikan data, termasuk ketika hasilnya tidak sesuai target."
+        },
+        {
+          "id": "lat1-tw-09",
+          "topik": "nasionalisme",
+          "q": "Menggunakan bahasa Indonesia dengan baik dalam forum resmi mencerminkan…",
+          "opts": [
+            "Sikap nasionalisme dan persatuan",
+            "Penolakan terhadap bahasa daerah",
+            "Keengganan mempelajari bahasa lain",
+            "Kewajiban yang tidak memiliki makna"
+          ],
+          "key": 0,
+          "why": "Bahasa Indonesia berfungsi sebagai bahasa persatuan; penggunaannya yang baik di forum resmi mendukung komunikasi dan identitas kebangsaan."
+        },
+        {
+          "id": "lat1-tw-10",
+          "topik": "sejarah",
+          "q": "Sumpah Pemuda 1928 penting bagi perjalanan bangsa Indonesia karena…",
+          "opts": [
+            "Menegaskan tekad persatuan dalam satu tanah air, bangsa, dan bahasa",
+            "Menandai berakhirnya masa penjajahan secara langsung",
+            "Menghapus seluruh organisasi pemuda daerah",
+            "Menetapkan bentuk pemerintahan negara"
+          ],
+          "key": 0,
+          "why": "Sumpah Pemuda menjadi momentum penguatan identitas dan persatuan pemuda Indonesia dalam satu tanah air, bangsa, dan bahasa."
+        }
+      ]
+    },
+    {
+      "subtest": "tiu",
+      "questions": [
+        {
+          "id": "lat1-ti-01",
+          "topik": "deret",
+          "q": "Lanjutan deret 4, 9, 16, 25, … adalah…",
+          "opts": ["30", "34", "36", "49"],
+          "key": 2,
+          "why": "Deret tersebut adalah bilangan kuadrat berurutan: 2², 3², 4², 5², sehingga berikutnya 6² = 36."
+        },
+        {
+          "id": "lat1-ti-02",
+          "topik": "aritmetika",
+          "q": "Sebuah toko memberi potongan harga 25% dari harga Rp80.000. Harga yang harus dibayar adalah…",
+          "opts": ["Rp55.000", "Rp60.000", "Rp62.000", "Rp65.000"],
+          "key": 1,
+          "why": "Potongan 25% dari 80.000 adalah 20.000, sehingga harga bayar 80.000 − 20.000 = Rp60.000."
+        },
+        {
+          "id": "lat1-ti-03",
+          "topik": "perbandingan",
+          "q": "Perbandingan umur Rani dan Sinta adalah 3 : 5. Jika jumlah umur mereka 40 tahun, umur Rani adalah…",
+          "opts": ["12 tahun", "15 tahun", "18 tahun", "25 tahun"],
+          "key": 1,
+          "why": "Jumlah bagian 3 + 5 = 8. Nilai satu bagian 40 ÷ 8 = 5. Umur Rani 3 × 5 = 15 tahun."
+        },
+        {
+          "id": "lat1-ti-04",
+          "topik": "analogi",
+          "q": "Pisau : memotong = pena : …",
+          "opts": ["Membaca", "Menulis", "Kertas", "Tinta"],
+          "key": 1,
+          "why": "Hubungannya adalah alat dan fungsi utamanya. Pisau digunakan untuk memotong, pena digunakan untuk menulis."
+        },
+        {
+          "id": "lat1-ti-05",
+          "topik": "silogisme",
+          "q": "Semua peserta pelatihan mendapat sertifikat. Raka adalah peserta pelatihan. Kesimpulan yang tepat adalah…",
+          "opts": [
+            "Raka mendapat sertifikat",
+            "Semua yang mendapat sertifikat adalah Raka",
+            "Raka bukan peserta pelatihan",
+            "Sebagian peserta pelatihan tidak mendapat sertifikat"
+          ],
+          "key": 0,
+          "why": "Karena Raka termasuk peserta pelatihan dan semua peserta pelatihan mendapat sertifikat, maka Raka mendapat sertifikat."
+        },
+        {
+          "id": "lat1-ti-06",
+          "topik": "sinonim",
+          "q": "Kata yang paling dekat maknanya dengan \"akurat\" adalah…",
+          "opts": ["Tepat", "Cepat", "Luas", "Keras"],
+          "key": 0,
+          "why": "\"Akurat\" berarti saksama atau tepat; padanan makna yang paling dekat adalah tepat."
+        },
+        {
+          "id": "lat1-ti-07",
+          "topik": "antonim",
+          "q": "Lawan kata yang paling tepat untuk \"langka\" adalah…",
+          "opts": ["Jarang", "Umum", "Sulit", "Asing"],
+          "key": 1,
+          "why": "\"Langka\" berarti jarang ditemukan, sehingga lawan katanya adalah umum atau banyak ditemukan."
+        },
+        {
+          "id": "lat1-ti-08",
+          "topik": "logika",
+          "q": "Semua anggota tim hadir. Sebagian yang hadir membawa laptop. Kesimpulan yang pasti benar adalah…",
+          "opts": [
+            "Sebagian anggota tim membawa laptop",
+            "Semua anggota tim membawa laptop",
+            "Tidak ada anggota tim yang membawa laptop",
+            "Semua yang membawa laptop bukan anggota tim"
+          ],
+          "key": 0,
+          "why": "Jika semua anggota tim hadir dan sebagian yang hadir membawa laptop, maka ada sebagian anggota tim yang membawa laptop."
+        },
+        {
+          "id": "lat1-ti-09",
+          "topik": "deret",
+          "q": "Lanjutan deret 81, 27, 9, 3, … adalah…",
+          "opts": ["0", "1", "2", "6"],
+          "key": 1,
+          "why": "Setiap angka dibagi tiga: 81 ÷ 3 = 27, 27 ÷ 3 = 9, 9 ÷ 3 = 3, maka 3 ÷ 3 = 1."
+        },
+        {
+          "id": "lat1-ti-10",
+          "topik": "aritmetika",
+          "q": "Sebuah kendaraan menempuh jarak 180 km dalam 3 jam. Kecepatan rata-ratanya adalah…",
+          "opts": ["50 km/jam", "55 km/jam", "60 km/jam", "65 km/jam"],
+          "key": 2,
+          "why": "Kecepatan rata-rata = jarak ÷ waktu = 180 ÷ 3 = 60 km/jam."
+        }
+      ]
+    },
+    {
+      "subtest": "tkp",
+      "questions": [
+        {
+          "id": "lat1-tk-01",
+          "topik": "pelayanan-publik",
+          "q": "Saat Anda sedang melayani, sistem mengalami gangguan sementara. Seorang pengguna tampak bingung dan meminta kepastian. Sikap Anda…",
+          "opts": [
+            { "t": "Menjelaskan situasi dengan jelas, memberi perkiraan langkah, dan membantu sebatas yang memungkinkan", "score": 5 },
+            { "t": "Memberi tahu ada gangguan dan meminta menunggu", "score": 4 },
+            { "t": "Menyarankan datang kembali tanpa penjelasan lebih lanjut", "score": 3 },
+            { "t": "Mengarahkan ke petugas lain tanpa memastikan", "score": 2 },
+            { "t": "Diam karena gangguan bukan kendali Anda", "score": 1 }
+          ],
+          "why": "Kepastian informasi dan bantuan yang memungkinkan membantu pengguna tetap tenang meskipun ada kendala teknis."
+        },
+        {
+          "id": "lat1-tk-02",
+          "topik": "kerja-sama",
+          "q": "Dalam kerja kelompok, ada anggota yang pendiam dan jarang menyampaikan pendapat. Sikap Anda…",
+          "opts": [
+            { "t": "Mengajaknya berpendapat dan memberi ruang agar idenya didengar", "score": 5 },
+            { "t": "Membagi tugas jelas agar ia tetap bisa berkontribusi", "score": 4 },
+            { "t": "Membiarkannya bekerja sesuai kenyamanan tanpa melibatkan dalam diskusi", "score": 3 },
+            { "t": "Mengambil alih bagiannya agar pekerjaan cepat selesai", "score": 2 },
+            { "t": "Menganggapnya tidak tertarik berkontribusi", "score": 1 }
+          ],
+          "why": "Memberi ruang dan mengajak berpendapat membantu semua anggota berkontribusi, bukan hanya yang paling aktif berbicara."
+        },
+        {
+          "id": "lat1-tk-03",
+          "topik": "profesionalisme",
+          "q": "Anda menerima masukan kritis tentang cara kerja Anda dari rekan tim. Sikap Anda…",
+          "opts": [
+            { "t": "Mendengarkan, menilai isinya, dan memperbaiki bagian yang perlu", "score": 5 },
+            { "t": "Menerima masukan dan mencobanya bila ada waktu", "score": 4 },
+            { "t": "Menjelaskan alasan cara kerja Anda tanpa mempertimbangkannya", "score": 3 },
+            { "t": "Menganggap masukan itu tidak relevan", "score": 2 },
+            { "t": "Tersinggung dan menjaga jarak dari pemberi masukan", "score": 1 }
+          ],
+          "why": "Sikap profesional ditunjukkan dengan keterbukaan pada masukan dan kemauan memperbaiki kinerja."
+        },
+        {
+          "id": "lat1-tk-04",
+          "topik": "integritas",
+          "q": "Anda diminta menandatangani dokumen yang belum sempat Anda periksa dengan teliti. Sikap Anda…",
+          "opts": [
+            { "t": "Memeriksa isi dokumen terlebih dahulu sebelum menandatangani", "score": 5 },
+            { "t": "Membaca bagian pentingnya lalu menandatangani", "score": 4 },
+            { "t": "Menandatangani karena mempercayai yang menyiapkan", "score": 3 },
+            { "t": "Meminta orang lain yang menandatangani", "score": 2 },
+            { "t": "Menandatangani agar proses tidak tertunda", "score": 1 }
+          ],
+          "why": "Tanggung jawab dan integritas menuntut kepastian atas dokumen yang ditandatangani, bukan sekadar mempercepat proses."
+        },
+        {
+          "id": "lat1-tk-05",
+          "topik": "jejaring-kerja",
+          "q": "Anda perlu bantuan dari unit lain untuk menyelesaikan tugas, tetapi unit tersebut sedang sibuk. Sikap Anda…",
+          "opts": [
+            { "t": "Menyampaikan kebutuhan dengan jelas, menjelaskan urgensi, dan mencari waktu atau cara kerja yang saling memungkinkan", "score": 5 },
+            { "t": "Mengirim permintaan dan menunggu tanggapan", "score": 4 },
+            { "t": "Mengerjakan sebisanya tanpa koordinasi lebih lanjut", "score": 3 },
+            { "t": "Menunda tugas sampai unit lain benar-benar longgar", "score": 2 },
+            { "t": "Menyalahkan unit lain jika tugas terlambat", "score": 1 }
+          ],
+          "why": "Koordinasi yang jelas dan saling menyesuaikan membantu tugas tetap berjalan tanpa merusak hubungan kerja antar unit."
+        },
+        {
+          "id": "lat1-tk-06",
+          "topik": "sosial-budaya",
+          "q": "Saat bertugas di lingkungan baru, Anda menemukan cara berkomunikasi warga berbeda dari yang biasa Anda lakukan. Sikap Anda…",
+          "opts": [
+            { "t": "Menyesuaikan cara berkomunikasi dengan tetap sopan dan menghargai kebiasaan setempat", "score": 5 },
+            { "t": "Mengamati dulu lalu menyesuaikan secara bertahap", "score": 4 },
+            { "t": "Tetap memakai cara biasa tanpa banyak penyesuaian", "score": 3 },
+            { "t": "Membatasi komunikasi agar tidak salah paham", "score": 2 },
+            { "t": "Menganggap cara setempat kurang efektif", "score": 1 }
+          ],
+          "why": "Penyesuaian yang sopan membantu komunikasi berjalan baik dan menunjukkan penghargaan terhadap lingkungan sosial budaya setempat."
+        },
+        {
+          "id": "lat1-tk-07",
+          "topik": "teknologi-informasi",
+          "q": "Anda menerima pesan digital berisi informasi penting yang belum jelas sumbernya. Sikap Anda…",
+          "opts": [
+            { "t": "Memeriksa sumber dan kebenarannya sebelum membagikan atau menindaklanjuti", "score": 5 },
+            { "t": "Menunggu konfirmasi dari rekan yang lebih paham", "score": 4 },
+            { "t": "Menyimpan pesan itu tanpa menindaklanjuti", "score": 3 },
+            { "t": "Meneruskan ke grup agar yang lain ikut menilai", "score": 2 },
+            { "t": "Langsung membagikannya karena terlihat penting", "score": 1 }
+          ],
+          "why": "Memeriksa sumber sebelum menyebarkan informasi mencegah kesalahan dan menjaga keandalan komunikasi."
+        },
+        {
+          "id": "lat1-tk-08",
+          "topik": "profesionalisme",
+          "q": "Tugas yang Anda kerjakan hampir selesai, tetapi Anda melihat ada bagian kecil yang bisa diperbaiki agar hasilnya lebih jelas. Sikap Anda…",
+          "opts": [
+            { "t": "Memperbaiki bagian itu jika masih dalam batas waktu yang wajar", "score": 5 },
+            { "t": "Menandai bagian itu sebagai catatan perbaikan berikutnya", "score": 4 },
+            { "t": "Menyelesaikan tanpa perubahan agar cepat dikumpulkan", "score": 3 },
+            { "t": "Meminta orang lain memeriksa dan memperbaikinya", "score": 2 },
+            { "t": "Mengabaikan karena hasilnya sudah cukup", "score": 1 }
+          ],
+          "why": "Perbaikan kecil yang masih memungkinkan menunjukkan tanggung jawab pada kualitas kerja tanpa mengabaikan batas waktu."
+        },
+        {
+          "id": "lat1-tk-09",
+          "topik": "pelayanan-publik",
+          "q": "Seorang pengguna kesulitan memahami prosedur yang sebenarnya sudah tertulis. Sikap Anda…",
+          "opts": [
+            { "t": "Menjelaskan langkah-langkahnya dengan bahasa yang sederhana dan sabar", "score": 5 },
+            { "t": "Menunjukkan bagian prosedur yang perlu dibaca", "score": 4 },
+            { "t": "Meminta pengguna membaca ulang prosedur tersebut", "score": 3 },
+            { "t": "Menyarankan datang saat petugas lain tersedia", "score": 2 },
+            { "t": "Mengabaikan karena informasi sudah disediakan", "score": 1 }
+          ],
+          "why": "Pelayanan yang baik membantu pengguna memahami prosedur, bukan hanya menyediakan informasi tertulis."
+        },
+        {
+          "id": "lat1-tk-10",
+          "topik": "anti-radikalisme",
+          "q": "Anda melihat unggahan di grup kerja yang berisi ajakan memusuhi kelompok tertentu. Sikap Anda…",
+          "opts": [
+            { "t": "Tidak ikut menyebarkan, mengingatkan pentingnya sikap berimbang, dan merujuk pada aturan atau etika yang berlaku", "score": 5 },
+            { "t": "Mengabaikan unggahan itu dan tidak menanggapinya", "score": 4 },
+            { "t": "Meninggalkan grup agar tidak terlibat", "score": 3 },
+            { "t": "Membalas dengan emosi agar pengunggah jera", "score": 2 },
+            { "t": "Ikut menyebarkan karena dikirim di grup kerja", "score": 1 }
+          ],
+          "why": "Menolak penyebaran konten yang memecah belah dan mengingatkan secara berimbang membantu menjaga lingkungan kerja yang aman dan inklusif."
+        }
+      ]
+    }
+  ]
+}

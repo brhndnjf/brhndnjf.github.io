@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "id": "paket-contoh",
-  "title": "Paket Contoh — 15 Soal",
+  "title": "Paket Contoh — 30 Soal",
   "jenis": "contoh",
-  "durasi": 20,
+  "durasi": 40,
   "sections": [
     {
       "subtest": "twk",
@@ -72,6 +72,71 @@
           ],
           "key": 2,
           "why": "Menolak dengan sopan menjaga integritas sekaligus hubungan kerja. Menerima, walau dibagikan, tetap berisiko melanggar aturan gratifikasi."
+        },
+        {
+          "id": "contoh-tw-06",
+          "topik": "uud1945",
+          "q": "Kedaulatan berada di tangan rakyat dan dilaksanakan menurut Undang-Undang Dasar. Prinsip ini menegaskan bahwa…",
+          "opts": [
+            "Kekuasaan tertinggi dijalankan tanpa batas",
+            "Penyelenggaraan negara harus berpijak pada konstitusi",
+            "Keputusan pemerintah tidak dapat dikoreksi",
+            "Rakyat hanya berperan saat pemilihan"
+          ],
+          "key": 1,
+          "why": "Kedaulatan rakyat dijalankan melalui aturan dalam UUD, sehingga kekuasaan negara dibatasi dan diatur oleh konstitusi."
+        },
+        {
+          "id": "contoh-tw-07",
+          "topik": "nkri",
+          "q": "Contoh sikap yang mendukung persatuan dalam kehidupan sehari-hari adalah…",
+          "opts": [
+            "Membentuk kelompok hanya dengan teman yang satu daerah",
+            "Menghargai pendapat berbeda saat kerja kelompok",
+            "Menghindari kegiatan bersama karena perbedaan kebiasaan",
+            "Menonjolkan keunggulan daerah sendiri di setiap kesempatan"
+          ],
+          "key": 1,
+          "why": "Persatuan tumbuh dari sikap saling menghargai dalam interaksi sehari-hari, termasuk saat ada perbedaan pendapat."
+        },
+        {
+          "id": "contoh-tw-08",
+          "topik": "bela-negara",
+          "q": "Bentuk bela negara yang dapat dilakukan pelajar dalam masa damai adalah…",
+          "opts": [
+            "Mengabaikan kegiatan sekolah demi urusan pribadi",
+            "Belajar dengan sungguh-sungguh dan menaati aturan",
+            "Menolak kerja sama dengan teman berbeda latar belakang",
+            "Menyebarkan informasi tanpa memeriksa kebenarannya"
+          ],
+          "key": 1,
+          "why": "Bela negara tidak selalu berbentuk militer; pelajar berkontribusi melalui sikap disiplin, belajar, dan menaati aturan."
+        },
+        {
+          "id": "contoh-tw-09",
+          "topik": "nasionalisme",
+          "q": "Perilaku yang menunjukkan nasionalisme dalam penggunaan produk adalah…",
+          "opts": [
+            "Menolak semua produk dari luar negeri dalam kondisi apa pun",
+            "Mendukung produk dalam negeri yang berkualitas sesuai kebutuhan",
+            "Membeli produk hanya karena mereknya terkenal",
+            "Menganggap produk lokal selalu lebih rendah mutunya"
+          ],
+          "key": 1,
+          "why": "Nasionalisme dapat diwujudkan dengan dukungan rasional pada produk dalam negeri yang berkualitas, bukan sikap menolak secara mutlak."
+        },
+        {
+          "id": "contoh-tw-10",
+          "topik": "sejarah",
+          "q": "Proklamasi kemerdekaan Indonesia memiliki arti penting bagi bangsa karena…",
+          "opts": [
+            "Menandai berakhirnya seluruh perjuangan bangsa",
+            "Menjadi pernyataan berdirinya negara Indonesia yang merdeka",
+            "Menghapus semua perbedaan di dalam masyarakat",
+            "Menggantikan seluruh aturan yang pernah berlaku sebelumnya"
+          ],
+          "key": 1,
+          "why": "Proklamasi adalah pernyataan kemerdekaan dan tonggak berdirinya negara Indonesia; perjuangan mengisi dan mempertahankan kemerdekaan tetap berlanjut."
         }
       ]
     },
@@ -122,6 +187,51 @@
           "opts": ["Naik 4%", "Tetap sama", "Turun 4%", "Turun 20%"],
           "key": 2,
           "why": "Misalkan harga awal 100. Setelah naik 20% menjadi 120. Diskon 20% dari 120 adalah 24, sehingga harga akhir 96 — turun 4% dari harga awal."
+        },
+        {
+          "id": "contoh-ti-06",
+          "topik": "aritmetika",
+          "q": "Rata-rata nilai 4 siswa adalah 78. Jika ditambah nilai satu siswa lagi, rata-ratanya menjadi 80. Nilai siswa kelima adalah…",
+          "opts": ["82", "84", "86", "88"],
+          "key": 3,
+          "why": "Total awal 4 × 78 = 312. Total baru 5 × 80 = 400. Nilai siswa kelima 400 − 312 = 88."
+        },
+        {
+          "id": "contoh-ti-07",
+          "topik": "sinonim",
+          "q": "Kata yang paling dekat maknanya dengan \"andal\" adalah…",
+          "opts": ["Ragu", "Cakap", "Biasa", "Lamban"],
+          "key": 1,
+          "why": "\"Andal\" berarti dapat dipercaya dan memiliki kemampuan baik; makna terdekatnya adalah cakap atau tangguh."
+        },
+        {
+          "id": "contoh-ti-08",
+          "topik": "antonim",
+          "q": "Lawan kata yang paling tepat untuk \"abstrak\" adalah…",
+          "opts": ["Samar", "Konkret", "Rumit", "Luas"],
+          "key": 1,
+          "why": "\"Abstrak\" bersifat tidak berwujud atau tidak nyata secara langsung, sedangkan lawannya adalah konkret atau nyata."
+        },
+        {
+          "id": "contoh-ti-09",
+          "topik": "deret",
+          "q": "Lanjutan deret 2, 5, 10, 17, 26, … adalah…",
+          "opts": ["35", "36", "37", "38"],
+          "key": 2,
+          "why": "Selisihnya bertambah ganjil: +3, +5, +7, +9. Selanjutnya +11, sehingga 26 + 11 = 37."
+        },
+        {
+          "id": "contoh-ti-10",
+          "topik": "logika",
+          "q": "Tidak ada mamalia yang bertelur. Semua platipus bertelur. Kesimpulan yang tepat adalah…",
+          "opts": [
+            "Platipus adalah mamalia",
+            "Sebagian mamalia bertelur",
+            "Platipus bukan mamalia",
+            "Semua yang bertelur adalah platipus"
+          ],
+          "key": 2,
+          "why": "Jika tidak ada mamalia yang bertelur, sedangkan platipus bertelur, maka platipus tidak termasuk mamalia (berdasarkan premis pada soal ini)."
         }
       ]
     },
@@ -143,7 +253,7 @@
         },
         {
           "id": "contoh-tk-02",
-          "topik": "kerja sama",
+          "topik": "kerja-sama",
           "q": "Rekan kerja melakukan kesalahan yang berdampak pada hasil kerja tim. Anda mengetahui hal itu sebelum atasan. Sikap Anda…",
           "opts": [
             { "t": "Membicarakannya empat mata dan membantunya memperbaiki", "score": 5 },
@@ -156,7 +266,7 @@
         },
         {
           "id": "contoh-tk-03",
-          "topik": "pelayanan publik",
+          "topik": "pelayanan-publik",
           "q": "Seorang warga menyampaikan keluhan karena layanan yang diterima lebih lambat dari yang dijanjikan. Sikap Anda…",
           "opts": [
             { "t": "Mendengarkan, meminta maaf, dan segera menindaklanjuti", "score": 5 },
@@ -182,7 +292,7 @@
         },
         {
           "id": "contoh-tk-05",
-          "topik": "teknologi informasi",
+          "topik": "teknologi-informasi",
           "q": "Tim Anda diminta menggunakan aplikasi baru untuk pekerjaan sehari-hari. Sikap Anda…",
           "opts": [
             { "t": "Mempelajari lebih dulu, lalu membantu anggota tim lain beradaptasi", "score": 5 },
@@ -192,6 +302,71 @@
             { "t": "Tetap memakai cara lama karena lebih cepat", "score": 1 }
           ],
           "why": "Mempelajari lebih dulu lalu membantu tim mempercepat adaptasi dan menjaga pekerjaan tetap berjalan."
+        },
+        {
+          "id": "contoh-tk-06",
+          "topik": "jejaring-kerja",
+          "q": "Anda ditempatkan di tim baru dengan anggota dari berbagai latar belakang. Langkah awal yang paling tepat adalah…",
+          "opts": [
+            { "t": "Mengenal peran dan cara kerja masing-masing, lalu membangun komunikasi yang terbuka", "score": 5 },
+            { "t": "Menunggu arahan sambil menyesuaikan perlahan", "score": 4 },
+            { "t": "Bekerja sendiri dulu sampai benar-benar paham situasinya", "score": 3 },
+            { "t": "Hanya berinteraksi dengan anggota yang latar belakangnya mirip", "score": 2 },
+            { "t": "Menghindari keterlibatan agar tidak menimbulkan salah paham", "score": 1 }
+          ],
+          "why": "Mengenal peran dan membuka komunikasi membantu kerja sama berjalan efektif meskipun latar belakang anggota berbeda."
+        },
+        {
+          "id": "contoh-tk-07",
+          "topik": "sosial-budaya",
+          "q": "Di lingkungan kerja, ada kebiasaan rekan yang berbeda dari kebiasaan Anda dan tidak melanggar aturan. Sikap Anda…",
+          "opts": [
+            { "t": "Menghargai perbedaan dan tetap bekerja sama dengan baik", "score": 5 },
+            { "t": "Menyesuaikan diri secukupnya agar kerja tetap nyaman", "score": 4 },
+            { "t": "Membatasi interaksi pada urusan pekerjaan saja", "score": 3 },
+            { "t": "Menyarankan rekan mengikuti kebiasaan yang umum", "score": 2 },
+            { "t": "Menunjukkan ketidaknyamanan agar ia mengubah kebiasaannya", "score": 1 }
+          ],
+          "why": "Selama tidak melanggar aturan, perbedaan kebiasaan perlu dihargai agar hubungan kerja tetap kondusif."
+        },
+        {
+          "id": "contoh-tk-08",
+          "topik": "anti-radikalisme",
+          "q": "Dalam diskusi, seorang rekan menyampaikan pandangan yang menyudutkan kelompok tertentu secara berlebihan. Sikap Anda…",
+          "opts": [
+            { "t": "Menanggapi dengan tenang, mengajak melihat persoalan secara berimbang, dan menjaga suasana tetap terbuka", "score": 5 },
+            { "t": "Mengingatkan secara singkat agar diskusi tetap objektif", "score": 4 },
+            { "t": "Diam karena khawatir diskusi memanas", "score": 3 },
+            { "t": "Meninggalkan diskusi tanpa memberi tanggapan", "score": 2 },
+            { "t": "Mendukung pandangan itu agar tidak berbeda pendapat", "score": 1 }
+          ],
+          "why": "Tanggapan tenang dan berimbang membantu menjaga diskusi tetap sehat tanpa memperkeruh suasana."
+        },
+        {
+          "id": "contoh-tk-09",
+          "topik": "pelayanan-publik",
+          "q": "Saat antrean layanan sedang panjang, seorang pengguna datang dengan pertanyaan sederhana yang bisa dijawab cepat. Sikap Anda…",
+          "opts": [
+            { "t": "Menjawab singkat dengan jelas bila memungkinkan, tanpa mengganggu alur layanan utama", "score": 5 },
+            { "t": "Mengarahkan ke informasi tertulis atau papan petunjuk yang tersedia", "score": 4 },
+            { "t": "Meminta ia menunggu giliran seperti yang lain", "score": 3 },
+            { "t": "Menyuruh bertanya kepada petugas lain", "score": 2 },
+            { "t": "Mengabaikan karena sedang fokus pada antrean", "score": 1 }
+          ],
+          "why": "Memberi jawaban cepat untuk hal sederhana tetap membantu pengguna, asalkan tidak mengganggu pelayanan yang sedang berjalan."
+        },
+        {
+          "id": "contoh-tk-10",
+          "topik": "profesionalisme",
+          "q": "Anda diminta menyampaikan laporan hasil kerja, tetapi ada bagian yang belum sepenuhnya Anda kuasai. Sikap Anda…",
+          "opts": [
+            { "t": "Mempelajari bagian tersebut dan menyiapkan penjelasan yang jujur serta jelas", "score": 5 },
+            { "t": "Menyampaikan apa yang Anda ketahui dan berjanji melengkapi sisanya", "score": 4 },
+            { "t": "Meminta rekan yang lebih paham untuk menyampaikan seluruh laporan", "score": 3 },
+            { "t": "Menyampaikan laporan seadanya tanpa persiapan tambahan", "score": 2 },
+            { "t": "Menghindari pertanyaan pada bagian yang belum dikuasai", "score": 1 }
+          ],
+          "why": "Persiapan dan kejujuran menjaga kualitas laporan sekaligus kepercayaan, tanpa berpura-pura menguasai hal yang belum dipahami."
         }
       ]
     }
