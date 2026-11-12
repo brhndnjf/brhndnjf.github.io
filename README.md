@@ -29,7 +29,7 @@ assets/
   css/tokens.css    warna, tipe, jarak, bentuk — satu-satunya sumber
   css/base.css      reset, kerangka, tombol, dialog
   css/hub.css       komponen beranda
-  js/theme.js       mode terang/gelap, dipakai beranda & aplikasi
+  js/theme.js       mode terang/gelap otomatis (jam setempat), dipakai beranda & aplikasi
   js/hub.js         tahun, dialog QRIS
   img/qris.png      (belum ada — tombol QRIS otomatis disembunyikan)
 

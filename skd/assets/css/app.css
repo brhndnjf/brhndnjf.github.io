@@ -237,7 +237,15 @@ a.row:hover .row-go { transform: translateX(3px); color: var(--stone); }
 .app-foot-tools {
   display: inline-flex;
   align-items: center;
-  gap: var(--s1);
+  flex-wrap: wrap;
+  gap: 6px var(--s2);
+}
+.app-foot .theme-note {
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  text-align: left;
 }
 
 /* ============================================================
