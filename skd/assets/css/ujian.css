@@ -3,6 +3,8 @@
    Dimuat setelah app.css.
    ============================================================ */
 
+html { scroll-padding-bottom: 96px; }
+
 /* ---------- Mesin ujian ---------- */
 .ujian-top {
   display: flex;
@@ -11,6 +13,24 @@
   gap: var(--s1);
   padding-bottom: var(--s1);
   border-bottom: 1px solid var(--line);
+}
+.ujian-top:focus, .soal-q:focus { outline: none; }
+.ujian-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex: none;
+}
+.btn-flag {
+  min-height: 44px;
+  padding: 4px 12px;
+  font-size: var(--fs-overline);
+}
+.btn-flag[aria-pressed="true"] {
+  background: var(--stone);
+  border-color: var(--stone);
+  color: var(--paper);
 }
 .ujian-title { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .ujian-title strong {
@@ -39,7 +59,7 @@
 }
 
 .nav-wrap {
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-control);
   margin-bottom: var(--s1);
 }
 .nav-wrap summary {
@@ -55,19 +75,19 @@
   list-style: none;
 }
 .nav-wrap summary::-webkit-details-marker { display: none; }
-.nav-wrap summary::after { content: "+"; font-size: 16px; color: var(--ink-3); }
+.nav-wrap summary::after { content: "+"; font-size: 16px; color: var(--ink-3-text); }
 .nav-wrap[open] summary::after { content: "−"; }
 .nav-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(38px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
   gap: 6px;
   padding: 0 var(--s1) var(--s1);
 }
 .nav-dot {
   position: relative;
-  min-height: 38px;
+  min-height: 44px;
   padding: 0;
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--line-control);
   font-size: var(--fs-caption);
   font-variant-numeric: tabular-nums;
   color: var(--ink-2);
@@ -84,7 +104,7 @@
   font-weight: 700;
   color: var(--warn);
 }
-.nav-note { padding: 0 var(--s1) var(--s1); font-size: var(--fs-caption); color: var(--ink-3); }
+.nav-note { padding: 0 var(--s1) var(--s1); font-size: var(--fs-caption); color: var(--ink-3-text); }
 
 .soal-meta {
   display: flex;
@@ -106,7 +126,7 @@
   gap: 10px;
   width: 100%;
   padding: var(--s1) 16px;
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--line-control);
   background: var(--paper);
   font-size: var(--fs-small);
   line-height: var(--lh-small);
@@ -120,7 +140,7 @@
   font-family: var(--mono);
   font-size: var(--fs-caption);
   line-height: var(--lh-small);
-  color: var(--ink-3);
+  color: var(--ink-3-text);
 }
 .soal-opt.is-pick .opt-letter { color: var(--paper); }
 
@@ -134,11 +154,19 @@
   align-items: center;
   justify-content: space-between;
   margin-top: var(--s3);
-  padding: var(--s1) 0;
+  padding: 8px 0;
   border-top: 1px solid var(--line);
   background: var(--paper);
 }
-.ujian-actions .btn { flex: 1 1 auto; }
+.ujian-actions .btn {
+  flex: 1 1 0;
+  min-height: 44px;
+  padding: 10px 8px;
+  font-size: var(--fs-caption);
+  white-space: nowrap;
+}
+/* Saat navigasi terbuka, jangan biarkan bilah menutupi opsi. */
+.nav-wrap[open] ~ .ujian-actions { position: static; }
 .ujian-foot {
   display: flex;
   flex-wrap: wrap;
@@ -171,6 +199,10 @@
 @media (min-width: 561px) {
   .ujian-top { align-items: center; }
   .ujian-actions { flex-wrap: nowrap; }
-  .ujian-actions .btn { flex: 0 0 auto; }
+  .ujian-actions .btn {
+    flex: 0 0 auto;
+    padding: var(--s1) var(--s2);
+    font-size: var(--fs-small);
+  }
   .ujian-title strong { font-size: 19px; }
 }

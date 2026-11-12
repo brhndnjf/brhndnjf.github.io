@@ -3,9 +3,11 @@
    Sumber tunggal warna, tipografi, jarak, dan bentuk.
    Acuan: DESIGN.md. Jangan menulis nilai mentah di berkas lain.
 
-   Dua penyimpangan yang disengaja dari DESIGN.md, keduanya
+   Tiga penyimpangan yang disengaja dari DESIGN.md, semuanya
    ditandai di bawah: (1) mode gelap, (2) ukuran tipe responsif
-   memakai clamp agar 40px tidak meluber di layar 360px.
+   memakai clamp agar 40px tidak meluber di layar 360px,
+   (3) token teks/border tambahan agar kontras memenuhi WCAG AA
+   tanpa mengubah sage sebagai aksen dekoratif.
    ============================================================ */
 
 :root {
@@ -23,17 +25,20 @@
 
   /* ---- Content Palette ---- */
   --ink-2: #57534E;        /* isi sekunder, metadata */
-  --ink-3: #A8A29E;        /* placeholder, label nonaktif */
+  --ink-3: #A8A29E;        /* aksen dekoratif, bukan untuk teks */
+  --ink-3-text: #6B6560;   /* teks tersier AA — 5,50:1 di paper */
 
   /* ---- Border Palette ---- */
   --line: #E7E5E4;         /* hairline pemisah */
-  --line-2: #D6D3D1;
+  --line-2: #D6D3D1;       /* pemisah non-interaktif */
+  --line-control: #8A8580; /* batas kontrol — 3,50:1 di paper */
   --line-3: #A8A29E;
 
   /* ---- Semantic ---- */
-  --ok: #65A30D;   --ok-bg: #F0FDF4;   --ok-line: #BBF7D0;
-  --warn: #CA8A04; --warn-bg: #FEFCE8; --warn-line: #FEF08A;
-  --bad: #DC2626;  --bad-bg: #FEF2F2;  --bad-line: #FECACA;
+  /* Warna teks status digelapkan agar tetap terbaca di latar tintanya. */
+  --ok: #3F6212;   --ok-bg: #F0FDF4;   --ok-line: #BBF7D0;
+  --warn: #854D0E; --warn-bg: #FEFCE8; --warn-line: #FEF08A;
+  --bad: #B91C1C;  --bad-bg: #FEF2F2;  --bad-line: #FECACA;
 
   /* ---- Tipografi ---- */
   --font-display: "Libre Baskerville", Georgia, "Times New Roman", serif;
@@ -111,9 +116,11 @@
 
   --ink-2: #D6D3D1;
   --ink-3: #A8A29E;
+  --ink-3-text: #A8A29E;   /* 6,93:1 di paper gelap */
 
   --line: #35302C;
   --line-2: #44403C;
+  --line-control: #78716C; /* 3,65:1 di paper gelap */
   --line-3: #78716C;
 
   --ok: #A3D95B;   --ok-bg: #1D2517;   --ok-line: #3A4A26;

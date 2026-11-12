@@ -23,6 +23,7 @@ var ViewMateri = (function () {
       .then(function (data) {
         if (my !== token) return;
         Exam.remember(examId);
+        UI.judul('Materi ' + (data.title || examId));
 
         var subtes = data.subtes || [];
         el.innerHTML =
@@ -83,6 +84,7 @@ var ViewMateri = (function () {
 
         return UI.loadJSON('data/' + meta.materi).then(function (materi) {
           if (my !== token) return;
+          UI.judul(materi.title || meta.penuh || 'Materi');
           render(el, examId, meta, materi);
         });
       })
@@ -118,14 +120,15 @@ var ViewMateri = (function () {
         '<h1>' + UI.esc(data.title || meta.penuh) + '</h1>' +
         (data.goal ? '<p>' + UI.esc(data.goal) + '</p>' : '') +
       '</div>' +
-      items.map(function (item) { return itemHTML(item); }).join('');
+      items.map(function (item) { return itemHTML(item); }).join('') +
+      '<p class="sr-only" id="status-materi" role="status" aria-live="polite"></p>';
 
     bind(el, examId, items);
   }
 
   function itemHTML(item) {
     var body = (item.sections || []).map(function (sec) {
-      var h = sec.h ? '<h4>' + UI.esc(sec.h) + '</h4>' : '';
+      var h = sec.h ? '<h3>' + UI.esc(sec.h) + '</h3>' : '';
       var p = (sec.p || []).map(function (t) {
         return '<p>' + UI.esc(t) + '</p>';
       }).join('');
@@ -148,13 +151,13 @@ var ViewMateri = (function () {
             return '<button class="opt" type="button" data-opt="' + oi + '">' +
               UI.esc(opt) + '</button>';
           }).join('') +
-          '<p class="quiz-why" hidden></p>' +
+          '<p class="quiz-why" tabindex="-1" hidden></p>' +
         '</div>';
       }).join('');
     }
 
     return '<details class="acc" data-id="' + UI.esc(item.id) + '">' +
-      '<summary>' + UI.esc(item.title || ('Materi ' + item.no)) +
+      '<summary><h2>' + UI.esc(item.title || ('Materi ' + item.no)) + '</h2>' +
         '<span class="tag" data-tag hidden></span></summary>' +
       '<div class="acc-body">' + body + memo + quiz +
         '<div class="mark" data-markgroup>' +
@@ -180,16 +183,36 @@ var ViewMateri = (function () {
           quizEl.dataset.done = '1';
 
           var pick = Number(btn.getAttribute('data-opt'));
+          var benar = pick === q.key;
           quizEl.querySelectorAll('[data-opt]').forEach(function (b, i) {
+            b.setAttribute('aria-pressed', String(i === pick));
             if (i === q.key) b.classList.add('is-ok');
             else if (i === pick) b.classList.add('is-no');
             b.disabled = true;
+
+            /* Status tidak boleh hanya warna: beri label teks yang
+               ikut dibaca screen reader. */
+            if (i === q.key || i === pick) {
+              var tanda = document.createElement('span');
+              tanda.className = 'opt-state';
+              tanda.textContent = i === q.key
+                ? (benar ? 'Benar' : 'Kunci')
+                : 'Salah';
+              b.appendChild(tanda);
+            }
           });
 
           var why = quizEl.querySelector('.quiz-why');
           if (why) {
-            why.textContent = q.why || '';
-            why.hidden = !q.why;
+            why.textContent = (benar ? 'Benar. ' : 'Salah. ') + (q.why || '');
+            why.hidden = false;
+            why.focus();
+          }
+
+          var status = document.getElementById('status-materi');
+          if (status) {
+            status.textContent = (benar ? 'Jawaban benar. ' : 'Jawaban salah. ') +
+              (q.why || '');
           }
         });
       });

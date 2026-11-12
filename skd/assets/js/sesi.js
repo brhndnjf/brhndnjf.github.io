@@ -23,16 +23,30 @@ var Sesi = (function () {
   }
 
   /* Sidik ringkas isi paket. Dipakai untuk mendeteksi paket yang berubah
-     setelah sesi atau hasil dibuat, tanpa menyimpan seluruh soal. */
+     setelah sesi atau hasil dibuat, tanpa menyimpan seluruh soal.
+     Versi 2 ikut menghitung teks soal, opsi, kunci, dan bobot; versi lama
+     hanya menghitung ID sehingga perubahan kunci tidak terdeteksi. */
   function sidik(pack) {
-    var daftar = ids(pack);
+    var daftar = daftarSoal(pack);
     var h = 5381;
-    daftar.forEach(function (id) {
-      for (var i = 0; i < id.length; i++) {
-        h = ((h << 5) + h + id.charCodeAt(i)) | 0;
+
+    function tambah(teks) {
+      for (var i = 0; i < teks.length; i++) {
+        h = ((h << 5) + h + teks.charCodeAt(i)) | 0;
       }
+    }
+
+    daftar.forEach(function (s) {
+      var q = s.q;
+      tambah(s.subtest + '|' + q.id + '|' + (q.q || '') + '|' +
+        (q.key == null ? '' : q.key) + '|');
+      (q.opts || []).forEach(function (o) {
+        tambah((typeof o === 'string' ? o : (o.t || '') + '#' + (o.score == null ? '' : o.score)) + '~');
+      });
+      tambah(';');
     });
-    return daftar.length + '-' + (h >>> 0).toString(36);
+
+    return '2-' + daftar.length + '-' + (h >>> 0).toString(36);
   }
 
   function buat(examId, meta, pack) {
@@ -71,6 +85,9 @@ var Sesi = (function () {
     for (var i = 0; i < now.length; i++) {
       if (now[i] !== session.ids[i]) return false;
     }
+    /* Sesi versi 2 juga memeriksa isi; sesi lama tetap bisa dilanjutkan. */
+    if (session.sidik && session.sidik.indexOf('2-') === 0 &&
+        session.sidik !== sidik(pack)) return false;
     return true;
   }
 

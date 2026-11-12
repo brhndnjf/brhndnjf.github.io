@@ -95,21 +95,43 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 }
 .btn:active { background: var(--stone-active); border-color: var(--stone-active); }
 .btn:disabled { opacity: .4; cursor: not-allowed; }
+
+/* Tombol tema — dipakai beranda dan aplikasi. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  border: 1px solid var(--line-control);
+  color: var(--ink-2);
+  transition: border-color .15s, color .15s, background .15s;
+}
+.theme-toggle:hover { border-color: var(--stone); color: var(--ink); background: var(--surface); }
+.theme-toggle svg {
+  width: 16px; height: 16px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round;
+}
+.theme-toggle .i-sun { display: none; }
+[data-theme="dark"] .theme-toggle .i-moon { display: none; }
+[data-theme="dark"] .theme-toggle .i-sun { display: block; }
 .btn.is-quiet {
   background: transparent;
   color: var(--stone);
-  border-color: var(--line-2);
+  border-color: var(--line-control);
 }
 .btn.is-quiet:hover {
   background: var(--surface);
-  border-color: var(--line-2);
+  border-color: var(--line-control);
   color: var(--ink);
 }
 
 /* Dialog — tanpa bayangan, pemisahnya border. */
 dialog.modal {
   padding: 0;
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--line-control);
   background: var(--paper);
   color: var(--ink);
   box-shadow: none;
@@ -128,7 +150,7 @@ dialog.modal::backdrop { background: rgba(28, 25, 23, .6); }
   width: 100%;
   margin-top: var(--s2);
   padding: var(--s1);
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--line-control);
   font-size: var(--fs-caption);
   font-weight: 600;
   color: var(--ink-2);
@@ -140,12 +162,25 @@ dialog.modal::backdrop { background: rgba(28, 25, 23, .6); }
   margin-top: var(--s1);
   font-size: var(--fs-caption);
   line-height: var(--lh-caption);
-  color: var(--ink-3);
+  color: var(--ink-3-text);
   max-width: 34em;
 }
 
 /* Atribut hidden harus menang atas display apa pun */
 [hidden] { display: none !important; }
+
+/* Teks untuk screen reader saja */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
 
 ::selection { background: var(--raised); color: var(--ink); }
 
@@ -172,7 +207,7 @@ dialog.modal::backdrop { background: rgba(28, 25, 23, .6); }
   line-height: var(--lh-caption);
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--ink-3);
+  color: var(--ink-3-text);
 }
 
 .muted { color: var(--ink-2); }
@@ -192,7 +227,7 @@ dialog.modal::backdrop { background: rgba(28, 25, 23, .6); }
   top: 0;
   padding: var(--s1) var(--s2);
   background: var(--paper);
-  border: 1px solid var(--line-2);
+  border: 1px solid var(--line-control);
   z-index: 100;
 }
 .skip:focus { left: var(--s2); top: var(--s2); }

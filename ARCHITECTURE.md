@@ -207,9 +207,9 @@ Sesi disimpan di `localStorage` dengan kunci `exam/paket`, maksimal 5 sesi.
 Setiap perubahan jawaban, posisi soal, atau tanda ragu-ragu langsung disimpan.
 
 - **Timer** dihitung dari `batas` (timestamp), bukan dari hitungan detik di tab. Tab yang ditidurkan browser tidak merusak waktu.
-- **Melanjutkan** sesi memeriksa kecocokan daftar id soal. Bila isi paket berubah, sesi lama ditolak dan pengguna diberi pilihan menghapusnya — jawaban tidak dipetakan ke soal yang salah.
+- **Melanjutkan** sesi memeriksa kecocokan daftar id soal dan sidik isi paket. Bila isi paket berubah, sesi lama ditolak dan pengguna diberi pilihan menghapusnya — jawaban tidak dipetakan ke soal yang salah.
 - **Kedaluwarsa**: saat halaman dibuka dan `batas` sudah lewat, sesi langsung difinalkan sebagai hasil dengan `auto: true`.
-- **Sidik paket** (`sidik`): hash ringkas daftar id soal, disimpan di sesi dan hasil. Dipakai halaman hasil untuk memberi tahu bila isi paket berubah setelah hasil dibuat.
+- **Sidik paket** (`sidik`, versi 2): hash ringkas id soal, teks soal, opsi, kunci, dan bobot; disimpan di sesi dan hasil. Dipakai halaman hasil untuk memberi tahu bila isi paket berubah setelah hasil dibuat. Sidik versi lama (hanya id) tetap dibaca agar riwayat lama tidak memicu peringatan palsu.
 
 Skor dihitung `score.js` dari `manifest.scoring`:
 

@@ -2,38 +2,10 @@
 (function () {
   'use strict';
 
-  var THEME_KEY = 'brh.theme';
-  var root = document.documentElement;
-
-  /* ---------- Tema ---------- */
-  function applyTheme(mode) {
-    if (mode === 'dark') root.setAttribute('data-theme', 'dark');
-    else root.removeAttribute('data-theme');
-  }
-
-  function readTheme() {
-    try {
-      var saved = localStorage.getItem(THEME_KEY);
-      if (saved === 'dark' || saved === 'light') return saved;
-    } catch (e) { /* localStorage diblokir: pakai preferensi sistem */ }
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
-
-  applyTheme(readTheme());
-
-  var toggle = document.querySelector('[data-theme-toggle]');
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      applyTheme(next);
-      try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
-      toggle.setAttribute('aria-pressed', String(next === 'dark'));
-    });
-  }
-
   /* ---------- Tahun di kaki ---------- */
-  var year = document.querySelector('[data-year]');
-  if (year) year.textContent = String(new Date().getFullYear());
+  document.querySelectorAll('[data-year]').forEach(function (el) {
+    el.textContent = String(new Date().getFullYear());
+  });
 
   /* ---------- Dialog QRIS ----------
      Gambar hanya dipasang bila <dialog> punya data-qris-src.
@@ -42,6 +14,12 @@
   var openers = document.querySelectorAll('[data-open="qris"]');
   var modal = document.getElementById('qris');
   var src = modal ? modal.getAttribute('data-qris-src') : null;
+  var note = document.querySelector('[data-qris-note]');
+
+  function sembunyikan() {
+    openers.forEach(function (btn) { btn.hidden = true; });
+    if (note) note.hidden = true;
+  }
 
   if (modal && src) {
     var slot = modal.querySelector('[data-qris-slot]');
@@ -53,14 +31,14 @@
       img.height = 280;
       img.addEventListener('error', function () {
         img.remove();
-        openers.forEach(function (btn) { btn.hidden = true; });
+        sembunyikan();
         var fb = modal.querySelector('[data-qris-fallback]');
         if (fb) fb.hidden = false;
       });
       slot.appendChild(img);
     }
   } else {
-    openers.forEach(function (btn) { btn.hidden = true; });
+    sembunyikan();
   }
 
   if (modal && typeof modal.showModal === 'function') {

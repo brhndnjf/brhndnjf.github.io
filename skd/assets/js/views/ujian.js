@@ -81,6 +81,7 @@ var ViewUjian = (function () {
   function praMulai(el, examId, meta, pack, manifest, my) {
     var soal = Sesi.daftarSoal(pack);
     var durasi = pack.durasi || meta.durasi || 100;
+    UI.judul(pack.title || meta.title);
     var nama = {};
 
     (manifest.subtes || []).forEach(function (s) { nama[s.id] = s.nama || s.id; });
@@ -109,7 +110,9 @@ var ViewUjian = (function () {
         '<h2>Sebelum mulai</h2>' +
         '<ul class="bullet">' +
           '<li>Timer berjalan sejak tombol mulai ditekan dan tidak bisa dijeda.</li>' +
-          '<li>Jawaban tersimpan otomatis. Menutup tab tidak menghapus sesi.</li>' +
+          (Store.available
+            ? '<li>Jawaban tersimpan otomatis. Menutup tab tidak menghapus sesi.</li>'
+            : '<li>Penyimpanan browser diblokir, jadi jawaban tidak akan tersimpan.</li>') +
           '<li>Bila waktu habis, jawaban yang sudah dipilih tetap dinilai.</li>' +
           '<li>Navigasi soal bisa dibuka kapan saja untuk melompat.</li>' +
         '</ul>' +
@@ -117,7 +120,9 @@ var ViewUjian = (function () {
       '<div class="start-actions">' +
         '<button class="btn" type="button" id="mulai">Mulai ujian</button>' +
       '</div>' +
-      '<p class="note">Semua jawaban hanya tersimpan di perangkat ini.</p>';
+      '<p class="note">' + (Store.available
+        ? 'Semua jawaban hanya tersimpan di perangkat ini.'
+        : 'Penyimpanan browser diblokir — jawaban dan progres tidak akan tersimpan.') + '</p>';
 
     var mulai = document.getElementById('mulai');
     if (mulai) mulai.addEventListener('click', function () {
@@ -132,18 +137,23 @@ var ViewUjian = (function () {
   function mulaiTampilan(el, examId, meta, pack, manifest, sesi, my) {
     var soal = Sesi.daftarSoal(pack);
     var nama = {};
+    UI.judul(pack.title || meta.title);
     (manifest.subtes || []).forEach(function (s) { nama[s.id] = s.nama || s.id; });
 
     var pos = Number(sesi.posisi) || 0;
     if (pos < 0 || pos >= soal.length) pos = 0;
 
     el.innerHTML =
-      '<div class="ujian-top">' +
+      '<div class="ujian-top" tabindex="-1">' +
         '<div class="ujian-title">' +
           '<span class="eyebrow">' + UI.esc(manifest.title || examId) + '</span>' +
           '<strong>' + UI.esc(pack.title || meta.title) + '</strong>' +
         '</div>' +
-        '<div class="timer" id="timer" role="timer" aria-label="Sisa waktu">—</div>' +
+        '<div class="ujian-clock">' +
+          '<button class="btn is-quiet btn-flag" type="button" id="flag" ' +
+            'aria-pressed="false">Ragu-ragu</button>' +
+          '<div class="timer" id="timer" role="timer" aria-label="Sisa waktu">—</div>' +
+        '</div>' +
       '</div>' +
       '<div class="ujian-line">' +
         '<span id="progress"></span>' +
@@ -157,13 +167,15 @@ var ViewUjian = (function () {
       '<div id="soal"></div>' +
       '<div class="ujian-actions">' +
         '<button class="btn is-quiet" type="button" id="prev">← Sebelumnya</button>' +
-        '<button class="btn is-quiet" type="button" id="flag" aria-pressed="false">Ragu-ragu</button>' +
         '<button class="btn" type="button" id="next">Berikutnya →</button>' +
       '</div>' +
       '<div class="ujian-foot">' +
         '<button class="btn is-quiet" type="button" id="finish">Selesaikan ujian</button>' +
-        '<span class="note">Jawaban tersimpan otomatis.</span>' +
+        '<span class="note">' + (Store.available
+          ? 'Jawaban tersimpan otomatis.'
+          : 'Penyimpanan diblokir — jawaban tidak akan tersimpan.') + '</span>' +
       '</div>' +
+      '<p class="sr-only" id="status-ujian" role="status" aria-live="polite"></p>' +
       '<dialog class="modal" id="dialog-selesai" aria-labelledby="judul-selesai">' +
         '<div class="modal-body">' +
           '<h3 id="judul-selesai">Selesaikan ujian?</h3>' +
@@ -194,7 +206,7 @@ var ViewUjian = (function () {
           '<span class="tag">' + UI.esc(nama[item.subtest] || item.subtest) + '</span>' +
           '<span class="muted">Soal ' + (pos + 1) + ' dari ' + soal.length + '</span>' +
         '</div>' +
-        '<p class="soal-q">' + UI.esc(q.q) + '</p>' +
+        '<p class="soal-q" id="soal-q" tabindex="-1">' + UI.esc(q.q) + '</p>' +
         '<div class="soal-opts">' +
         opts.map(function (o, i) {
           var teks = typeof o === 'string' ? o : o.t;
@@ -249,6 +261,8 @@ var ViewUjian = (function () {
           pos = Number(b.getAttribute('data-nav'));
           simpan();
           gambar();
+          var q = document.getElementById('soal-q');
+          if (q) q.focus();
         });
       });
     }
@@ -260,6 +274,17 @@ var ViewUjian = (function () {
           sesi.answers[soal[pos].q.id] = i;
           simpan();
           gambar();
+
+          /* Opsi dirender ulang; kembalikan fokus ke pilihan yang sama
+             supaya pengguna keyboard tidak kembali ke awal halaman. */
+          var lagi = document.querySelector('[data-pick="' + i + '"]');
+          if (lagi) lagi.focus();
+
+          var status = document.getElementById('status-ujian');
+          if (status) {
+            status.textContent = 'Jawaban ' + String.fromCharCode(65 + i) +
+              ' dipilih untuk soal ' + (pos + 1) + '.';
+          }
         });
       });
     }
@@ -270,6 +295,8 @@ var ViewUjian = (function () {
       pos = baru;
       simpan();
       gambar();
+      var q = document.getElementById('soal-q');
+      if (q) q.focus();
     }
 
     function bukaDialog() {
@@ -333,6 +360,12 @@ var ViewUjian = (function () {
     gambar();
     updateTimer();
     tick = setInterval(updateTimer, 1000);
+
+    /* Mulai dari atas: timer dan awal soal harus terlihat, bukan posisi
+       scroll layar pra-ujian yang lebih panjang. */
+    window.scrollTo(0, 0);
+    var qAwal = document.getElementById('soal-q');
+    if (qAwal) qAwal.focus({ preventScroll: true });
   }
 
   return { render: render };

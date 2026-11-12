@@ -34,6 +34,7 @@ var ViewExam = (function () {
         return Exam.manifest(examId).then(function (man) {
           if (my !== token) return;
           Exam.remember(examId);
+          UI.judul(meta.title || examId);
 
           var subtes = man.subtes || [];
           var paket = man.paket || [];

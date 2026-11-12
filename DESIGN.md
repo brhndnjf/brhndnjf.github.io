@@ -30,7 +30,8 @@ ThoughtStream is a contemplative design system built for minimalist personal blo
 |----------------|-----------|---------------------------------------|
 | Text Primary   | `#1C1917` | Body copy, headings                   |
 | Text Secondary | `#57534E` | Bylines, metadata, captions           |
-| Text Tertiary  | `#A8A29E` | Placeholders, disabled labels         |
+| Text Tertiary  | `#A8A29E` | Aksen dekoratif saja (bukan teks kecil) |
+| Text Tertiary AA | `#6B6560` | Teks 11–13px yang harus lolos WCAG AA (5,50:1) |
 
 ### Border Palette
 
@@ -38,16 +39,20 @@ ThoughtStream is a contemplative design system built for minimalist personal blo
 |---------------|-----------|
 | Border Subtle | `#E7E5E4` |
 | Border Medium | `#D6D3D1` |
+| Border Control | `#8A8580` (batas kontrol interaktif, 3,50:1) |
 | Border Strong | `#A8A29E` |
 
 ### Semantic Colors
 
 | Token   | Hex       |
 |---------|-----------|
-| Success | `#65A30D` |
-| Warning | `#CA8A04` |
-| Error   | `#DC2626` |
+| Success | `#3F6212` (teks), `#F0FDF4` (latar) |
+| Warning | `#854D0E` (teks), `#FEFCE8` (latar) |
+| Error   | `#B91C1C` (teks), `#FEF2F2` (latar) |
 | Info    | `#78716C` |
+
+Warna status digelapkan dari nilai awal agar teks 11px tetap lolos 4,5:1
+di atas latar tintanya. Nuansa tetap sama; yang berubah hanya keterbacaan.
 
 ## Typography
 
@@ -211,9 +216,9 @@ All interactive and container elements use sharp, geometric edges (0px radius). 
 - Padding: 4px 12px
 - Font: Inter, 11px, weight 600, uppercase
 - Radius: 0px
-- Success: Background `#F0FDF4`, text `#65A30D`, border `1px solid #BBF7D0`
-- Warning: Background `#FEFCE8`, text `#CA8A04`, border `1px solid #FEF08A`
-- Error: Background `#FEF2F2`, text `#DC2626`, border `1px solid #FECACA`
+- Success: Background `#F0FDF4`, text `#3F6212`, border `1px solid #BBF7D0`
+- Warning: Background `#FEFCE8`, text `#854D0E`, border `1px solid #FEF08A`
+- Error: Background `#FEF2F2`, text `#B91C1C`, border `1px solid #FECACA`
 
 ### Lists
 
@@ -222,7 +227,7 @@ All interactive and container elements use sharp, geometric edges (0px radius). 
 - Border bottom: `1px solid #E7E5E4`
 - Font: Inter, 15px, weight 400
 - Text: `#1C1917`
-- Secondary text: `#A8A29E`, 13px
+- Secondary text: `#6B6560`, 13px (teks AA; `#A8A29E` hanya untuk aksen)
 - Hover: Background `#F5F5F4`
 - Active: Background `#EFEDEB`
 - Leading element: 20px icon, color `#78716C`

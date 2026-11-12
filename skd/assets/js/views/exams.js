@@ -7,6 +7,7 @@ var ViewExams = (function () {
   function render(el) {
     var my = ++token;
     Nav.render(null);
+    UI.judul('Pilih ujian');
 
     el.innerHTML =
       '<div class="view-head">' +
@@ -57,8 +58,10 @@ var ViewExams = (function () {
             'di perangkat ini — tanpa akun, tanpa server.</p>' +
           '</div>' +
           '<div class="list">' + rows + '</div>' +
-          '<p class="note">Data tidak dikirim ke mana pun. Menghapus data browser ' +
-          'berarti menghapus progres dan riwayat di perangkat ini.</p>';
+          '<p class="note">Jawaban dan progres tidak dikirim ke server mana pun; ' +
+          'semuanya disimpan di perangkat ini. Halaman memuat font dari Google ' +
+          'Fonts, jadi Google menerima permintaan font tersebut. Menghapus data ' +
+          'browser berarti menghapus progres dan riwayat.</p>';
       })
       .catch(function (err) {
         if (my !== token) return;

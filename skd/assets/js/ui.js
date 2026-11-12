@@ -76,6 +76,11 @@ var UI = (function () {
       '</div>';
   }
 
+  /* Judul tab mengikuti halaman aktif. */
+  function judul(teks) {
+    document.title = teks ? teks + ' — brhndnjf' : 'Latihan Ujian — brhndnjf';
+  }
+
   return {
     esc: esc,
     loadJSON: loadJSON,
@@ -83,6 +88,7 @@ var UI = (function () {
     tanggal: tanggal,
     jam: jam,
     menit: menit,
+    judul: judul,
     errorBox: errorBox
   };
 })();

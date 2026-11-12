@@ -27,14 +27,19 @@ ARCHITECTURE.md     keputusan arsitektur & batas platform
 
 assets/
   css/tokens.css    warna, tipe, jarak, bentuk — satu-satunya sumber
-  css/base.css      reset & kerangka
+  css/base.css      reset, kerangka, tombol, dialog
   css/hub.css       komponen beranda
-  js/hub.js         tema, tahun, dialog QRIS
+  js/theme.js       mode terang/gelap, dipakai beranda & aplikasi
+  js/hub.js         tahun, dialog QRIS
   img/qris.png      (belum ada — tombol QRIS otomatis disembunyikan)
 
 skd/
   index.html
-  assets/css/app.css
+  assets/css/
+    app.css               kerangka aplikasi
+    materi.css            akordeon, penanda progres, kuis
+    ujian.css             layar ujian
+    hasil.css             skor & pembahasan
   assets/js/
     ui, store, score      pembantu, penyimpanan, penilaian
     exam, sesi, nav       daftar ujian, sesi berjalan, tab

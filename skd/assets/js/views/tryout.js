@@ -16,6 +16,7 @@ var ViewTryout = (function () {
       .then(function (man) {
         if (my !== token) return;
         Exam.remember(examId);
+        UI.judul('Tryout ' + (man.title || examId));
 
         var packs = man.paket || [];
         var siap = packs.filter(function (p) { return p.aktif; });

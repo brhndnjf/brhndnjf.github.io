@@ -9,6 +9,7 @@ var Router = (function () {
 
   var routes = [];
   var cleanup = null;
+  var pertama = true;
 
   function add(pattern, handler) {
     routes.push({
@@ -61,12 +62,21 @@ var Router = (function () {
           view.innerHTML = UI.errorBox(err, 'halaman ini');
         }
         window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+
+        /* Fokus ke konten baru supaya screen reader dan keyboard tidak
+           tertinggal di tombol yang sudah tidak ada. Lewati saat muat
+           pertama agar fokus tetap di awal dokumen. */
+        if (!pertama) {
+          try { view.focus({ preventScroll: true }); } catch (e2) { view.focus(); }
+        }
+        pertama = false;
         return;
       }
     }
 
     /* Tidak ada yang cocok */
     Nav.render(null);
+    document.title = 'Halaman tidak ditemukan — brhndnjf';
     view.innerHTML =
       '<div class="empty"><strong>Halaman tidak ada</strong>' +
       'Alamat <code>#' + UI.esc(location.hash.replace(/^#/, '')) + '</code> tidak dikenal. ' +

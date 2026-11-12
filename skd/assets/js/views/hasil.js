@@ -45,7 +45,9 @@ var ViewHasil = (function () {
         (manifest.subtes || []).forEach(function (s) { nama[s.id] = s.nama || s.id; });
 
         var contoh = (attempt.jenis || pack.jenis || 'penuh') === 'contoh';
-        var berubah = attempt.sidik && Sesi.sidik(pack) !== attempt.sidik;
+        var berubah = attempt.sidik && attempt.sidik.indexOf('2-') === 0 &&
+          Sesi.sidik(pack) !== attempt.sidik;
+        UI.judul('Hasil Tryout ' + (manifest.title || examId));
 
         el.innerHTML =
           '<a class="back" href="#/' + encodeURIComponent(examId) + '/tryout">' +
