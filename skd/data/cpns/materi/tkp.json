@@ -1,7 +1,7 @@
 {
   "subtest": "tkp",
   "title": "Tes Karakteristik Pribadi",
-  "goal": "Tidak ada jawaban salah — yang dinilai bobotnya.",
+  "goal": "Tidak ada jawaban salah — yang dinilai bobotnya. Pilih respons paling dewasa, solutif, dan sesuai nilai ASN.",
   "items": [
     {
       "id": "tkp-01",
@@ -11,8 +11,8 @@
         {
           "h": "Inti",
           "p": [
-            "TKP tidak punya jawaban benar atau salah. Setiap opsi berbobot 1 sampai 5, dan yang dicari adalah opsi paling sesuai dengan nilai yang diharapkan dari seorang ASN.",
-            "Karena semua opsi \"masuk akal\", kuncinya memilih yang paling menyelesaikan masalah tanpa merugikan pihak lain."
+            "TKP tidak punya jawaban benar atau salah mutlak. Setiap opsi berbobot 1 sampai 5, dan yang dicari adalah opsi paling sesuai dengan nilai yang diharapkan dari seorang ASN. Karena semua opsi 'masuk akal', kuncinya memilih yang paling menyelesaikan masalah tanpa merugikan pihak lain.",
+            "TKP adalah situational judgment test: yang dinilai bukan hafalan, melainkan cara membaca masalah utama, pihak yang terdampak, batas kewenangan, dan efektivitas tindakan."
           ]
         },
         {
@@ -26,7 +26,317 @@
           ]
         }
       ],
-      "memo": "Opsi yang paling \"dewasa\" biasanya berbobot 5: mengakui kekurangan, memperbaiki, dan tetap menyelesaikan tanggung jawab.",
+      "memo": "Opsi yang paling 'dewasa' biasanya berbobot 5: mengakui kekurangan, memperbaiki, dan tetap menyelesaikan tanggung jawab. Opsi yang pasif, emosional, atau melanggar prosedur hampir pasti berbobot rendah.",
+      "quiz": []
+    },
+    {
+      "id": "tkp-02",
+      "no": 2,
+      "title": "Enam kompetensi resmi TKP",
+      "sections": [
+        {
+          "h": "Peta kompetensi",
+          "p": [
+            "Berdasarkan KepmenPANRB Nomor 321 Tahun 2024, TKP menguji enam area: pelayanan publik, jejaring kerja, sosial budaya, teknologi informasi dan komunikasi (TIK), profesionalisme, dan antiradikalisme. Total 45 soal TKP dalam SKD, dengan skor tiap opsi 1–5."
+          ]
+        },
+        {
+          "h": "Fokus masing-masing kompetensi",
+          "list": [
+            "Pelayanan publik: melayani secara ramah, empatik, dan efektif sesuai kewenangan",
+            "Jejaring kerja: membangun hubungan, berbagi informasi, dan berkolaborasi lintas unit",
+            "Sosial budaya: beradaptasi dan bekerja efektif dalam masyarakat majemuk",
+            "Teknologi informasi dan komunikasi: memanfaatkan teknologi untuk kinerja dan pelayanan, dengan etika dan integritas",
+            "Profesionalisme: melaksanakan tugas sesuai tuntutan jabatan, mengelola prioritas, dan bertanggung jawab",
+            "Antiradikalisme: menolak kekerasan, intoleransi, dan pemaksaan; merespons sesuai peran dan prosedur"
+          ]
+        }
+      ],
+      "memo": "Satu soal bisa terlihat seperti soal pelayanan publik, tetapi inti masalahnya bisa profesionalisme. Kenali kata kunci situasinya, bukan hanya istilah kompetensinya.",
+      "quiz": []
+    },
+    {
+      "id": "tkp-03",
+      "no": 3,
+      "title": "Pelayanan publik",
+      "sections": [
+        {
+          "h": "Prinsip skor tinggi",
+          "p": [
+            "Respons terbaik tidak berhenti pada keramahan. Skor 5 biasanya menggabungkan empati, penjelasan yang jelas, dan tindakan nyata untuk membantu menyelesaikan kebutuhan warga sesuai kewenangan. Pelayanan prima diberikan tanpa diskriminasi."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Warga marah karena antrean panjang atau sistem bermasalah",
+            "Warga lanjut usia atau pengguna layanan yang tidak memahami prosedur",
+            "Keluhan pelayanan yang lambat atau dokumen tidak lengkap",
+            "Situasi ketika efisiensi diuji melawan kualitas layanan"
+          ]
+        }
+      ],
+      "memo": "Jangan memilih opsi yang hanya menyuruh warga 'sabar' atau 'pulang dulu'. Skor tinggi menunjukkan empati + penjelasan + solusi konkret dalam batas kewenangan.",
+      "quiz": [
+        {
+          "q": "Saat melayani masyarakat, ada warga yang datang dengan nada marah karena antrean panjang. Respons terbaik Anda adalah…",
+          "opts": [
+            "Meminta warga untuk sabar dan menunggu giliran tanpa penjelasan lebih lanjut",
+            "Mengabaikan warga tersebut karena masih melayani yang lain",
+            "Menyapa dengan tenang, menjelaskan perkiraan waktu tunggu, dan meminta maaf atas ketidaknyamanan",
+            "Menyuruh warga pulang dan kembali lain hari",
+            "Meminta rekan kerja menangani warga tersebut agar tidak mengganggu konsentrasi"
+          ],
+          "key": 2,
+          "why": "Respons ini menunjukkan empati, komunikasi yang menenangkan, dan tindakan yang membantu warga memahami situasi. Opsi lain pasif, mengabaikan, atau melempar tanggung jawab."
+        }
+      ]
+    },
+    {
+      "id": "tkp-04",
+      "no": 4,
+      "title": "Jejaring kerja (kolaborasi)",
+      "sections": [
+        {
+          "h": "Prinsip skor tinggi",
+          "p": [
+            "Skor tertinggi menunjukkan inisiatif membangun komunikasi, memperkenalkan diri, memahami peran rekan kerja, dan berkoordinasi rutin. Bukan bekerja sendiri tanpa koordinasi, bukan pula bergantung penuh pada atasan."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Ditempatkan di kantor baru dan harus mengerjakan proyek lintas divisi dengan waktu terbatas",
+            "Menemukan cara kerja yang lebih efisien daripada metode tim yang sudah disepakati",
+            "Konflik kecil dengan rekan kerja atau unit lain",
+            "Kebutuhan berbagi informasi agar kolaborasi berjalan efektif"
+          ]
+        }
+      ],
+      "memo": "Opsi 'langsung mengubah metode tanpa memberi tahu tim' atau 'mengadu ke atasan tanpa diskusi' biasanya rendah. Skor tinggi = komunikasi aktif dan kolaborasi.",
+      "quiz": [
+        {
+          "q": "Saat mengerjakan proyek bersama, Anda menemukan cara yang lebih efisien dari metode yang sudah disepakati tim. Sikap terbaik Anda adalah…",
+          "opts": [
+            "Langsung mengubah metode kerja tanpa memberitahu tim",
+            "Membiarkan saja karena sudah disepakati bersama",
+            "Mengadu ke atasan agar metode lama diganti",
+            "Hanya menerapkan metode baru untuk bagian pekerjaan Anda sendiri",
+            "Menyampaikan ide tersebut dalam forum diskusi tim dan meminta pertimbangan bersama"
+          ],
+          "key": 4,
+          "why": "Skor tertinggi ada pada opsi yang menghargai keputusan tim sekaligus membuka ruang perbaikan secara terbuka. Opsi lain sepihak, pasif, atau melompati mekanisme tim."
+        }
+      ]
+    },
+    {
+      "id": "tkp-05",
+      "no": 5,
+      "title": "Sosial budaya (adaptasi dan keberagaman)",
+      "sections": [
+        {
+          "h": "Prinsip skor tinggi",
+          "p": [
+            "Yang diuji adalah kemampuan tetap adaptif, objektif, dan profesional di tengah perbedaan suku, agama, budaya, kebiasaan, dan cara komunikasi. Skor tinggi tidak berarti harus 'sama dengan mayoritas', tetapi mampu bekerja efektif tanpa prasangka."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Lingkungan kerja baru dengan budaya yang berbeda",
+            "Rekan kerja berbeda pendapat atau latar belakang",
+            "Perbedaan cara komunikasi dan kebiasaan kerja",
+            "Situasi yang menguji sikap objektif terhadap kelompok lain"
+          ]
+        }
+      ],
+      "memo": "Hindari opsi yang menutup diri, memaksakan kebiasaan sendiri, atau menyimpulkan orang berdasarkan latar belakang. Skor tinggi = adaptif, terbuka, dan tetap objektif.",
+      "quiz": [
+        {
+          "q": "Anda ditempatkan di lingkungan kerja baru dengan budaya dan kebiasaan rekan kerja yang sangat berbeda dari Anda. Sikap terbaik adalah…",
+          "opts": [
+            "Menutup diri dan hanya bergaul dengan yang budayanya sama",
+            "Memaksa rekan kerja mengikuti kebiasaan Anda",
+            "Mempelajari kebiasaan setempat, tetap terbuka, dan menyesuaikan diri secara profesional",
+            "Mengabaikan perbedaan dan bekerja sendiri saja",
+            "Meminta pindah ke unit lain karena tidak nyaman"
+          ],
+          "key": 2,
+          "why": "Skor tertinggi menunjukkan adaptasi aktif dan sikap terbuka tanpa kehilangan profesionalisme. Opsi lain menunjukkan penolakan, pemaksaan, atau penghindaran."
+        }
+      ]
+    },
+    {
+      "id": "tkp-06",
+      "no": 6,
+      "title": "Teknologi informasi dan komunikasi (TIK)",
+      "sections": [
+        {
+          "h": "Prinsip skor tinggi",
+          "p": [
+            "Skor 5 selalu menunjukkan pemanfaatan teknologi untuk mempermudah pekerjaan, mempercepat layanan, dan meningkatkan efisiensi. Namun, integritas dan etika tetap dijaga: data pribadi dilindungi, hoaks tidak disebarkan, dan fasilitas kantor tidak disalahgunakan.",
+            "Sikap proaktif dan terbuka terhadap teknologi baru juga dinilai tinggi, selama tetap berkoordinasi dan mengikuti hierarki."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Sistem/aplikasi bermasalah saat melayani masyarakat",
+            "Teknologi baru yang harus dikuasai untuk pekerjaan",
+            "Penggunaan media sosial atau data pribadi dalam pekerjaan",
+            "Ajakan efisiensi lewat 'jalan pintas' teknologi yang berisiko melanggar aturan"
+          ]
+        }
+      ],
+      "memo": "Jangan memilih opsi yang mengorbankan privasi, menyebarkan informasi belum terverifikasi, atau melanggar prosedur hanya demi kecepatan. Skor tinggi = solusi teknologi + etika + koordinasi.",
+      "quiz": [
+        {
+          "q": "Saat sistem pelayanan sedang bermasalah dan antrean warga bertambah, tindakan yang paling tepat adalah…",
+          "opts": [
+            "Menyalahkan sistem dan meminta warga pulang",
+            "Tetap melayani dengan cara manual sambil menghubungi petugas teknis dan menjelaskan kondisi kepada warga",
+            "Mengabaikan warga sampai sistem normal kembali",
+            "Menggunakan akun pribadi untuk memproses data warga agar cepat",
+            "Menyebarkan keluhan di media sosial agar sistem segera diperbaiki"
+          ],
+          "key": 1,
+          "why": "Opsi ini menggabungkan solusi sementara (pelayanan manual), koordinasi teknis, dan komunikasi kepada warga. Opsi lain pasif, melanggar etika data, atau menyebarkan keluhan tanpa tindakan konstruktif."
+        }
+      ]
+    },
+    {
+      "id": "tkp-07",
+      "no": 7,
+      "title": "Profesionalisme dan integritas",
+      "sections": [
+        {
+          "h": "Prinsip skor tinggi",
+          "p": [
+            "Profesionalisme mencakup tanggung jawab, prioritas kerja, kepatuhan pada aturan, dan integritas ketika menghadapi konflik kepentingan. Skor tinggi biasanya menunjukkan tindakan yang mengikuti prosedur resmi, bukan diam, ikut-ikutan, atau main hakim sendiri."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Mengetahui pelanggaran atau korupsi di lingkungan kerja",
+            "Konflik antara deadline, kualitas, dan permintaan atasan",
+            "Kesalahan kerja sendiri atau rekan kerja",
+            "Tekanan untuk melanggar prosedur demi hasil cepat"
+          ]
+        }
+      ],
+      "memo": "Untuk kasus pelanggaran, opsi 'melaporkan melalui saluran resmi' hampir selalu lebih tinggi daripada 'diam', 'menceritakan ke rekan', atau 'meminta bagian'.",
+      "quiz": [
+        {
+          "q": "Anda mengetahui bahwa kepala divisi Anda menerima komisi dari vendor untuk memenangkan tender. Tindakan yang tepat adalah…",
+          "opts": [
+            "Diam karena atasan adalah pimpinan",
+            "Menceritakan kepada rekan kerja",
+            "Ikut meminta bagian komisi tersebut",
+            "Melaporkan melalui saluran pengaduan resmi yang tersedia",
+            "Mengancam akan melaporkan untuk mendapat keuntungan pribadi"
+          ],
+          "key": 3,
+          "why": "Integritas yang benar adalah melaporkan melalui saluran resmi (whistleblowing system/inspektorat) sesuai prosedur. Opsi lain melanggar etika, pasif, atau memanfaatkan situasi untuk kepentingan pribadi."
+        }
+      ]
+    },
+    {
+      "id": "tkp-08",
+      "no": 8,
+      "title": "Antiradikalisme",
+      "sections": [
+        {
+          "h": "Prinsip skor tinggi",
+          "p": [
+            "Yang dinilai adalah sikap dan tindakan terhadap stimulus terkait radikalisme: menolak kekerasan, intoleransi, dan pemaksaan. Respons yang tepat disesuaikan dengan peran dan prosedur, tanpa menyimpulkan risiko seseorang hanya dari agama, suku, pakaian, atau perbedaan pendapat."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Ajakan atau provokasi untuk mendukung tindakan kekerasan",
+            "Situasi yang menguji sikap terhadap perbedaan paham",
+            "Informasi provokatif yang berpotensi memecah belah",
+            "Tekanan kelompok untuk memaksakan kehendak"
+          ]
+        }
+      ],
+      "memo": "Jangan memilih opsi yang main hakim sendiri, menyebarkan prasangka, atau ikut memaksa. Skor tinggi = menolak kekerasan secara tegas, tetap objektif, dan melaporkan sesuai prosedur.",
+      "quiz": [
+        {
+          "q": "Seorang rekan kerja mulai sering menyampaikan ajakan untuk membenci kelompok tertentu dan mendukung tindakan tegas di luar hukum. Sikap Anda sebaiknya…",
+          "opts": [
+            "Mendengarkan saja karena itu pendapat pribadinya",
+            "Ikut menyebarkan ajakannya agar kelompok lain waspada",
+            "Menegur dengan tegas, menolak ajakan kekerasan, dan melaporkan sesuai prosedur yang berlaku",
+            "Menjauhinya tanpa melakukan apa pun",
+            "Memihak kelompok yang paling kuat agar aman"
+          ],
+          "key": 2,
+          "why": "Sikap yang tepat adalah menolak kekerasan dan intoleransi secara tegas, sekaligus menempuh prosedur yang benar. Opsi lain pasif, ikut menyebarkan kebencian, atau hanya menyelamatkan diri."
+        }
+      ]
+    },
+    {
+      "id": "tkp-09",
+      "no": 9,
+      "title": "Nilai dasar ASN BerAKHLAK sebagai kompas jawaban",
+      "sections": [
+        {
+          "h": "Tujuh nilai yang menjadi rujukan",
+          "p": [
+            "Core Values ASN BerAKHLAK adalah akronim dari Berorientasi Pelayanan, Akuntabel, Kompeten, Harmonis, Loyal, Adaptif, dan Kolaboratif. Nilai-nilai ini menjadi kompas dalam menilai opsi TKP: respons yang selaras dengan BerAKHLAK biasanya berbobot lebih tinggi."
+          ]
+        },
+        {
+          "h": "Pemetaan singkat ke situasi TKP",
+          "list": [
+            "Berorientasi pelayanan → empati dan solusi bagi masyarakat",
+            "Akuntabel → bertanggung jawab, transparan, tidak menyalahkan orang lain",
+            "Kompeten → mau belajar dan meningkatkan kemampuan",
+            "Harmonis → menghargai perbedaan dan tidak memancing konflik",
+            "Loyal → mengikuti prosedur dan mendukung kepentingan organisasi",
+            "Adaptif → terbuka terhadap perubahan dan teknologi baru",
+            "Kolaboratif → aktif berkoordinasi dan berbagi informasi"
+          ]
+        }
+      ],
+      "memo": "Saat ragu antara dua opsi yang sama-sama masuk akal, tanyakan: opsi mana yang paling mencerminkan BerAKHLAK sekaligus menyelesaikan masalah pihak yang terdampak?",
+      "quiz": []
+    },
+    {
+      "id": "tkp-10",
+      "no": 10,
+      "title": "Strategi umum meraih skor tinggi",
+      "sections": [
+        {
+          "h": "Langkah cepat di ruang ujian",
+          "p": [
+            "Identifikasi masalah utama dan pihak yang terdampak. Cari kata kunci nilai ASN dalam soal. Eliminasi opsi yang pasif, emosional, menyalahkan orang lain, atau melanggar aturan. Pilih opsi yang menggabungkan solusi nyata, komunikasi/koordinasi, dan manfaat bagi publik atau tim."
+          ]
+        },
+        {
+          "h": "Kalimat yang sering muncul di jawaban skor tinggi",
+          "list": [
+            "\"Saya akan mempelajari/memahami lebih lanjut…\"",
+            "\"Saya akan berkoordinasi dengan tim/unit terkait…\"",
+            "\"Saya akan menyampaikan secara terbuka dan mencari solusi bersama…\"",
+            "\"Saya akan melaporkan melalui saluran resmi sesuai prosedur…\"",
+            "\"Saya akan tetap melayani dan membantu menyelesaikan kebutuhan warga…\""
+          ]
+        },
+        {
+          "h": "Jebakan yang harus dihindari",
+          "list": [
+            "Opsi yang hanya menyalahkan sistem, atasan, atau rekan kerja",
+            "Opsi yang memilih jalan pintas atau melanggar prosedur",
+            "Opsi yang mengabaikan pihak yang sedang membutuhkan bantuan",
+            "Opsi yang emosional, defensif, atau main hakim sendiri"
+          ]
+        }
+      ],
+      "memo": "TKP bukan tentang menjadi 'orang baik' secara umum, tetapi tentang memilih tindakan paling tepat, paling aman, dan paling berdampak dalam situasi kerja ASN.",
       "quiz": []
     }
   ]

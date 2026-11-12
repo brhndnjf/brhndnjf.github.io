@@ -1,7 +1,7 @@
 {
   "subtest": "twk",
   "title": "Tes Wawasan Kebangsaan",
-  "goal": "Paham kaitannya, bukan menghafal daftarnya.",
+  "goal": "Paham kaitannya, bukan menghafal daftarnya. Hubungkan nilai, aturan, dan penerapannya.",
   "items": [
     {
       "id": "twk-01",
@@ -12,19 +12,19 @@
           "h": "Inti",
           "p": [
             "Nasionalisme adalah kesadaran bahwa diri adalah bagian dari satu bangsa, dan kesediaan menempatkan kepentingan bangsa di atas kepentingan pribadi atau golongan.",
-            "Dalam soal SKD, nasionalisme paling sering muncul sebagai sikap terhadap simbol negara, produk dalam negeri, dan persatuan di tengah perbedaan."
+            "Dalam soal SKD, nasionalisme paling sering muncul sebagai sikap terhadap simbol negara, produk dalam negeri, persatuan di tengah perbedaan, dan cara merespons narasi yang melemahkan semangat kebangsaan."
           ]
         },
         {
           "h": "Yang sering dikelirukan",
           "list": [
             "Nasionalisme bukan chauvinisme — menganggap bangsa sendiri paling unggul dan merendahkan bangsa lain.",
-            "Nasionalisme bukan sekadar memasang bendera; intinya kesediaan berkorban.",
+            "Nasionalisme bukan sekadar memasang bendera; intinya kesediaan berkorban untuk kepentingan bersama.",
             "Cinta tanah air menekankan rasa memiliki; patriotisme menekankan kesediaan membela."
           ]
         }
       ],
-      "memo": "Kalau opsi jawaban berbau merendahkan bangsa lain, itu jebakan chauvinisme.",
+      "memo": "Kalau opsi jawaban berbau merendahkan bangsa lain atau menutup diri dari kerja sama, itu jebakan chauvinisme.",
       "quiz": [
         {
           "q": "Sikap yang paling mencerminkan nasionalisme adalah…",
@@ -60,7 +60,7 @@
           ]
         }
       ],
-      "memo": "Integritas diuji saat tidak ada saksi. Opsi yang bergantung pada \"asal tidak ketahuan\" selalu salah.",
+      "memo": "Integritas diuji saat tidak ada saksi. Opsi yang bergantung pada 'asal tidak ketahuan' selalu salah.",
       "quiz": [
         {
           "q": "Rekan kerja memberi hadiah mahal sebagai ucapan terima kasih atas proyek yang Anda tangani. Sikap terbaik adalah…",
@@ -83,8 +83,8 @@
         {
           "h": "Inti",
           "p": [
-            "Bela negara adalah hak dan kewajiban setiap warga negara, bukan hanya tugas TNI atau Polri.",
-            "Bentuknya menyesuaikan kemampuan: pelajar belajar sungguh-sungguh, pegawai bekerja profesional, warga menjaga lingkungan."
+            "Bela negara adalah hak dan kewajiban setiap warga negara, bukan hanya tugas TNI atau Polri. Bentuknya menyesuaikan kemampuan: pelajar belajar sungguh-sungguh, pegawai bekerja profesional, warga menjaga lingkungan.",
+            "Soal TWK menguji pemahaman bahwa bela negara bersifat non-fisik maupun fisik, dan yang paling sering benar adalah kontribusi sesuai profesi."
           ]
         },
         {
@@ -98,7 +98,421 @@
           ]
         }
       ],
-      "memo": "Bela negara tidak selalu berarti angkat senjata. Kontribusi sesuai profesi adalah jawaban yang paling sering benar.",
+      "memo": "Bela negara tidak selalu berarti angkat senjata. Kontribusi nyata sesuai peran sehari-hari adalah jawaban yang paling sering tepat.",
+      "quiz": []
+    },
+    {
+      "id": "twk-04",
+      "no": 4,
+      "title": "Pancasila: sejarah, rumusan, dan kedudukan",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "Pancasila lahir melalui sidang BPUPK (29 Mei–1 Juni 1945). Soekarno memperkenalkan Pancasila sebagai dasar negara pada 1 Juni 1945. Rumusan final Pancasila tercantum dalam alinea keempat Pembukaan UUD 1945.",
+            "Kedudukan Pancasila ada empat: dasar negara, pandangan hidup bangsa, ideologi negara, dan sumber dari segala sumber hukum. Jika soal menanyakan bukti sebagai dasar negara, konteksnya adalah penyelenggaraan negara, kebijakan, peraturan, dan kelembagaan. Jika menanyakan pandangan hidup, konteksnya adalah perilaku sehari-hari."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Tanggal 1 Juni sebagai Hari Lahir Pancasila",
+            "Rumusan Pancasila dalam alinea keempat Pembukaan UUD 1945",
+            "Pancasila sebagai ideologi terbuka: nilai dasar tetap, penerapan dapat menyesuaikan zaman",
+            "Perbedaan Pancasila sebagai dasar negara dan sebagai pandangan hidup"
+          ]
+        }
+      ],
+      "memo": "Jangan tertukar antara 'dasar negara' dan 'pandangan hidup'. Baca konteks soal: lembaga/kebijakan atau perilaku sehari-hari.",
+      "quiz": [
+        {
+          "q": "Pancasila sebagai dasar negara berarti Pancasila menjadi…",
+          "opts": [
+            "Pedoman untuk satu kelompok masyarakat",
+            "Landasan penyelenggaraan negara",
+            "Aturan yang hanya berlaku bagi aparatur negara",
+            "Kebiasaan yang tidak mengikat kehidupan bernegara"
+          ],
+          "key": 1,
+          "why": "Sebagai dasar negara, Pancasila menjadi landasan penyelenggaraan negara, pembentukan hukum, dan pelaksanaan kehidupan berbangsa dan bernegara."
+        },
+        {
+          "q": "Pancasila disebut ideologi terbuka karena…",
+          "opts": [
+            "Nilai dasarnya dapat diganti sesuai keinginan pemerintah",
+            "Penerapannya dapat menyesuaikan perkembangan zaman tanpa meninggalkan nilai dasarnya",
+            "Seluruh ideologi asing harus diterapkan bersamaan",
+            "Pancasila hanya berlaku ketika keadaan darurat"
+          ],
+          "key": 1,
+          "why": "Ideologi terbuka memungkinkan penjabaran nilai instrumental dan penerapan yang dinamis, sementara nilai dasar Pancasila tetap dipertahankan."
+        }
+      ]
+    },
+    {
+      "id": "twk-05",
+      "no": 5,
+      "title": "Pancasila: nilai tiap sila dan penerapannya",
+      "sections": [
+        {
+          "h": "Peta nilai",
+          "list": [
+            "Sila 1 (Ketuhanan Yang Maha Esa): kebebasan beragama, toleransi, tidak memaksakan keyakinan.",
+            "Sila 2 (Kemanusiaan yang Adil dan Beradab): persamaan derajat, penolakan diskriminasi, penghormatan martabat manusia.",
+            "Sila 3 (Persatuan Indonesia): kepentingan nasional, keutuhan bangsa, mengutamakan persatuan di atas kepentingan golongan.",
+            "Sila 4 (Kerakyatan yang Dipimpin oleh Hikmat Kebijaksanaan dalam Permusyawaratan/Perwakilan): musyawarah untuk mufakat, tidak memaksakan kehendak.",
+            "Sila 5 (Keadilan Sosial bagi Seluruh Rakyat Indonesia): pemerataan, keadilan, penghargaan terhadap hak dan hasil karya orang lain."
+          ]
+        },
+        {
+          "h": "Cara membaca soal penerapan",
+          "p": [
+            "Soal TWK sering menyajikan perilaku atau kebijakan, lalu menanyakan sila mana yang paling erat. Kuncinya: jangan melihat siapa pelakunya, tetapi nilai apa yang dominan. Melayani tanpa membedakan agama/suku/status → sila kedua. Musyawarah → sila keempat. Membangun fasilitas umum secara adil → sila kelima."
+          ]
+        }
+      ],
+      "memo": "Hafalkan kata kunci tiap sila, bukan hanya bunyinya. Kata kunci memudahkan mencocokkan situasi dengan sila yang tepat.",
+      "quiz": [
+        {
+          "q": "Seorang pegawai melayani masyarakat tanpa membedakan agama, suku, atau status sosial. Perilaku ini paling erat kaitannya dengan sila…",
+          "opts": ["Pertama", "Kedua", "Ketiga", "Keempat"],
+          "key": 1,
+          "why": "Sila kedua, Kemanusiaan yang Adil dan Beradab, menekankan penghormatan terhadap martabat manusia dan perlakuan yang adil tanpa diskriminasi."
+        },
+        {
+          "q": "Mengutamakan musyawarah untuk mencapai keputusan bersama merupakan pengamalan sila…",
+          "opts": ["Pertama", "Kedua", "Keempat", "Kelima"],
+          "key": 2,
+          "why": "Sila keempat menekankan kerakyatan, permusyawaratan, dan perwakilan dalam pengambilan keputusan."
+        }
+      ]
+    },
+    {
+      "id": "twk-06",
+      "no": 6,
+      "title": "UUD 1945: kedudukan, Pembukaan, dan hierarki",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "UUD 1945 adalah hukum dasar tertinggi dalam sistem peraturan perundang-undangan Indonesia. Pembukaan UUD 1945 terdiri dari empat alinea; alinea keempat memuat tujuan negara, dasar negara (Pancasila), dan susunan negara.",
+            "Hierarki perundang-undangan: UUD 1945 → TAP MPR → UU/Perppu → Peraturan Presiden → Peraturan Daerah (Provinsi/Kabupaten/Kota)."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Dasar hukum tertinggi: UUD Negara Republik Indonesia Tahun 1945",
+            "Pembukaan UUD 1945 alinea keempat memuat Pancasila, tujuan negara, dan bentuk negara",
+            "Amandemen UUD 1945 dilakukan empat kali (1999–2002)",
+            "Pasal 25A: wilayah NKRI adalah kepulauan yang berciri Nusantara"
+          ]
+        }
+      ],
+      "memo": "Soal hierarki sering menjebak dengan menempatkan TAP MPR di atas UUD. Ingat: UUD 1945 selalu di puncak.",
+      "quiz": [
+        {
+          "q": "Dasar hukum tertinggi dalam sistem peraturan perundang-undangan Indonesia adalah…",
+          "opts": [
+            "Undang-Undang",
+            "Peraturan Presiden",
+            "Peraturan Pemerintah",
+            "UUD Negara Republik Indonesia Tahun 1945"
+          ],
+          "key": 3,
+          "why": "UUD NRI Tahun 1945 adalah hukum dasar tertulis dan sumber hukum tertinggi dalam hierarki peraturan perundang-undangan."
+        },
+        {
+          "q": "Pembukaan UUD 1945 alinea keempat memuat…",
+          "opts": [
+            "Bentuk negara dan sistem pemerintahan",
+            "Tujuan negara, dasar negara, dan susunan negara",
+            "Hak asasi manusia dan kewajiban warga negara",
+            "Lambang negara dan bahasa persatuan"
+          ],
+          "key": 1,
+          "why": "Alinea keempat Pembukaan UUD 1945 memuat tujuan negara, rumusan Pancasila sebagai dasar negara, dan susunan negara."
+        }
+      ]
+    },
+    {
+      "id": "twk-07",
+      "no": 7,
+      "title": "UUD 1945: pasal-pasal penting dan HAM",
+      "sections": [
+        {
+          "h": "Pasal yang sering diuji",
+          "list": [
+            "Pasal 27: persamaan kedudukan warga negara di depan hukum dan pemerintahan.",
+            "Pasal 28A–28J: hak asasi manusia (hak hidup, beragama, berpendapat, memperoleh pendidikan, dll).",
+            "Pasal 29: kebebasan beragama dan beribadah.",
+            "Pasal 30: hak dan kewajiban bela negara.",
+            "Pasal 31: hak atas pendidikan.",
+            "Pasal 32: memajukan kebudayaan nasional.",
+            "Pasal 33: perekonomian nasional dan kesejahteraan sosial.",
+            "Pasal 34: fakir miskin dan anak terlantar dipelihara oleh negara."
+          ]
+        },
+        {
+          "h": "Cara menjawab soal HAM",
+          "p": [
+            "Soal HAM dalam TWK biasanya meminta pasal yang menjamin hak tertentu, atau mengaitkan Pembukaan UUD 1945 dengan HAM. Pembukaan UUD 1945 alinea pertama memuat pernyataan kemerdekaan dan penolakan penjajahan, yang menjadi dasar filosofis HAM di Indonesia."
+          ]
+        }
+      ],
+      "memo": "Jangan menghafal nomor pasal tanpa memahami isinya. Cukup ingat kelompok: persamaan (27), HAM (28), agama (29), bela negara (30), pendidikan (31), ekonomi (33).",
+      "quiz": [
+        {
+          "q": "Jaminan kebebasan memeluk agama dan beribadah terdapat dalam UUD 1945 Pasal…",
+          "opts": ["27", "28", "29", "30"],
+          "key": 2,
+          "why": "Pasal 29 UUD 1945 menjamin kemerdekaan setiap orang memeluk agamanya dan beribadah menurut agamanya dan kepercayaannya."
+        }
+      ]
+    },
+    {
+      "id": "twk-08",
+      "no": 8,
+      "title": "NKRI: bentuk negara, wilayah, dan kedaulatan",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "NKRI adalah negara kesatuan berbentuk republik. Kedaulatan berada di tangan rakyat dan dilaksanakan menurut UUD 1945. Wilayah NKRI adalah kepulauan yang berciri Nusantara, dengan batas-batas dan hak-hak yang ditetapkan undang-undang (Pasal 25A).",
+            "Soal NKRI sering menguji pemahaman bahwa bentuk negara kesatuan tidak sama dengan sentralisasi; otonomi daerah tetap ada dalam kerangka NKRI."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Pasal 25A tentang wilayah NKRI",
+            "Bentuk negara: kesatuan (unitary), bukan serikat/federal",
+            "Kedaulatan rakyat dilaksanakan menurut UUD",
+            "Hubungan pusat–daerah dalam kerangka NKRI"
+          ]
+        }
+      ],
+      "memo": "Jika opsi menyebut 'negara serikat' atau 'federal', itu pasti salah untuk konteks NKRI.",
+      "quiz": [
+        {
+          "q": "Berdasarkan UUD 1945 Pasal 25A, wilayah Negara Kesatuan Republik Indonesia adalah…",
+          "opts": [
+            "Kepulauan yang berciri Nusantara",
+            "Daratan dan lautan yang terpisah-pisah",
+            "Wilayah yang ditentukan oleh pemerintah pusat saja",
+            "Wilayah bekas jajahan Belanda"
+          ],
+          "key": 0,
+          "why": "Pasal 25A menyatakan bahwa NKRI adalah negara kepulauan yang berciri Nusantara dengan wilayah yang batas-batas dan hak-haknya ditetapkan dengan undang-undang."
+        }
+      ]
+    },
+    {
+      "id": "twk-09",
+      "no": 9,
+      "title": "Bhinneka Tunggal Ika",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "Bhinneka Tunggal Ika berarti 'berbeda-beda tetapi tetap satu'. Semboyan ini menjadi landasan persatuan di tengah keberagaman suku, agama, budaya, bahasa, dan adat istiadat.",
+            "Soal TWK menguji makna semboyan, sejarah penggunaannya sebagai semboyan negara, dan penerapannya dalam kehidupan berbangsa: keragaman bukan hambatan, melainkan kekuatan."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Makna: berbeda-beda tetapi tetap satu",
+            "Semboyan negara pada lambang Garuda Pancasila",
+            "Penerapan: toleransi, gotong royong, tidak memaksakan budaya sendiri",
+            "Kaitan dengan sila ketiga Persatuan Indonesia"
+          ]
+        }
+      ],
+      "memo": "Opsi yang menekankan 'semua harus sama' atau 'keberagaman harus dihilangkan' selalu bertentangan dengan Bhinneka Tunggal Ika.",
+      "quiz": [
+        {
+          "q": "Semboyan Bhinneka Tunggal Ika memiliki makna…",
+          "opts": [
+            "Bersatu untuk menang",
+            "Berbeda-beda tetapi tetap satu",
+            "Semua warga harus memiliki budaya yang sama",
+            "Persatuan hanya berlaku dalam pemerintahan"
+          ],
+          "key": 1,
+          "why": "Bhinneka Tunggal Ika berarti berbeda-beda tetapi tetap satu jua, menjadi landasan persatuan dalam keberagaman."
+        }
+      ]
+    },
+    {
+      "id": "twk-10",
+      "no": 10,
+      "title": "Sejarah perjuangan bangsa",
+      "sections": [
+        {
+          "h": "Titik penting yang sering diuji",
+          "list": [
+            "Pergerakan nasional: Budi Utomo (1908) sebagai awal kebangkitan nasional.",
+            "Sumpah Pemuda (28 Oktober 1928): satu tanah air, satu bangsa, satu bahasa.",
+            "Proklamasi Kemerdekaan (17 Agustus 1945).",
+            "Sidang BPUPK dan PPKI: perumusan dasar negara dan UUD 1945.",
+            "Amandemen UUD 1945 (1999–2002) sebagai bagian reformasi."
+          ]
+        },
+        {
+          "h": "Cara menghubungkan dengan soal",
+          "p": [
+            "Soal sejarah TWK jarang menanyakan tanggal secara telanjang. Biasanya mengaitkan peristiwa dengan nilai kebangsaan, misalnya Sumpah Pemuda dengan persatuan dan bahasa Indonesia, atau Proklamasi dengan kedaulatan rakyat."
+          ]
+        }
+      ],
+      "memo": "Hubungkan peristiwa dengan nilainya, bukan hanya urutan tahun. Soal TWK lebih sering menanyakan 'makna' daripada 'tanggal'.",
+      "quiz": [
+        {
+          "q": "Sumpah Pemuda 28 Oktober 1928 menegaskan tiga hal, yaitu satu tanah air, satu bangsa, dan…",
+          "opts": [
+            "Satu ideologi",
+            "Satu bahasa",
+            "Satu pemerintahan",
+            "Satu agama"
+          ],
+          "key": 1,
+          "why": "Sumpah Pemuda menegaskan satu tanah air Indonesia, satu bangsa Indonesia, dan menjunjung bahasa persatuan, bahasa Indonesia."
+        }
+      ]
+    },
+    {
+      "id": "twk-11",
+      "no": 11,
+      "title": "Sistem pemerintahan dan lembaga negara",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "Indonesia menganut sistem pemerintahan presidensial: Presiden sebagai kepala negara sekaligus kepala pemerintahan. Lembaga negara utama: MPR, DPR, DPD, Presiden, MA, MK, KY, dan BPK.",
+            "Soal TWK sering menguji fungsi lembaga: MPR mengubah UUD dan melantik Presiden; DPR membuat undang-undang; MK menguji undang-undang terhadap UUD; BPK memeriksa pengelolaan keuangan negara."
+          ]
+        },
+        {
+          "h": "Fungsi lembaga yang sering ditanya",
+          "list": [
+            "MPR: mengubah dan menetapkan UUD, melantik Presiden/Wakil Presiden.",
+            "DPR: fungsi legislasi, anggaran, dan pengawasan.",
+            "DPD: mengajukan dan membahas RUU terkait daerah.",
+            "MK: menguji UU terhadap UUD, memutus sengketa kewenangan lembaga.",
+            "BPK: memeriksa pengelolaan dan tanggung jawab keuangan negara."
+          ]
+        }
+      ],
+      "memo": "Jangan tertukar antara DPR dan DPD. DPD mewakili daerah; DPR mewakili rakyat melalui partai politik.",
+      "quiz": [
+        {
+          "q": "Lembaga negara yang berwenang menguji undang-undang terhadap UUD 1945 adalah…",
+          "opts": ["Mahkamah Agung", "Mahkamah Konstitusi", "Komisi Yudisial", "BPK"],
+          "key": 1,
+          "why": "Mahkamah Konstitusi berwenang menguji undang-undang terhadap UUD 1945 (judicial review), sedangkan Mahkamah Agung menguji peraturan di bawah undang-undang."
+        }
+      ]
+    },
+    {
+      "id": "twk-12",
+      "no": 12,
+      "title": "Empat pilar negara dan hubungannya",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "Empat pilar kebangsaan: Pancasila, UUD 1945, NKRI, dan Bhinneka Tunggal Ika. Keempatnya memiliki fungsi berbeda tetapi saling berkaitan: Pancasila sebagai dasar negara, UUD 1945 sebagai hukum dasar, NKRI sebagai bentuk negara, dan Bhinneka Tunggal Ika sebagai prinsip persatuan dalam keberagaman.",
+            "Soal TWK sering meminta peserta menghubungkan pilar-pilar ini dengan situasi konkret, bukan sekadar menyebutkan definisinya."
+          ]
+        },
+        {
+          "h": "Cara membaca soal relasi",
+          "p": [
+            "Jika soal menyebut 'landasan penyelenggaraan negara', arahnya ke Pancasila atau UUD 1945. Jika menyebut 'bentuk negara', arahnya ke NKRI. Jika menyebut 'persatuan dalam keberagaman', arahnya ke Bhinneka Tunggal Ika."
+          ]
+        }
+      ],
+      "memo": "Jangan hanya menghafal daftar pilar. Pahami fungsi masing-masing agar bisa membedakan konteks soal.",
+      "quiz": []
+    },
+    {
+      "id": "twk-13",
+      "no": 13,
+      "title": "Bahasa Indonesia sebagai bahasa persatuan",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "Bahasa Indonesia ditetapkan sebagai bahasa persatuan dalam Sumpah Pemuda 1928 dan ditegaskan dalam UUD 1945 Pasal 36. Fungsinya: lambang identitas nasional, alat komunikasi antarwarga, dan pemersatu suku bangsa.",
+            "Soal TWK sering mengaitkan bahasa Indonesia dengan nasionalisme dan Bhinneka Tunggal Ika: bahasa yang berbeda-beda tidak menghalangi persatuan karena ada bahasa Indonesia."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Sumpah Pemuda: menjunjung bahasa persatuan, bahasa Indonesia",
+            "Pasal 36 UUD 1945: bahasa negara adalah bahasa Indonesia",
+            "Fungsi bahasa Indonesia sebagai pemersatu bangsa"
+          ]
+        }
+      ],
+      "memo": "Jika soal menanyakan dasar bahasa Indonesia sebagai bahasa persatuan, jawabannya Sumpah Pemuda. Jika sebagai bahasa negara, jawabannya UUD 1945 Pasal 36.",
+      "quiz": [
+        {
+          "q": "Bahasa Indonesia ditetapkan sebagai bahasa persatuan berdasarkan…",
+          "opts": ["UUD 1945 Pasal 36", "Sumpah Pemuda 1928", "Proklamasi 1945", "Pancasila sila ketiga"],
+          "key": 1,
+          "why": "Sumpah Pemuda 28 Oktober 1928 menegaskan 'menjunjung bahasa persatuan, bahasa Indonesia'. UUD 1945 Pasal 36 menegaskan bahasa negara, bukan bahasa persatuan."
+        }
+      ]
+    },
+    {
+      "id": "twk-14",
+      "no": 14,
+      "title": "Wawasan Nusantara dan geopolitik Indonesia",
+      "sections": [
+        {
+          "h": "Inti",
+          "p": [
+            "Wawasan Nusantara adalah cara pandang bangsa Indonesia tentang diri dan lingkungannya sebagai negara kepulauan yang berciri Nusantara, dengan mengutamakan persatuan dan kesatuan bangsa serta kesatuan wilayah.",
+            "Konsep ini lahir dari Deklarasi Djuanda 1957 yang menegaskan bahwa laut bukan pemisah, melainkan penghubung antarpulau."
+          ]
+        },
+        {
+          "h": "Yang sering keluar",
+          "list": [
+            "Deklarasi Djuanda dan gagasan negara kepulauan",
+            "Laut sebagai pemersatu, bukan pemisah",
+            "Wawasan Nusantara sebagai landasan persatuan wilayah"
+          ]
+        }
+      ],
+      "memo": "Jangan menganggap wawasan Nusantara hanya soal laut. Intinya cara pandang yang menempatkan persatuan wilayah dan bangsa sebagai prioritas.",
+      "quiz": []
+    },
+    {
+      "id": "twk-15",
+      "no": 15,
+      "title": "Strategi umum menjawab TWK",
+      "sections": [
+        {
+          "h": "Langkah cepat di ruang ujian",
+          "p": [
+            "Baca soal dengan cermat untuk menangkap kata kunci nilai (nasionalisme, integritas, bela negara, Pancasila, UUD, NKRI, Bhinneka Tunggal Ika). Eliminasi opsi yang melanggar nilai dasar atau bertentangan dengan aturan konstitusi. Pilih opsi yang paling sesuai dengan konteks soal, bukan opsi yang paling panjang atau paling terdengar 'bijak'."
+          ]
+        },
+        {
+          "h": "Jebakan yang harus dihindari",
+          "list": [
+            "Opsi yang menutup diri dari keberagaman atau kerja sama",
+            "Opsi yang menganggap satu kelompok/budaya paling unggul",
+            "Opsi yang melanggar prosedur atau konstitusi",
+            "Opsi yang hanya menghafal bunyi sila tanpa memahami konteks"
+          ]
+        }
+      ],
+      "memo": "TWK bukan tes hafalan. Yang diuji adalah kemampuan menghubungkan nilai kebangsaan dengan situasi konkret.",
       "quiz": []
     }
   ]
