@@ -47,9 +47,15 @@
   ],
   "modul": [
     {
-      "id": "skd",
-      "title": "SKD",
-      "desc": "Materi dan tryout berwaktu: TWK, TIU, TKP.",
+      "id": "materi",
+      "title": "Materi SKD",
+      "desc": "TWK, TIU, TKP — baca ringkas, tandai paham.",
+      "status": "aktif"
+    },
+    {
+      "id": "tryout",
+      "title": "Tryout SKD",
+      "desc": "Simulasi berwaktu + riwayat skor.",
       "status": "aktif"
     },
     {

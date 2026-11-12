@@ -50,7 +50,6 @@ var Nav = (function () {
       var aktif = section || (function () {
         var seg = segmenAktif();
         if (!seg) return 'ujian';
-        if (seg === 'materi' || seg === 'tryout') return 'ujian';
         for (var i = 0; i < ALAT.length; i++) {
           if (ALAT[i].segmen === seg) return ALAT[i].nav;
         }
