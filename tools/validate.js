@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = path.resolve(__dirname, '..', 'skd');
+const ROOT = path.resolve(__dirname, '..', 'cpns');
 /* Semua jalur di dalam manifest bersifat relatif terhadap folder data/ */
 const BASE = path.join(ROOT, 'data');
 

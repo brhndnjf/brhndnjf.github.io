@@ -3,7 +3,7 @@
 Situs pribadi. Statis sepenuhnya — tanpa backend, tanpa build step.
 
 - Beranda: <https://brhndnjf.github.io>
-- Latihan ujian: <https://brhndnjf.github.io/skd/>
+- Latihan ujian: <https://brhndnjf.github.io/cpns/>
 
 ## Acuan desain
 
@@ -33,7 +33,7 @@ assets/
   js/hub.js         tahun, dialog QRIS
   img/qris.png      kode QRIS donasi
 
-skd/
+cpns/
   index.html
   assets/css/
     app.css               kerangka aplikasi
@@ -88,8 +88,8 @@ teoretis ujian penuh.
 
 ## Menambah isi
 
-Seluruh isi berada di `skd/data/`. Jalur di dalam manifest bersifat relatif
-terhadap folder `skd/data/`.
+Seluruh isi berada di `cpns/data/`. Jalur di dalam manifest bersifat relatif
+terhadap folder `cpns/data/`.
 
 Sebelum commit, jalankan pemeriksa:
 
@@ -108,9 +108,9 @@ Ganti dengan soal asli sebelum dipakai orang lain.
 
 ## Menambah ujian baru
 
-1. Buat folder `skd/data/<id>/` berisi `manifest.json`, `materi/`, dan `paket/`.
+1. Buat folder `cpns/data/<id>/` berisi `manifest.json`, `materi/`, dan `paket/`.
 2. Salin bentuk `cpns/manifest.json`, ganti `id`, `title`, dan `scoring`.
-3. Tambahkan satu entri di `skd/data/exams.json` dengan `manifest` yang sesuai.
+3. Tambahkan satu entri di `cpns/data/exams.json` dengan `manifest` yang sesuai.
 4. Jalankan `node tools/validate.js`.
 
 Tidak ada JavaScript yang perlu diubah. Rute, tab, dan pemilihan ujian mengikuti
@@ -125,7 +125,7 @@ Membuka `index.html` langsung dari disk akan gagal memuat JSON, karena
 node tools/serve.js
 ```
 
-Lalu buka <http://localhost:8080> dan <http://localhost:8080/skd/>.
+Lalu buka <http://localhost:8080> dan <http://localhost:8080/cpns/>. (Alias lama <http://localhost:8080/skd/> dialihkan ke `/cpns/`.)
 
 ## Menambah proyek
 
