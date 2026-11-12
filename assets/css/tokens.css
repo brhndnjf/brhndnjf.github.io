@@ -87,6 +87,8 @@
 
   /* ---- Ukuran halaman ---- */
   --container: 680px;  /* DESIGN: lebar maksimum isi 680px */
+  --container-wide: 1120px; /* kerangka desktop: rail + kolom baca */
+  --rail: 300px;       /* rail identitas di desktop */
 
   color-scheme: light;
 }
@@ -123,7 +125,7 @@
   --line-control: #78716C; /* 3,65:1 di paper gelap */
   --line-3: #78716C;
 
-  --ok: #A3D95B;   --ok-bg: #1D2517;   --ok-line: #3A4A26;
+  --ok: #A3C46B;   --ok-bg: #1D2517;   --ok-line: #3A4A26;
   --warn: #E5B454; --warn-bg: #26210F; --warn-line: #4A3F1C;
   --bad: #F87171;  --bad-bg: #2A1717;  --bad-line: #4A2626;
 

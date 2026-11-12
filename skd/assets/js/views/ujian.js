@@ -144,36 +144,44 @@ var ViewUjian = (function () {
     if (pos < 0 || pos >= soal.length) pos = 0;
 
     el.innerHTML =
-      '<div class="ujian-top" tabindex="-1">' +
-        '<div class="ujian-title">' +
-          '<span class="eyebrow">' + UI.esc(manifest.title || examId) + '</span>' +
-          '<strong>' + UI.esc(pack.title || meta.title) + '</strong>' +
+      '<div class="ujian-layout">' +
+        '<div class="ujian-head">' +
+          '<div class="ujian-top" tabindex="-1">' +
+            '<div class="ujian-title">' +
+              '<span class="eyebrow">' + UI.esc(manifest.title || examId) + '</span>' +
+              '<strong>' + UI.esc(pack.title || meta.title) + '</strong>' +
+            '</div>' +
+            '<div class="ujian-clock">' +
+              '<button class="btn is-quiet btn-flag" type="button" id="flag" ' +
+                'aria-pressed="false">Ragu-ragu</button>' +
+              '<div class="timer" id="timer" role="timer" aria-label="Sisa waktu">—</div>' +
+            '</div>' +
+          '</div>' +
+          '<div class="ujian-line">' +
+            '<span id="progress"></span>' +
+            '<span id="terjawab" class="muted"></span>' +
+          '</div>' +
         '</div>' +
-        '<div class="ujian-clock">' +
-          '<button class="btn is-quiet btn-flag" type="button" id="flag" ' +
-            'aria-pressed="false">Ragu-ragu</button>' +
-          '<div class="timer" id="timer" role="timer" aria-label="Sisa waktu">—</div>' +
+        '<aside class="ujian-side">' +
+          '<details class="nav-wrap">' +
+            '<summary>Navigasi soal</summary>' +
+            '<div class="nav-grid" id="navgrid"></div>' +
+            '<p class="nav-note">Angka penuh berarti sudah dijawab. Tanda · berarti ragu-ragu.</p>' +
+          '</details>' +
+        '</aside>' +
+        '<div class="ujian-body">' +
+          '<div id="soal"></div>' +
+          '<div class="ujian-actions">' +
+            '<button class="btn is-quiet" type="button" id="prev">← Sebelumnya</button>' +
+            '<button class="btn" type="button" id="next">Berikutnya →</button>' +
+          '</div>' +
+          '<div class="ujian-foot">' +
+            '<button class="btn is-quiet" type="button" id="finish">Selesaikan ujian</button>' +
+            '<span class="note">' + (Store.available
+              ? 'Jawaban tersimpan otomatis.'
+              : 'Penyimpanan diblokir — jawaban tidak akan tersimpan.') + '</span>' +
+          '</div>' +
         '</div>' +
-      '</div>' +
-      '<div class="ujian-line">' +
-        '<span id="progress"></span>' +
-        '<span id="terjawab" class="muted"></span>' +
-      '</div>' +
-      '<details class="nav-wrap">' +
-        '<summary>Navigasi soal</summary>' +
-        '<div class="nav-grid" id="navgrid"></div>' +
-        '<p class="nav-note">Angka penuh berarti sudah dijawab. Tanda · berarti ragu-ragu.</p>' +
-      '</details>' +
-      '<div id="soal"></div>' +
-      '<div class="ujian-actions">' +
-        '<button class="btn is-quiet" type="button" id="prev">← Sebelumnya</button>' +
-        '<button class="btn" type="button" id="next">Berikutnya →</button>' +
-      '</div>' +
-      '<div class="ujian-foot">' +
-        '<button class="btn is-quiet" type="button" id="finish">Selesaikan ujian</button>' +
-        '<span class="note">' + (Store.available
-          ? 'Jawaban tersimpan otomatis.'
-          : 'Penyimpanan diblokir — jawaban tidak akan tersimpan.') + '</span>' +
       '</div>' +
       '<p class="sr-only" id="status-ujian" role="status" aria-live="polite"></p>' +
       '<dialog class="modal" id="dialog-selesai" aria-labelledby="judul-selesai">' +
@@ -186,6 +194,11 @@ var ViewUjian = (function () {
           '</div>' +
         '</div>' +
       '</dialog>';
+
+    var navWrap = el.querySelector('.nav-wrap');
+    if (navWrap && window.matchMedia('(min-width: 1100px)').matches) {
+      navWrap.open = true;
+    }
 
     selesai = false;
 

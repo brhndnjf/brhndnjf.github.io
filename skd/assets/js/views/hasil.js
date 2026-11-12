@@ -61,16 +61,21 @@ var ViewHasil = (function () {
               (attempt.auto ? ' · waktu habis' : '') + '</p>' +
           '</div>' +
 
-          '<div class="skor-hero">' +
-            '<span class="skor-besar">' + UI.fmt(skor.total) + '</span>' +
-            '<span class="skor-dari">/ ' + UI.fmt(skor.maks) + '</span>' +
-          '</div>' +
-
-          statusHTML(contoh, skor) +
-          '<div class="skor-list">' +
-            Object.keys(skor.detail).map(function (k) {
-              return skorRow(k, nama[k] || k.toUpperCase(), skor.detail[k], contoh);
-            }).join('') +
+          '<div class="hasil-grid">' +
+            '<div class="hasil-summary">' +
+              '<div class="skor-hero">' +
+                '<span class="skor-besar">' + UI.fmt(skor.total) + '</span>' +
+                '<span class="skor-dari">/ ' + UI.fmt(skor.maks) + '</span>' +
+              '</div>' +
+              statusHTML(contoh, skor) +
+            '</div>' +
+            '<div class="hasil-detail">' +
+              '<div class="skor-list">' +
+                Object.keys(skor.detail).map(function (k) {
+                  return skorRow(k, nama[k] || k.toUpperCase(), skor.detail[k], contoh);
+                }).join('') +
+              '</div>' +
+            '</div>' +
           '</div>' +
           '<p class="note">' + (contoh
             ? 'Paket contoh: ambang kelulusan tidak berlaku. Skor ini hanya ' +

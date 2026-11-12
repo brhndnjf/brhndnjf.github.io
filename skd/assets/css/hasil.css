@@ -4,6 +4,8 @@
    ============================================================ */
 
 /* ---------- Hasil & pembahasan ---------- */
+.hasil-grid { display: grid; gap: var(--s3); }
+.hasil-summary, .hasil-detail { min-width: 0; }
 .hasil-meta { margin-top: 6px; font-size: var(--fs-caption); color: var(--ink-3-text); }
 .skor-hero {
   display: flex;
@@ -140,4 +142,12 @@
 .review-opt.is-wrong .review-tag::before { content: "✗ "; }
 .opt-score { font-family: var(--mono); font-size: var(--fs-caption); color: var(--ink-3-text); }
 .hasil-actions { display: flex; flex-wrap: wrap; gap: var(--s1); margin-top: var(--s3); }
+
+@media (min-width: 900px) {
+  .hasil-grid {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    gap: var(--s5);
+    align-items: start;
+  }
+}
 

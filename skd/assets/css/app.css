@@ -3,25 +3,28 @@
    Memakai tokens.css yang sama; tidak ada nilai mentah di sini.
    ============================================================ */
 
-/* ---------- Bilah atas ---------- */
-.bar {
+/* ---------- Kerangka aplikasi ---------- */
+.shell {
+  width: 100%;
+  max-width: var(--container-wide);
+  margin: 0 auto;
+  padding: 0 var(--s2);
+}
+
+.side {
   position: sticky;
   top: 0;
   z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  min-height: 60px;
+  padding: 8px 0;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
-.bar-in {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--s1);
-  min-height: 54px;
-  padding-top: var(--s1);
-  padding-bottom: var(--s1);
-}
 
-.bar-brand {
+.side-brand {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -32,17 +35,17 @@
   color: var(--ink-2);
   text-decoration: none;
 }
-.bar-brand b { color: var(--ink); font-weight: 600; }
-/* Nama bagian disembunyikan di layar kecil: bilah tetap satu baris */
-.bar-sep, .bar-sub { display: none; }
-.bar-dot {
+.side-brand b { color: var(--ink); font-weight: 600; }
+.side-dot {
   width: 7px; height: 7px;
   background: var(--stone);
   flex: none;
 }
 
-.tabs { display: flex; gap: var(--s2); margin-left: auto; }
-.tabs a {
+.side-exam { display: none; }
+
+.side-nav { display: flex; gap: var(--s2); margin-left: auto; }
+.side-nav a {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
@@ -54,11 +57,15 @@
   border-bottom: 1px solid transparent;
   transition: color .15s, border-color .15s;
 }
-.tabs a:hover { color: var(--ink); }
-.tabs a[aria-current="page"] {
+.side-nav a:hover { color: var(--ink); }
+.side-nav a[aria-current="page"] {
   color: var(--ink);
   border-bottom-color: var(--stone);
 }
+
+.side-progress { display: none; }
+
+.main { min-width: 0; }
 
 /* ---------- Kerangka isi ---------- */
 #view { padding-top: var(--s3); padding-bottom: var(--s5); min-height: 60vh; }
@@ -237,11 +244,6 @@ a.row:hover .row-go { transform: translateX(3px); color: var(--stone); }
    Layar lebih lebar — mobile-first: penyesuaian ke atas.
    ============================================================ */
 @media (min-width: 561px) {
-  .bar-in { min-height: 60px; gap: var(--s2); }
-  .bar-sep, .bar-sub { display: inline; }
-  .bar-sep { color: var(--ink-3-text); }
-  .tabs { margin-left: 0; }
-
   #view { padding-top: var(--s4); }
   .view-head { margin-bottom: var(--s3); }
 
@@ -255,7 +257,75 @@ a.row:hover .row-go { transform: translateX(3px); color: var(--stone); }
     padding-left: var(--s2);
     border-top: 0;
   }
+}
 
-  .acc summary { font-size: 19px; }
-
+@media (min-width: 900px) {
+  .shell {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: var(--s6);
+    align-items: start;
+  }
+  .side {
+    position: sticky;
+    top: 0;
+    display: block;
+    min-height: 100vh;
+    padding: var(--s4) 0;
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+  }
+  .side-brand { display: flex; margin-bottom: var(--s4); }
+  .side-exam {
+    display: block;
+    font-family: var(--mono);
+    font-size: var(--fs-caption);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3-text);
+  }
+  .side-nav {
+    display: grid;
+    gap: 0;
+    margin: var(--s3) 0 0;
+  }
+  .side-nav a {
+    display: flex;
+    min-height: 44px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .side-nav a[aria-current="page"] {
+    border-bottom-color: var(--line);
+  }
+  .side-nav a[aria-current="page"]::before {
+    content: "→";
+    margin-right: 8px;
+    color: var(--stone);
+  }
+  .side-progress {
+    display: block;
+    margin-top: var(--s4);
+    padding-top: var(--s2);
+    border-top: 1px solid var(--line);
+    font-size: var(--fs-caption);
+    line-height: var(--lh-caption);
+    color: var(--ink-2);
+  }
+  .side-progress span { display: block; margin-top: 4px; }
+  .side-progress .side-progress-label {
+    margin: 0 0 6px;
+    font-family: var(--font);
+    font-size: var(--fs-overline);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-3-text);
+  }
+  .main {
+    max-width: 760px;
+    padding-top: var(--s4);
+  }
+  #view { padding-top: 0; }
+  .app-foot { max-width: none; }
 }

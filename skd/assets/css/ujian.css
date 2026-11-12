@@ -5,6 +5,12 @@
 
 html { scroll-padding-bottom: 96px; }
 
+/* ---------- Kerangka ujian ---------- */
+.ujian-layout { display: flex; flex-direction: column; }
+.ujian-head { order: 1; }
+.ujian-side { order: 2; }
+.ujian-body { order: 3; }
+
 /* ---------- Mesin ujian ---------- */
 .ujian-top {
   display: flex;
@@ -205,4 +211,26 @@ html { scroll-padding-bottom: 96px; }
     font-size: var(--fs-small);
   }
   .ujian-title strong { font-size: 19px; }
+}
+
+@media (min-width: 1100px) {
+  .ujian-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 260px;
+    grid-template-areas:
+      "head side"
+      "body side";
+    gap: var(--s2) var(--s4);
+    align-items: start;
+  }
+  .ujian-head { grid-area: head; order: 0; }
+  .ujian-side {
+    grid-area: side;
+    order: 0;
+    position: sticky;
+    top: var(--s2);
+  }
+  .ujian-body { grid-area: body; order: 0; }
+  .ujian-actions { position: static; }
+  .ujian-side .nav-wrap { margin-bottom: 0; }
 }
