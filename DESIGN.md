@@ -1,10 +1,12 @@
-# ThoughtStream
+# ThoughtStream — taman digital
 
 Minimal, zen, distraction-free.
 
 ## Overview
 
 ThoughtStream is a contemplative design system built for minimalist personal blogs and newsletters. It embraces generous white space as a design element, letting words breathe and ideas settle. The warm, neutral palette recedes behind content, creating a reading experience that feels like a well-set page in a quiet room. Every decision prioritizes reading flow and typographic clarity over ornament.
+
+Situs ini memakainya untuk taman digital: beranda dengan rail identitas, halaman catatan yang tenang, dan status pertumbuhan yang jujur.
 
 ## Colors
 
@@ -231,6 +233,57 @@ All interactive and container elements use sharp, geometric edges (0px radius). 
 - Hover: Background `#F5F5F4`
 - Active: Background `#EFEDEB`
 - Leading element: 20px icon, color `#78716C`
+
+## Digital Garden Patterns
+
+### Rail + main
+
+- Mobile: satu kolom, urutan rail lalu konten.
+- `900px`: rail 260px + kolom baca.
+- `1024px`: rail 300px + kolom baca; jarak antar-kolom 72px.
+- Kolom baca maksimum 680px; rail tidak pernah melebar mengalahkan isi.
+
+### Topic chip
+
+- Font: Source Code Pro, 13px.
+- Border: `1px solid #D6D3D1`, radius 0, padding 3px 8px.
+- Warna teks `#57534E`; hover border `#78716C`, teks `#1C1917`.
+- Boleh menjadi tautan; tanpa garis bawah, tetapi tetap punya cincin fokus.
+
+### Growth status
+
+Tiga status, selalu ikon + teks (jangan mengandalkan warna saja):
+
+| Status | Label | Ikon | Warna |
+|---|---|---|---|
+| `seedling` | Benih | 🌱 | warning tint |
+| `budding` | Tumbuh | 🌿 | success tint |
+| `evergreen` | Abadi | 🌲 | surface netral |
+
+- Font: Inter 11px, weight 600, uppercase, letter-spacing 0.06em.
+- Padding 3px 9px, border 1px, radius 0.
+
+### Halaman catatan
+
+- Judul: Libre Baskerville, memakai skala Display.
+- Ringkasan: Inter 18–20px, warna `#57534E`, maksimum 34em.
+- Isi: Inter 17px / 1.8, maksimum 680px.
+- `h2` memakai skala Headline; `h3` memakai Subhead.
+- Kode inline dan blok memakai Source Code Pro di atas `#F5F5F4` dengan border hairline.
+- Kutipan memakai border kiri 2px `#A8A29E`, bukan latar warna.
+- Metadata tanggal memakai mono 13px `#6B6560`.
+
+### Filter status
+
+- Tombol minimal 44px tinggi agar nyaman disentuh.
+- Tidak dipilih: border `#D6D3D1`, teks `#57534E`.
+- Dipilih: latar `#78716C`, teks `#FAFAF9`, border sama; status juga ditandai `aria-pressed`.
+- Jumlah memakai mono 13px; tanpa JavaScript semua catatan tetap tampil.
+
+### Gerak
+
+Hanya transisi hover 150ms untuk warna dan border. Tidak ada animasi masuk,
+parallax, atau gerak dekoratif. `prefers-reduced-motion` mematikan transisi.
 
 ### Checkboxes
 

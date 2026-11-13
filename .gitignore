@@ -19,5 +19,8 @@ desktop.ini
 .vscode/
 .idea/
 
-# Arsip lokal — tidak dipublikasikan (modul SKD CPNS diisolasi di sini)
+# Arsip lokal — tidak dipublikasikan (materi yang diisolasi dari situs)
 _archive/
+
+# Draf pribadi — hanya di disk lokal, tidak pernah di-commit
+draft/

@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "notes": [
+    {
+      "slug": "hp-bekas-headless-server",
+      "title": "Repurposing HP Bekas Jadi Headless Server",
+      "summary": "Langkah awal menjadikan ponsel lama sebagai server kecil di rumah — daya kecil, manfaat nyata.",
+      "status": "budding",
+      "tags": [
+        "hardware",
+        "journal"
+      ],
+      "created": "2026-11-13",
+      "updated": "2026-11-13",
+      "url": "/catatan/hp-bekas-headless-server/"
+    },
+    {
+      "slug": "sistem-terminal-overstimulasi",
+      "title": "Sistem Terminal untuk Mengurangi Overstimulasi Visual",
+      "summary": "Palet kalem, prompt pendek, dan tata letak yang tidak berisik untuk sesi kerja yang lebih tenang.",
+      "status": "evergreen",
+      "tags": [
+        "neurodiversity",
+        "code"
+      ],
+      "created": "2026-11-13",
+      "updated": "2026-11-13",
+      "url": "/catatan/sistem-terminal-overstimulasi/"
+    },
+    {
+      "slug": "snippet-backup-shell",
+      "title": "Snippet Shell untuk Automasi Backup",
+      "summary": "Skrip pendek untuk menyalin berkas penting tanpa mengingat perintah panjang setiap kali.",
+      "status": "seedling",
+      "tags": [
+        "code"
+      ],
+      "created": "2026-11-13",
+      "updated": "2026-11-13",
+      "url": "/catatan/snippet-backup-shell/"
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+/* ============================================================
+   notes.css — halaman catatan & daftar catatan.
+   Memakai token yang sama dengan beranda: tepi tajam, hairline,
+   tanpa bayangan.
+   ============================================================ */
+
+/* ---------- Halaman catatan ---------- */
+.note-page { padding-top: var(--s3); }
+
+.note-crumb {
+  font-family: var(--mono);
+  font-size: var(--fs-caption);
+  color: var(--ink-3-text);
+}
+.note-crumb a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+.note-crumb a:hover { color: var(--stone); }
+.note-crumb span { margin: 0 4px; }
+
+.note-page h1 { margin-top: var(--s2); }
+
+.note-lede {
+  margin-top: var(--s2);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  color: var(--ink-2);
+  max-width: 34em;
+}
+
+.note-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px var(--s1);
+  margin-top: var(--s2);
+  padding-top: var(--s1);
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: var(--fs-caption);
+  color: var(--ink-3-text);
+}
+
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--s1);
+  padding: 0;
+  list-style: none;
+}
+.note-tags a {
+  display: inline-block;
+  padding: 3px 8px;
+  border: 1px solid var(--line-2);
+  font-family: var(--mono);
+  font-size: var(--fs-caption);
+  line-height: 1.4;
+  color: var(--ink-2);
+  text-decoration: none;
+}
+.note-tags a:hover { border-color: var(--stone); color: var(--ink); }
+
+/* ---------- Isi catatan ---------- */
+.prose {
+  margin-top: var(--s3);
+  max-width: var(--container);
+}
+.prose > * + * { margin-top: var(--s2); }
+
+.prose h2 {
+  margin-top: var(--s4);
+  font-size: var(--fs-headline);
+  line-height: var(--lh-headline);
+  letter-spacing: -0.015em;
+}
+.prose h3 {
+  margin-top: var(--s3);
+  font-size: var(--fs-subhead);
+  font-weight: 400;
+  line-height: var(--lh-subhead);
+}
+
+.prose p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.4em;
+}
+.prose ul { list-style: disc; }
+.prose ol { list-style: decimal; }
+.prose li { line-height: var(--lh-body); }
+.prose li + li { margin-top: 6px; }
+.prose li::marker { color: var(--ink-3-text); }
+
+.prose a { overflow-wrap: anywhere; }
+
+.prose strong { font-weight: 600; }
+
+.prose code {
+  padding: 0.1em 0.35em;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  font-family: var(--mono);
+  font-size: 0.88em;
+}
+
+.prose pre {
+  padding: var(--s2);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow-x: auto;
+}
+.prose pre code {
+  padding: 0;
+  border: 0;
+  background: none;
+  font-size: var(--fs-caption);
+  line-height: 1.65;
+}
+
+.prose blockquote {
+  margin-inline: 0;
+  padding-left: var(--s2);
+  border-left: 2px solid var(--line-3);
+  color: var(--ink-2);
+}
+
+.prose hr {
+  margin: var(--s4) 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.note-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--s1) var(--s2);
+  margin-top: var(--s5);
+  padding-top: var(--s2);
+  border-top: 1px solid var(--line);
+  font-size: var(--fs-small);
+}
+
+/* ---------- Daftar catatan ---------- */
+.notes-head { padding-top: var(--s3); }
+.notes-head h1 { margin-top: 8px; }
+.notes-head .lede {
+  margin-top: var(--s2);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-lead);
+  color: var(--ink-2);
+  max-width: 34em;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: var(--s3);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--line);
+}
+.filter {
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid var(--line-2);
+  font-size: var(--fs-caption);
+  font-weight: 500;
+  color: var(--ink-2);
+  transition: background .15s, border-color .15s, color .15s;
+}
+.filter:hover { border-color: var(--stone); color: var(--ink); }
+.filter[aria-pressed="true"] {
+  background: var(--stone);
+  border-color: var(--stone);
+  color: var(--paper);
+}
+.filter span {
+  margin-left: 4px;
+  font-family: var(--mono);
+  opacity: 0.8;
+}
+
+.filter-note {
+  margin-top: var(--s1);
+  font-family: var(--mono);
+  font-size: var(--fs-caption);
+  color: var(--ink-3-text);
+}
+.filter-note a { color: var(--ink-2); }
+
+.filter-count {
+  margin-top: var(--s1);
+  font-family: var(--mono);
+  font-size: var(--fs-caption);
+  color: var(--ink-3-text);
+}
+
+.note-list {
+  display: grid;
+  margin-top: var(--s1);
+}
+
+.note-card {
+  display: grid;
+  gap: 6px;
+  padding: var(--s2) 0;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+  text-decoration: none;
+  transition: background .15s;
+}
+.note-card:hover { background: var(--surface); }
+.note-card:focus-visible {
+  background: var(--surface);
+  outline: 2px solid var(--stone);
+  outline-offset: -2px;
+}
+
+.note-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.note-date {
+  margin-left: auto;
+  font-family: var(--mono);
+  font-size: var(--fs-caption);
+  color: var(--ink-3-text);
+}
+
+.note-card-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-subhead);
+  font-weight: 700;
+  line-height: var(--lh-subhead);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+.note-card-summary {
+  max-width: 34em;
+  font-size: var(--fs-small);
+  line-height: var(--lh-small);
+  color: var(--ink-2);
+}
+.note-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: var(--fs-caption);
+  color: var(--ink-3-text);
+}
+
+.empty {
+  padding: var(--s3) 0;
+  font-size: var(--fs-small);
+  color: var(--ink-2);
+}
+
+@media (min-width: 561px) {
+  .note-page,
+  .notes-head { padding-top: var(--s4); }
+  .note-card-title { font-size: var(--fs-headline); }
+}

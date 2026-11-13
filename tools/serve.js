@@ -58,5 +58,5 @@ http.createServer((req, res) => {
   });
 }).listen(PORT, () => {
   console.log(`Pratinjau: http://localhost:${PORT}`);
-  console.log(`Aplikasi : http://localhost:${PORT}/skd/`);
+  console.log(`Catatan  : http://localhost:${PORT}/catatan/`);
 });

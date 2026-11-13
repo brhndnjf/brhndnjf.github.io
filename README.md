@@ -1,144 +1,143 @@
 # brhndnjf.github.io
 
-Situs pribadi. Statis sepenuhnya — tanpa backend, tanpa build step.
+Taman digital pribadi. Statis sepenuhnya — tanpa backend, tanpa akun, tanpa
+pelacak. Isi situs adalah berkas teks di repo ini; tidak ada basis data.
 
-- Beranda: <https://brhndnjf.github.io>
-- Latihan ujian: <https://brhndnjf.github.io/cpns/>
+- Situs: <https://brhndnjf.github.io>
+- Catatan: <https://brhndnjf.github.io/catatan/>
 
-## Acuan desain
+## Cara kerja singkat
 
-`DESIGN.md` adalah kontrak visual: palet batu hangat, Libre Baskerville untuk
-judul, Inter untuk UI, tepi tajam (radius 0), tanpa bayangan, jarak berbasis
-12px, lebar isi 680px.
+1. Tulis catatan Markdown di `catatan/`.
+2. Jalankan `node tools/build-notes.js`.
+3. Periksa hasilnya, lalu commit dan push.
 
-Semua nilai itu hidup di **`assets/css/tokens.css`**. Jangan menulis warna,
-ukuran huruf, atau radius langsung di berkas CSS lain — selalu lewat variabel,
-supaya mode gelap dan konsistensi tetap terjaga.
+GitHub Pages menyajikan repo apa adanya. Tidak ada build di server.
 
 ## Struktur
 
-```
-index.html          beranda
-404.html            halaman tidak ditemukan
+```text
+index.html              beranda: rail identitas + catatan terbaru
+404.html                halaman tidak ditemukan
 robots.txt
-.nojekyll           mematikan pemrosesan Jekyll
-DESIGN.md           acuan desain
-ARCHITECTURE.md     keputusan arsitektur & batas platform
+.nojekyll               mematikan pemrosesan Jekyll
+
+catatan/
+  _template.md          contoh front-matter
+  <slug>.md             sumber catatan (satu-satunya yang disunting)
+  index.html            daftar catatan (hasil generate)
+  <slug>/index.html     halaman catatan (hasil generate)
+
+data/
+  notes.json            metadata catatan (hasil generate)
+
+draft/                  draf lokal, gitignored — tidak pernah terbit
 
 assets/
-  css/tokens.css    warna, tipe, jarak, bentuk — satu-satunya sumber
-  css/base.css      reset, kerangka, tombol, dialog
-  css/hub.css       komponen beranda
-  js/theme.js       mode terang/gelap otomatis (jam setempat), dipakai beranda & aplikasi
-  js/hub.js         tahun, dialog QRIS
-  img/qris.png      kode QRIS donasi
-
-cpns/
-  index.html
-  assets/css/
-    app.css               kerangka aplikasi
-    materi.css            akordeon, penanda progres, kuis
-    ujian.css             layar ujian
-    hasil.css             skor & pembahasan
-  assets/js/
-    ui, store, score      pembantu, penyimpanan, penilaian
-    exam, sesi, nav       daftar ujian, sesi berjalan, tab
-    router, app           hash router & pemasangan rute
-    views/                exams, exam, materi, tryout, ujian, hasil
-  data/
-    exams.json            daftar ujian
-    cpns/
-      manifest.json       subtes, aturan skor, daftar paket
-      materi/             twk.json, tiu.json, tkp.json
-      paket/
-        paket-contoh.json 15 soal contoh untuk menguji mesin
-        paket-01.json     (belum ada — menunggu soal asli)
+  css/tokens.css        warna, tipe, jarak, bentuk — satu-satunya sumber
+  css/base.css          reset, tipografi, kerangka, tombol, dialog
+  css/hub.css           komponen beranda & kepala halaman
+  css/notes.css         halaman catatan & daftar catatan
+  js/theme.js           tema terang/gelap otomatis (jam setempat)
+  js/hub.js             tahun, dialog QRIS
+  js/notes.js           penyaringan status di daftar catatan
+  img/qris.png          kode QRIS dukungan
 
 tools/
-  serve.js          server lokal untuk pratinjau
-  validate.js       pemeriksa isi data sebelum commit
+  build-notes.js        Markdown → halaman statis + data/notes.json
+  new-note.js           membuat catatan baru dari template
+  lib/markdown.js       parser Markdown ringan
+  lib/page.js           kerangka HTML halaman catatan
+  serve.js              server lokal untuk pratinjau
+
+DESIGN.md               acuan visual
+ARCHITECTURE.md         keputusan arsitektur & batas platform
 ```
 
-## Alur ujian
+## Menulis catatan
 
-Rute memakai awalan ujian, jadi satu aplikasi bisa memuat banyak ujian:
-
-```
-#/                        daftar ujian
-#/cpns                    ringkasan ujian
-#/cpns/materi             daftar subtes
-#/cpns/materi/twk         isi materi
-#/cpns/tryout             daftar paket + riwayat
-#/cpns/tryout/paket-01    sesi ujian
-#/cpns/hasil/<id>         skor + pembahasan
-```
-
-Tautan lama `#/materi`, `#/materi/twk`, dan `#/tryout` diarahkan ke CPNS.
-
-Sesi ujian disimpan di `localStorage` setiap kali jawaban berubah. Kalau tab
-ditutup atau halaman dimuat ulang, sesi yang sama dilanjutkan — timer dihitung
-dari batas waktu, bukan dari hitungan detik di tab. Sesi yang kedaluwarsa
-otomatis disimpan sebagai hasil. Satu ujian tidak bisa memakai sesi paket lain;
-isi paket yang berubah juga ditolak lewat sidik soal.
-
-Skor dihitung dari `scoring` di manifest ujian: `mode: "key"` memberi poin
-untuk kunci benar, `mode: "weighted"` menjumlahkan bobot opsi (TKP). Skor
-maksimum mengikuti jumlah soal yang benar-benar ada di paket, bukan angka
-teoretis ujian penuh.
-
-## Menambah isi
-
-Seluruh isi berada di `cpns/data/`. Jalur di dalam manifest bersifat relatif
-terhadap folder `cpns/data/`.
-
-Sebelum commit, jalankan pemeriksa:
+Buat berkas baru dari template:
 
 ```powershell
-node tools/validate.js
+node tools/new-note.js "Judul catatan"
 ```
 
-Perintah itu menolak kunci jawaban di luar jangkauan, id soal ganda, opsi TKP
-yang bobotnya bukan 1–5, subtes yang tidak punya aturan skor, dan manifest yang
-menunjuk berkas tidak ada. Tanpa build step, inilah satu-satunya jaring
-pengaman — jangan dilewati.
+Atau tulis draf yang belum siap terbit:
 
-Paket `paket-contoh` sengaja pendek dan bertanda `"jenis": "contoh"`. Ia hanya
-untuk menguji mesin ujian; ambang kelulusan tidak berlaku untuk paket itu.
-Ganti dengan soal asli sebelum dipakai orang lain.
+```powershell
+node tools/new-note.js --draft "Ide yang belum matang"
+```
 
-## Menambah ujian baru
+Draf masuk ke `draft/` yang di-`.gitignore`. Isinya hanya ada di disk lokal.
+Saat siap, pindahkan berkasnya ke `catatan/`, lalu jalankan build.
 
-1. Buat folder `cpns/data/<id>/` berisi `manifest.json`, `materi/`, dan `paket/`.
-2. Salin bentuk `cpns/manifest.json`, ganti `id`, `title`, dan `scoring`.
-3. Tambahkan satu entri di `cpns/data/exams.json` dengan `manifest` yang sesuai.
-4. Jalankan `node tools/validate.js`.
+Front-matter yang dipakai:
 
-Tidak ada JavaScript yang perlu diubah. Rute, tab, dan pemilihan ujian mengikuti
-daftar di `exams.json`.
+```yaml
+---
+title: "Judul catatan"
+slug: judul-catatan
+status: seedling        # seedling | budding | evergreen
+tags: [code, journal]
+created: 2026-11-13
+updated: 2026-11-13
+summary: "Satu kalimat untuk kartu dan metadata."
+---
+```
+
+- `slug` menjadi alamat: `/catatan/<slug>/`.
+- `status` menjadi badge 🌱 Benih, 🌿 Tumbuh, atau 🌲 Abadi.
+- `summary` dipakai di kartu beranda dan deskripsi halaman.
+- `tags` dipakai untuk chip topik dan saringan `?tag=`.
+
+Setelah menulis atau mengubah catatan:
+
+```powershell
+node tools/build-notes.js
+```
+
+Perintah itu menghasilkan `data/notes.json`, `catatan/index.html`, halaman tiap
+catatan, dan kartu "Catatan terbaru" di beranda. Jangan menyunting berkas hasil
+generate — sunting `.md`-nya lalu build ulang.
+
+Selama menulis, mode pantau bisa dipakai:
+
+```powershell
+node tools/build-notes.js --watch
+```
 
 ## Pratinjau lokal
-
-Membuka `index.html` langsung dari disk akan gagal memuat JSON, karena
-`fetch` diblokir untuk `file://`. Jalankan server kecil ini:
 
 ```powershell
 node tools/serve.js
 ```
 
-Lalu buka <http://localhost:8080> dan <http://localhost:8080/cpns/>. (Alias lama <http://localhost:8080/skd/> dialihkan ke `/cpns/`.)
+Lalu buka <http://localhost:8080> dan <http://localhost:8080/catatan/>.
 
-## Menambah proyek
+Server ini hanya alat pengembangan; GitHub Pages tidak membutuhkannya.
 
-Sunting blok `<div class="projects">` di `index.html`. Pakai `<a class="project">`
-bila sudah ada tautan, `<div class="project">` bila belum. Status memakai
-`<span class="tag is-live">`, `is-next`, atau `tag` biasa.
+## Batas yang disengaja
 
-## QRIS
+- Tidak ada komentar, analytics, akun, atau database.
+- Semua yang di-commit bersifat publik. Jangan menaruh rahasia atau data pribadi.
+- Draf lokal tidak ter-backup otomatis oleh Git; salin manual bila perlu.
+- Riwayat Git menyimpan versi lama berkas meskipun berkasnya dihapus.
 
-Gambar aktif di `assets/img/qris.png` dan dimuat lewat
-`data-qris-src` pada `<dialog id="qris">`. Untuk mengganti, timpa berkas
-tersebut. Bila atribut dihapus, tombol QRIS disembunyikan otomatis.
+## Tema
 
-## Catatan
+Tema mengikuti jam setempat: gelap pukul 18.00–05.59, terang pukul 06.00–17.59.
+Pilihan manual disimpan di `localStorage` perangkat pengunjung dan tidak pernah
+dikirim ke mana pun.
 
-Tidak ada rahasia di repo ini. Apa pun yang ada di sini bisa dibaca publik.
+## Dukungan
+
+Gambar QRIS ada di `assets/img/qris.png` dan dimuat lewat `data-qris-src` pada
+`<dialog id="qris">` di beranda. Tombol disembunyikan otomatis bila gambar tidak
+tersedia.
+
+## Acuan desain
+
+`DESIGN.md` adalah kontrak visual: palet batu hangat, Libre Baskerville untuk
+judul, Inter untuk UI, tepi tajam, tanpa bayangan, jarak berbasis 12px, lebar
+baca 680px. Semua nilai hidup di `assets/css/tokens.css`; berkas CSS lain
+memakai variabel, bukan nilai mentah.

@@ -14,6 +14,7 @@
   <meta property="og:description" content="Taman digital Burhan — catatan soal neurodiversity, perangkat keras, kode sederhana, dan proyek kecil yang tumbuh perlahan.">
   <meta property="og:url" content="https://brhndnjf.github.io/">
   <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://brhndnjf.github.io/">
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E4572E'/><text x='50' y='68' font-size='54' font-family='system-ui' font-weight='600' fill='white' text-anchor='middle'>b</text></svg>">
 
@@ -83,10 +84,10 @@
         <section class="topics" aria-labelledby="judul-topik">
           <h2 id="judul-topik">Topik</h2>
           <ul class="topic-list">
-            <li class="topic">#neurodiversity</li>
-            <li class="topic">#hardware</li>
-            <li class="topic">#code</li>
-            <li class="topic">#journal</li>
+            <li><a class="topic" href="/catatan/?tag=neurodiversity">#neurodiversity</a></li>
+            <li><a class="topic" href="/catatan/?tag=hardware">#hardware</a></li>
+            <li><a class="topic" href="/catatan/?tag=code">#code</a></li>
+            <li><a class="topic" href="/catatan/?tag=journal">#journal</a></li>
           </ul>
         </section>
 
@@ -145,69 +146,42 @@
         <section class="section" aria-labelledby="judul-catatan">
           <div class="section-head">
             <h2 id="judul-catatan">Catatan terbaru</h2>
-            <span>5</span>
+            <span data-notes-count>3</span>
           </div>
 
-          <div class="projects">
-            <div class="project">
-              <span class="project-title">
-                Sistem Terminal untuk Mengurangi Overstimulasi Visual
-                <span class="status is-ever">🌲 Abadi</span>
-              </span>
-              <span class="project-desc">
-                Palet warna kalem, prompt pendek, dan tata letak yang tidak
-                berisik untuk sesi kerja yang lebih tenang.
-              </span>
-            </div>
-
-            <div class="project">
+          <div class="projects" data-notes-latest>
+            <!-- notes:start -->
+            <a class="project" href="/catatan/hp-bekas-headless-server/">
               <span class="project-title">
                 Repurposing HP Bekas Jadi Headless Server
                 <span class="status is-bud">🌿 Tumbuh</span>
               </span>
-              <span class="project-desc">
-                Langkah awal menjadikan ponsel lama sebagai server kecil di
-                rumah — daya kecil, manfaat nyata.
+              <span class="project-desc">Langkah awal menjadikan ponsel lama sebagai server kecil di rumah — daya kecil, manfaat nyata.</span>
+              <span class="project-go" aria-hidden="true">→</span>
+            </a>
+            <a class="project" href="/catatan/sistem-terminal-overstimulasi/">
+              <span class="project-title">
+                Sistem Terminal untuk Mengurangi Overstimulasi Visual
+                <span class="status is-ever">🌲 Abadi</span>
               </span>
-            </div>
-
-            <div class="project">
+              <span class="project-desc">Palet kalem, prompt pendek, dan tata letak yang tidak berisik untuk sesi kerja yang lebih tenang.</span>
+              <span class="project-go" aria-hidden="true">→</span>
+            </a>
+            <a class="project" href="/catatan/snippet-backup-shell/">
               <span class="project-title">
                 Snippet Shell untuk Automasi Backup
                 <span class="status is-seed">🌱 Benih</span>
               </span>
-              <span class="project-desc">
-                Skrip pendek untuk menyalin berkas penting tanpa mengingat
-                perintah panjang setiap kali.
-              </span>
-            </div>
-
-            <div class="project">
-              <span class="project-title">
-                Setup Kitty Terminal &amp; Tmux
-                <span class="status is-bud">🌿 Tumbuh</span>
-              </span>
-              <span class="project-desc">
-                Konfigurasi yang membuat terminal enak dipakai sehari-hari:
-                font, tema, dan pintasan yang masuk akal.
-              </span>
-            </div>
-
-            <div class="project">
-              <span class="project-title">
-                Mengapa Membuat Situs Sendiri Lebih Tenang
-                <span class="status is-seed">🌱 Benih</span>
-              </span>
-              <span class="project-desc">
-                Catatan soal memiliki ruang sendiri di web, jauh dari linimasa
-                dan tekanan untuk selalu tampil.
-              </span>
-            </div>
+              <span class="project-desc">Skrip pendek untuk menyalin berkas penting tanpa mengingat perintah panjang setiap kali.</span>
+              <span class="project-go" aria-hidden="true">→</span>
+            </a>
+            <!-- notes:end -->
           </div>
 
           <p class="note">
             Sebagian catatan masih berupa benih — tumbuh pelan-pelan, tidak
             harus selesai hari ini.
+            <a href="/catatan/">Lihat semua catatan →</a>
           </p>
         </section>
 

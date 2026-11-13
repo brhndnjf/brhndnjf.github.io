@@ -99,13 +99,17 @@
   list-style: none;
 }
 .topic {
+  display: inline-block;
   font-family: var(--mono);
   font-size: var(--fs-caption);
   line-height: 1.4;
   color: var(--ink-2);
   padding: 3px 8px;
   border: 1px solid var(--line-2);
+  text-decoration: none;
+  transition: border-color .15s, color .15s;
 }
+a.topic:hover { border-color: var(--stone); color: var(--ink); }
 
 /* ---------- Tautan ---------- */
 .links {
