@@ -18,3 +18,6 @@ desktop.ini
 # Berkas editor
 .vscode/
 .idea/
+
+# Arsip lokal — tidak dipublikasikan (modul SKD CPNS diisolasi di sini)
+_archive/

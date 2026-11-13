@@ -7,9 +7,15 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = path.resolve(__dirname, '..', 'cpns');
+const ROOT = path.resolve(__dirname, '..', '_archive', 'cpns');
 /* Semua jalur di dalam manifest bersifat relatif terhadap folder data/ */
 const BASE = path.join(ROOT, 'data');
+
+if (!fs.existsSync(BASE)) {
+  console.log('Tidak ada folder data ujian (modul SKD diarsipkan/diisolasi).');
+  console.log('Tidak ada yang perlu divalidasi.');
+  process.exit(0);
+}
 
 const errors = [];
 const warnings = [];
