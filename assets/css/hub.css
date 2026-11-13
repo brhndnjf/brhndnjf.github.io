@@ -76,6 +76,37 @@
   color: var(--ink-3-text);
 }
 
+/* ---------- Topik ---------- */
+.topics {
+  margin-top: var(--s4);
+  padding-top: var(--s2);
+  border-top: 1px solid var(--line);
+}
+.topics h2 {
+  font-family: var(--font);
+  font-size: var(--fs-overline);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-3-text);
+}
+.topic-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.topic {
+  font-family: var(--mono);
+  font-size: var(--fs-caption);
+  line-height: 1.4;
+  color: var(--ink-2);
+  padding: 3px 8px;
+  border: 1px solid var(--line-2);
+}
+
 /* ---------- Tautan ---------- */
 .links {
   display: grid;
@@ -227,6 +258,23 @@ a.project:hover .project-go { transform: translateX(3px); color: var(--stone); }
 .tag.is-live { background: var(--ok-bg); border-color: var(--ok-line); color: var(--ok); }
 .tag.is-next { background: var(--warn-bg); border-color: var(--warn-line); color: var(--warn); }
 
+/* Status pertumbuhan catatan — 🌱 benih, 🌿 tumbuh, 🌲 abadi */
+.status {
+  font-family: var(--font);
+  font-size: var(--fs-overline);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border: 1px solid var(--line-2);
+  color: var(--ink-2);
+  background: transparent;
+  white-space: nowrap;
+}
+.status.is-seed { background: var(--warn-bg); border-color: var(--warn-line); color: var(--warn); }
+.status.is-bud { background: var(--ok-bg); border-color: var(--ok-line); color: var(--ok); }
+.status.is-ever { background: var(--surface); border-color: var(--line-2); color: var(--ink); }
+
 /* ---------- Dukungan ---------- */
 .support { margin-top: var(--s2); }
 .support h3 { font-family: var(--font); font-size: var(--fs-body); font-weight: 600; }
@@ -267,7 +315,6 @@ a.project:hover .project-go { transform: translateX(3px); color: var(--stone); }
 @media (min-width: 900px) {
   .hub-grid {
     grid-template-columns: 260px minmax(0, 1fr);
-    grid-template-rows: auto auto;
     column-gap: var(--s5);
     row-gap: var(--s4);
     align-items: start;
@@ -276,14 +323,9 @@ a.project:hover .project-go { transform: translateX(3px); color: var(--stone); }
     grid-column: 1;
     grid-row: 1;
   }
-  .links {
-    grid-column: 1;
-    grid-row: 2;
-    margin-top: 0;
-  }
   .hub-main {
     grid-column: 2;
-    grid-row: 1 / span 2;
+    grid-row: 1;
     max-width: var(--container);
   }
   .section { padding-top: var(--s5); }
